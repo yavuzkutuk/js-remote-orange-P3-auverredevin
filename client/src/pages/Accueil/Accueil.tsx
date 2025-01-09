@@ -7,10 +7,12 @@ function Accueil() {
       <NavBar />
 
       <div className="main">
-        <h1>DECOUVREZ VOTRE PROFIL</h1>
+        <h1>
+          <strong>DECOUVREZ VOTRE PROFIL</strong>
+        </h1>
         <h4>Participez à ce quizz pour en savoir plus sur vous goûts !</h4>
         <button type="button" className="button-quizz">
-          Quizz
+          <strong>QUIZZ</strong>
         </button>
       </div>
 
@@ -21,7 +23,7 @@ function Accueil() {
             src="../src/assets/images/Raisin.png"
             alt="Raisin"
           />
-          Nos vins
+          <strong>Nos vins</strong>
           <p>
             Réveillez votre palais gustativement avec notre sélection de 50 vins
             au choix !
@@ -33,7 +35,7 @@ function Accueil() {
             src="../src/assets/images/Degustation.png"
             alt="degustation"
           />
-          Dégustation
+          <strong>Dégustation</strong>
           <p>
             Venez participer à nos séances dégustation qui réveillera vos
             papilles !
@@ -46,15 +48,17 @@ function Accueil() {
             src="../src/assets/images/Francais.png"
             alt="100% Francais"
           />
-          100% Français
+          <strong>100% Français</strong>
           <p>Tout nos vins sont directement produits de vignes française !</p>
         </button>
       </section>
 
       <section>
-        <h1>PRÊT A RELEVER L’AVENTURE ?</h1>
+        <h1>
+          <strong>PRÊT A RELEVER L’AVENTURE ?</strong>
+        </h1>
         <button type="button" className="button-vins">
-          Nos vins
+          <strong>NOS VINS</strong>
         </button>
       </section>
     </div>
