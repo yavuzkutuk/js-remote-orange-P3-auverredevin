@@ -1,6 +1,6 @@
 -- Création de la table users
 CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
+    id INT NOT NULL AUTO_INCREMENT,
     firstname VARCHAR(50),
     lastname VARCHAR(50),
     date_of_birth DATE,
@@ -12,7 +12,7 @@ CREATE TABLE users (
 
 -- Création de la table vin
 CREATE TABLE vin (
-    id SERIAL PRIMARY KEY,
+    id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
     category VARCHAR(50) NOT NULL,
     origin VARCHAR(100),
@@ -23,7 +23,7 @@ CREATE TABLE vin (
 
 -- Création de la table degustations
 CREATE TABLE degustations (
-    id SERIAL PRIMARY KEY,
+    id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
     date DATE DEFAULT NULL,
     location VARCHAR(255),
@@ -34,7 +34,7 @@ CREATE TABLE degustations (
 
 -- Création de la table avis
 CREATE TABLE avis (
-    id SERIAL PRIMARY KEY,
+    id INT NOT NULL AUTO_INCREMENT,
     note DECIMAL(3,1) NOT NULL,
     description VARCHAR(200) NOT NULL,
     vin_id INT NOT NULL,
@@ -47,22 +47,15 @@ CREATE TABLE avis (
 
 -- Création de la table quizz
 CREATE TABLE quizz (
-    id SERIAL PRIMARY KEY,
+    id INT NOT NULL AUTO_INCREMENT,
     type VARCHAR(50),
     question TEXT,
     options JSON,
-    media_data TEXT,
-    duree_en_minutes INT,
-    url VARCHAR(255),
-    created_by INT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (created_by) REFERENCES users(id) ON DELETE CASCADE,
-    CONSTRAINT duree_positive CHECK (duree_en_minutes > 0)
 );
 
 -- Création de la table questions
 CREATE TABLE questions (
-    id SERIAL PRIMARY KEY,
+    id INT NOT NULL AUTO_INCREMENT,
     queries TEXT NOT NULL,
     name VARCHAR(100) NOT NULL,
     img BOOLEAN DEFAULT FALSE,
@@ -72,7 +65,7 @@ CREATE TABLE questions (
 
 -- Création de la table reponses
 CREATE TABLE reponses (
-    id SERIAL PRIMARY KEY,
+    id INT NOT NULL AUTO_INCREMENT,
     choix_1 TEXT NOT NULL,
     choix_2 TEXT NOT NULL,
     choix_3 TEXT,
@@ -84,11 +77,10 @@ CREATE TABLE reponses (
 
 -- Création de la table answer (réponses des utilisateurs)
 CREATE TABLE answer (
-    id SERIAL PRIMARY KEY,
+    id INT NOT NULL AUTO_INCREMENT,
     user_id INT NOT NULL,
     quizz_id INT NOT NULL,
-    question_id INT NOT NULL,
-    reponse_id INT NOT NULL,
+    score INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (quizz_id) REFERENCES quizz(id) ON DELETE CASCADE,
@@ -98,8 +90,9 @@ CREATE TABLE answer (
 
 -- Création de la table filtres
 CREATE TABLE filtres (
-    id SERIAL PRIMARY KEY,
+    id INT NOT NULL AUTO_INCREMENT,
     user_id INT NOT NULL,
+    answer_id INT NOT NULL,
     name VARCHAR(50) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
@@ -209,3 +202,45 @@ INSERT INTO vin (id, name, category, origin, price, description) VALUES
 (48, 'Chocolate in a Bottle CHARDONNAY', 'Blanc', 'France', 18, 'Vin blanc pétillant et gourmand du sud de la France.'),
 (49, 'Sauvignon Blanc Lablachère', 'Blanc', 'France', 12, 'Ce vin blanc très aromatique à la robe brillante et limpide accompagnera les poissons et crustacés.'),
 (50, 'Le Merlot', 'Rouge', 'France', 14, 'Rouge fruit noir et mûre, tannins puissants.');
+
+-- Insertion des utilisateurs
+INSERT INTO users (firstname, lastname, date_of_birth, email, mobile_data, address) VALUES
+('Jean', 'Dupont', '1985-03-15', 'jean.dupont@email.com', '+33612345678', '123 Rue de Paris, Paris'),
+('Marie', 'Martin', '1990-07-22', 'marie.martin@email.com', '+33623456789', '45 Avenue des Champs-Élysées, Paris'),
+('Pierre', 'Bernard', '1988-11-30', 'pierre.bernard@email.com', '+33634567890', '78 Rue du Commerce, Lyon'),
+('Sophie', 'Petit', '1992-04-18', 'sophie.petit@email.com', '+33645678901', '15 Rue de la République, Marseille'),
+('Lucas', 'Moreau', '1987-09-25', 'lucas.moreau@email.com', '+33656789012', '32 Boulevard Victor Hugo, Nice');
+
+-- Insertion des avis
+INSERT INTO avis (note, description, vin_id, user_id) VALUES
+(4.5, 'Exceptionnel, des arômes complexes et une longueur remarquable', 1, 1),
+(5.0, 'Une expérience unique, le meilleur vin que j''ai jamais dégusté', 2, 2),
+(4.8, 'Un sauternes parfaitement équilibré, sublime', 3, 3),
+(4.7, 'Un champagne d''exception, des bulles parfaites', 4, 4),
+(4.6, 'Puissant et élégant à la fois', 5, 5);
+
+-- Questions orientées préférences
+INSERT INTO questions (queries, name, img, quizz_id) VALUES
+('Comment préférez-vous votre vin rouge ?', 'Style de Rouge', false, 1),
+('Quel niveau de sucrosité appréciez-vous dans un vin blanc ?', 'Sucrosité', false, 1),
+('Quelle intensité aromatique recherchez-vous ?', 'Intensité', false, 1),
+('Quel budget êtes-vous prêt à consacrer pour une bouteille de vin ?', 'Budget', false, 2),
+('Dans quel contexte dégustez-vous le plus souvent du vin ?', 'Contexte', false, 2),
+('Quelles saveurs vous attirent le plus ?', 'Saveurs', false, 3);
+
+-- Réponses possibles aux questions de préférence
+INSERT INTO reponses (choix_1, choix_2, choix_3, choix_4, question_id, correct_choix) VALUES
+('Léger et fruité', 'Moyennement corsé', 'Puissant et tannique', 'Très structuré', 1, 1),
+('Sec', 'Demi-sec', 'Moelleux', 'Liquoreux', 2, 1),
+('Subtile et délicate', 'Moyennement prononcée', 'Intense', 'Très intense', 3, 1),
+('Moins de 15€', '15-30€', '30-50€', 'Plus de 50€', 4, 1),
+('Apéritif', 'Repas gastronomique', 'Soirée entre amis', 'Occasion spéciale', 5, 1),
+('Fruits', 'Épices', 'Fleurs', 'Notes boisées', 6, 1);
+
+-- Exemples de réponses utilisateurs (il n'y a pas de "bonne" réponse, donc correct_choix est arbitraire)
+INSERT INTO answer (user_id, quizz_id, question_id, reponse_id) VALUES
+(1, 1, 1, 1), -- Préfère les vins légers et fruités
+(1, 1, 2, 1), -- Préfère les vins blancs secs
+(2, 2, 4, 3), -- Budget 30-50€
+(2, 2, 5, 2), -- Consomme plutôt lors de repas gastronomiques
+(3, 3, 6, 4); -- Préfère les notes boisées
