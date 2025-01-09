@@ -11,7 +11,9 @@ function NavBar() {
           <img src="../src/assets/images/Logo.png" alt="Logo" />
         </div>
         <div className="connexion">
-          <button type="button">Connexion</button>
+          <button type="button" className="button-connexion">
+            Connexion
+          </button>
         </div>
       </div>
     </>
