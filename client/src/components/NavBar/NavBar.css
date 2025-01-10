@@ -1,47 +1,60 @@
-.burger-button {
-  font-size: 2rem; /* Taille de l'icône burger */
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #333; /* Couleur de l'icône */
-}
 .burger-menu {
-  margin: 0%;
-  display: flex;
-  flex-direction: row;
+  position: absolute; /* Pour garantir qu'il est placé relativement à la page */
+  top: 0; /* Aligné en haut */
+  left: 0; /* Aligné à gauche */
+  margin: 0;
+  z-index: 100; /* Assurez-vous que le bouton burger est au-dessus des autres éléments */
 }
 
 .burger-button {
-  font-size: 4rem;
+  font-size: 5rem; /* Ajustez la taille de l'icône burger */
   background: none;
   border: none;
   cursor: pointer;
   color: #333;
-
-  z-index: 10;
-  /* Assurez-vous qu'il est au-dessus des autres éléments */
+  margin: 0%;
+  margin-left: 0.15em;
 }
 
 .nav-links {
   display: none; /* Caché par défaut */
   position: absolute;
-  top: 0;
+  top: 4rem; /* Décalé vers le bas de manière à s'afficher sous le bouton */
   left: 0; /* Menu aligné à gauche */
-  padding: 2rem;
-  height: 100%; /* Pour couvrir toute la hauteur de l'écran */
-  /* width: 250px; Largeur fixe pour le menu */
-  transform: translateX(-100%); /* Menu hors de l'écran */
-  transition: transform 0.3s ease-in-out;
+  padding: 1rem;
+  background-color: #fff;
+  width: 100%; /* Utilise toute la largeur disponible */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transform: translateY(-10px); /* Menu légèrement déplacé vers le haut par défaut */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease;
 }
-.nav-links text {
-  display: flex;
-}
+
 .nav-links.open {
-  transform: translateX(0); /* Affiche le menu */
+  display: block; /* Menu visible quand ouvert */
+  transform: translateY(0); /* Réinitialise la position quand le menu s'ouvre */
+  width: 10em;
+  height: 14em;
+}
+
+.nav-links ul {
+  list-style: none;
+  margin-top: 1em;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 2em;
+  font-size: 1em;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
 }
 
 .burger-button:hover {
-  color: #555; /* Changement de couleur au survol */
+  color: #555;
 }
 
 .logo {
@@ -49,7 +62,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 8em;
+  margin-left: 42%;
+  margin-top: 2.5em;
 }
 
 img {
@@ -67,31 +81,13 @@ img {
   margin: 0%;
   justify-content: space-between;
 }
-.nav-links.open {
-  display: block; /* Affiche le menu quand isOpen est true */
-  display: flex;
-  justify-content: space-between;
-}
-.nav-links {
-  display: none; /* Caché par défaut */
-  position: absolute;
-  top: 3rem;
-  right: 1rem;
-  padding: 1rem;
-  border-radius: 8px;
-}
-.nav-links ul {
-  list-style: none; /* Retire les puces des listes */
-  padding: 0;
-  margin: 0;
-}
-button {
-  margin-right: 1em;
-  background-color: #fbc116;
+.button-connexion {
+  margin-right: 0.5em;
+  background-color: #f5e7dd;
   border-radius: 3em;
-  padding: 1.1em;
+  width: 10em;
+  height: 3em;
   font-size: medium;
-  border: brown 3.1px solid;
 }
 
 li {

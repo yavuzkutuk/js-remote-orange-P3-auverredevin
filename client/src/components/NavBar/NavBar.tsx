@@ -11,7 +11,9 @@ function NavBar() {
           <img src="../src/assets/images/Logo.png" alt="Logo" />
         </div>
         <div className="connexion">
-          <button type="button">Connexion</button>
+          <button type="button" className="button-connexion">
+            <strong> Connexion </strong>
+          </button>
         </div>
       </div>
     </>
@@ -38,22 +40,22 @@ const BurgerMenu = () => {
         <ul>
           <li>
             <Link to="/">
-              <strong>Accueil</strong>
+              <strong>ACCUEIL</strong>
             </Link>
           </li>
           <li>
             <Link to="/boutique">
-              <strong>Quizz</strong>
+              <strong>QUIZZ</strong>
             </Link>
           </li>
           <li>
             <Link to="/albums">
-              <strong>Nos vins</strong>
+              <strong>NOS VINS</strong>
             </Link>
           </li>
           <li>
             <Link to="/concerts">
-              <strong>Dégustation</strong>
+              <strong>DEGUSTATION</strong>
             </Link>
           </li>
         </ul>
