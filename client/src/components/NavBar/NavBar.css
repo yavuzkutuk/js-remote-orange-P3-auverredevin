@@ -1,0 +1,98 @@
+.burger-menu {
+  position: absolute; /* Pour garantir qu'il est placé relativement à la page */
+  top: 0; /* Aligné en haut */
+  left: 0; /* Aligné à gauche */
+  margin: 0;
+  z-index: 100; /* Assurez-vous que le bouton burger est au-dessus des autres éléments */
+}
+
+.burger-button {
+  font-size: 5rem; /* Ajustez la taille de l'icône burger */
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  margin: 0%;
+  margin-left: 0.15em;
+}
+
+.nav-links {
+  display: none; /* Caché par défaut */
+  position: absolute;
+  top: 4rem; /* Décalé vers le bas de manière à s'afficher sous le bouton */
+  left: 0; /* Menu aligné à gauche */
+  padding: 1rem;
+  background-color: #fff;
+  width: 100%; /* Utilise toute la largeur disponible */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transform: translateY(-10px); /* Menu légèrement déplacé vers le haut par défaut */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease;
+}
+
+.nav-links.open {
+  display: block; /* Menu visible quand ouvert */
+  transform: translateY(0); /* Réinitialise la position quand le menu s'ouvre */
+  width: 10em;
+  height: 14em;
+}
+
+.nav-links ul {
+  list-style: none;
+  margin-top: 1em;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 2em;
+  font-size: 1em;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.burger-button:hover {
+  color: #555;
+}
+
+.logo {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 42%;
+  margin-top: 2.5em;
+}
+
+img {
+  width: 15em;
+  height: 15em;
+}
+
+.connexion {
+  margin: 1em;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  margin: 0%;
+  justify-content: space-between;
+}
+.button-connexion {
+  margin-right: 0.5em;
+  background-color: #f5e7dd;
+  border-radius: 3em;
+  width: 10em;
+  height: 3em;
+  font-size: medium;
+}
+
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
