@@ -1,6 +1,6 @@
-import "./NavBar.css";
+import "./Footer.css";
 
-function Navbar() {
+function Footer() {
   return (
     <div className="div_navbar">
       <nav className="nav_navbar">
@@ -25,7 +25,7 @@ function Navbar() {
 
       <div className="logo_footer">
         <img
-          src="..src/assets/images/auverredevinnnnn.png"
+          src="../src/assets/images/auverredevinnnnn.png"
           alt="Au Verre De Vin Logo"
         />
       </div>
@@ -37,4 +37,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Footer;

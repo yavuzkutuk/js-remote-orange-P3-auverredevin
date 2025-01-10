@@ -44,17 +44,17 @@ const BurgerMenu = () => {
             </Link>
           </li>
           <li>
-            <Link to="/boutique">
+            <Link to="/quizz">
               <strong>QUIZZ</strong>
             </Link>
           </li>
           <li>
-            <Link to="/albums">
+            <Link to="/nosvins">
               <strong>NOS VINS</strong>
             </Link>
           </li>
           <li>
-            <Link to="/concerts">
+            <Link to="/degustation">
               <strong>DEGUSTATION</strong>
             </Link>
           </li>
