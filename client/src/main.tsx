@@ -28,7 +28,6 @@ const router = createBrowserRouter([
     path: "/wines", // The root path
     element: <ListWine />, // Renders the App component for the home page
   },
-  
 ]);
 
 /* ************************************************************************* */

@@ -1,6 +1,5 @@
-import Accueil from './pages/Accueil/Accueil';
-import ListeVin from './pages/ListeVin/ListeVin';
-
+import Accueil from "./pages/Accueil/Accueil";
+import ListeVin from "./pages/ListeVin/ListeVin";
 
 function App() {
   return (

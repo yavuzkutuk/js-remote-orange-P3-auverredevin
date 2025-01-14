@@ -1,5 +1,5 @@
 import "./ListeVin.css";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface Wine {
   wine_id: number;
