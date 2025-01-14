@@ -190,6 +190,7 @@ INSERT INTO tasting (tasting_id, name, date, location, city_name, website_url) V
 	(37,'Le Grand Tasting','28-29 novembre 2025','Carrousel du Louvre, Paris, France','Paris','https://www.grandtasting.com'),
 	(38,'Salon des Vins et Gourmandises','28 février 2025','Complexe sportif Jean Claverie à Laigné en Belin','Laigne-Saint-Gervais','https://clubdesloisirslaigne.fr/'),
 	(39,'Salon d''Annecy','17-19 octobre 2025','Route de Thône','Annecy','https://www.mer-et-vigne.fr/salons/salon-annecy-le-vieux-espace-rencontre');
+    
 INSERT INTO opinion (opinion, description, wine_id, user_id) VALUES
 (4.5, "Vin excellent avec une belle complexité. Très équilibré, j'ai adoré!", 1, 1),
 (3.8, 'Un bon vin, mais je trouve que le goût manque un peu de profondeur.', 2, 2),
