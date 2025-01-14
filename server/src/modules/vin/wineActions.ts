@@ -40,19 +40,17 @@ const read: RequestHandler = async (req, res, next) => {
 // The A of BREAD - Add (Create) operation
 const add: RequestHandler = async (req, res, next) => {
   try {
-    // Extract the wine data from the request body
-    const newwine = {
-      title: req.body.title,
-      user_id: req.body.user_id,
+    const newWine = {
+      name: req.body.name,
+      category: req.body.category,
+      origin: req.body.origin,
+      price: req.body.price,
+      description: req.body.description,
     };
 
-    // Create the wine
-    const insertId = await wineRepository.create(newwine);
-
-    // Respond with HTTP 201 (Created) and the ID of the newly inserted wine
+    const insertId = await wineRepository.create(newWine);
     res.status(201).json({ insertId });
   } catch (err) {
-    // Pass any errors to the error-handling middleware
     next(err);
   }
 };

@@ -2,20 +2,21 @@ import databaseClient from "../../../database/client";
 
 import type { Result, Rows } from "../../../database/client";
 
-type wine = {
-  id: number;
-  title: string;
-  user_id: number;
-};
-
+interface Wine {
+  wine_id: number; // au lieu de id car c'est wine_id dans la table
+  name: string;
+  category: string;
+  origin: string | null;
+  price: number;
+  description: string | null;
+}
 class wineRepository {
   // The C of CRUD - Create operation
 
-  async create(wine: Omit<wine, "id">) {
-    // Execute the SQL INSERT query to add a new wine to the "wine" table
+  async create(wine: Omit<Wine, "wine_id">) {
     const [result] = await databaseClient.query<Result>(
-      "insert into wine (title, user_id) values (?, ?)",
-      [wine.title, wine.user_id],
+      "insert into wine (name, category, origin, price, description) values (?, ?, ?, ?, ?)",
+      [wine.name, wine.category, wine.origin, wine.price, wine.description],
     );
 
     // Return the ID of the newly inserted wine
@@ -32,7 +33,7 @@ class wineRepository {
     );
 
     // Return the first row of the result, which represents the wine
-    return rows[0] as wine;
+    return rows[0] as Wine;
   }
 
   async readAll() {
@@ -40,7 +41,7 @@ class wineRepository {
     const [rows] = await databaseClient.query<Rows>("select * from wine");
 
     // Return the array of wines
-    return rows as wine[];
+    return rows as Wine[];
   }
 
   // The U of CRUD - Update operation
