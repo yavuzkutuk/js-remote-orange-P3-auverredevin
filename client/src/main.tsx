@@ -51,6 +51,10 @@ const router = createBrowserRouter([
     path: "/vins",
     element: <ListWine />, // Renders the ListWine component
   },
+  {
+    path: "/tastings", // The root path
+    element: <Degustation />, // Renders the App component for the home page
+  },
 ]);
 
 /* ************************************************************************* */
