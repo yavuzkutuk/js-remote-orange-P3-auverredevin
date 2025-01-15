@@ -53,7 +53,6 @@ const router = createBrowserRouter([
     path: "/vins",
     element: <ListWine />, // Renders the ListWine component
   },
-
   {
     path: "/Footer", // The root path
     element: <Footer />, // Renders the App component for the home page
