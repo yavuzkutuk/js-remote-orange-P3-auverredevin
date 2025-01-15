@@ -2,9 +2,11 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <div className="div_navbar">
-      <nav className="nav_navbar">
-        <ul className="ul_navbar">
+
+    <div className="div_footer">
+      <nav className="nav_footer">
+        <ul className="ul_footer">
+
           <li>
             <a href="/nosvins">NOS VINS</a>
           </li>
@@ -25,7 +27,7 @@ function Footer() {
 
       <div className="logo_footer">
         <img
-          src="../src/assets/images/auverredevinnnnn.png"
+          src="..src/assets/images/auverredevinnnnn.png"
           alt="Au Verre De Vin Logo"
         />
       </div>
