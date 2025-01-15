@@ -1,3 +1,8 @@
+CREATE TABLE roles (
+    role_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) UNIQUE NOT NULL
+);
+
 CREATE TABLE users (
     user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(50),
@@ -6,7 +11,9 @@ CREATE TABLE users (
     email VARCHAR(50) UNIQUE NOT NULL,
     phone VARCHAR(50),
     address VARCHAR(250),
-    last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    role_id INT,
+    last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (role_id) REFERENCES roles(role_id) ON DELETE SET NULL
 );
 
 CREATE TABLE wine (
@@ -25,7 +32,7 @@ CREATE TABLE tasting (
     date DATE DEFAULT NULL,
     location VARCHAR(255),
     city_name VARCHAR(50) NOT NULL,
-    reservation_url VARCHAR(255),
+    website_url VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -91,6 +98,8 @@ CREATE TABLE wine_filters (
     FOREIGN KEY (wine_id) REFERENCES wine(wine_id) ON DELETE CASCADE
 );
 
+INSERT INTO roles (name) VALUES ('admin'), ('client');
+
 INSERT INTO users (firstname, lastname, date_of_birth, email, phone, address) VALUES
 ('Jean', 'Dupont', '1985-03-15', 'jean.dupont@email.com', '+33612345678', '123 Rue de Paris, Paris'),
 ('Marie', 'Martin', '1990-07-22', 'marie.martin@email.com', '+33623456789', '45 Avenue des Champs-Élysées, Paris'),
@@ -150,6 +159,47 @@ INSERT INTO wine (wine_id, name, category, origin, price, description) VALUES
 (49, 'Sauvignon Blanc Lablachère', 'Blanc', 'France', 12, 'Ce vin blanc très aromatique à la robe brillante et limpide accompagnera les poissons et crustacés.'),
 (50, 'Le Merlot', 'Rouge', 'France', 14, 'Rouge fruit noir et mûre, tannins puissants.');
 
+INSERT INTO tasting (tasting_id, name, date, location, city_name, website_url) VALUES 
+    (1,'Millésime Bio','27-29 janvier 2025','Parc des Expositions','Montpellier','https://www.millesime-bio.com'),
+	(2,'Salon Vinidôme','31 janvier - 3 février 2025','Grande Halle d''Auvergne','Clermont-Ferrand','https://www.salon-vinifrance.fr/les-salons/clermont-ferrand/'),
+	(3,'Salon des Vins de Loire','3-4 février 2025','Parc des Expositions','Angers','https://salondesvinsdeloire.com/'),
+	(4,'Wine Paris / Vinexpo','10-12 février 2025','Paris Porte de Versailles','Paris','https://wineparis.com/newfront'),
+	(5,'Salon des Vins de Limoges','14-16 février 2025','Parc des Expositions','Limoges','https://www.salon-vinifrance.fr/les-salons/limoges/'),
+	(6,'Salon des Vins Bio de Nantes','28 février 2025','Parc des Expositions','Nantes','https://www.club-vignerons-laureats.com/salon-des-vins-nantes/#:~:text=Les%2028%20f%C3%A9vrier%2C%201%20%26%202,du%20Ch%C3%A2teau%20de%20la%20Poterie.'),
+	(7,'Salon Vins et Terroirs Toulouse','7-9 mars 2025','Parc des Expositions MEETT','Toulouse','https://www.salon-vins-terroirs-toulouse.com'),
+	(8,'Salon des Vins des Vigerons Indépendants de Lyon','07-09 mars 2025','Eurexpo','Lyon','https://www.vigneron-independant.com/19%C3%A8me-salon-des-vins-des-vignerons-ind%C3%A9pendants-lyon-eurexpo'),
+	(9,'Salon de la Gastronomie et des Vins','21-23 mars 2025','Parc des Expositions','Caen','https://www.abcsalles.com/agenda/salon-vins-gastronomie-caen'),
+	(10,'Somm''Up','30-31 mars 2025','Palais de la Méditerranée','Nice','https://www.salon-vin-nice.com'),
+	(11,'Les Printemps de Châteauneuf-du-Pape','4-6 avril 2025','Salle Dufays','Châteauneuf-du-Pape','https://www.lesprintempsdechateauneufdupape.fr'),
+	(12,'SAVIM de printemps','21-24 mars 2025','Parc Chanot','Marseille','https://www.salons-savim.fr'),
+	(13,'Salon Vins de Macon','25-27 avril 2025','Parc des Expositions','Mâcon','https://www.salon-des-vins.fr/'),
+	(14,'Salon de la Gastronomie des Vins et des Spiritueux','8-11 mai 2025','Place du Bras d''Or','Pont-l''Évêque','https://www.calvados-tourisme.com/evenement/41eme-fete-du-fromage-salon-de-la-gastronomie-des-vins-et-spiritueux/'),
+	(15,'Foire aux Vins d''Alsace','25 février - 3 aout 2025','Parc Expo de Colmar','Strasbourg','https://www.foire-colmar.com/fr/'),
+	(16,'Salon Viti Loire','30 mai - 1 juin 2025','Tours','Tours','https://www.tours.fr/'),
+	(17,'Bacchus','28-30 mars 2025','place d’Armes et ville de Toulon','Toulon','https://www.bacchus-fete.com/'),
+	(18,'Salon des Vins de Sancerre','mai 2025','Maison des Sancerre','Sancerre','https://www.vins-centre-loire.com/fr/foire-aux-vins-de-sancerre'),
+	(19,'Bordeaux fête le vin','19-22 juin 2025','Quais de la Garonne','Bordeaux','https://www.bordeaux-fete-le-vin.com/billetterie.html?o=Agenda-BFV'),
+	(20,'Salon Vinexpo Bordeaux','16-18 juin 2025','Sur les quais de Bordeaux','Bordeaux','https://www.vinexpobordeaux.com'),
+	(21,'Salon des Vins du Jura','23-24 mars 2025','Grand Gymnase','Arbois','https://lenezdanslevert.com/'),
+	(22,'Salon des Vins Artisanaux et Naturels','21 mars 2025','Hotel Amour Plage','Nice, France','https://www.vinsdazur.com/'),
+	(23,'Salon des Vins d''Automne de Colmar','3 août 2025','Parc Expo','Colmar','https://www.foire-colmar.com/fr/'),
+	(24,'Bacchus','5-7 juin 2025','Parc de Valmy','Argeles-sur-Mer','https://festival-bacchus.fr/#:~:text=Rendez%2Dvous%20le%205%2C%206%20et%207%20juin%202025%20!'),
+	(25,'Fête des Grands Vins de Bourgogne','14-15 novembre 2026','Palais des Congrès','Beaune','https://www.fetedesgrandsvins.fr/'),
+	(26,'Salon de Paris-Vincennes','5-8 septembre 2025','Vincennes Hippodrome de Paris','Paris','https://www.mer-et-vigne.fr/salons/salon-dautomne-paris-vincennes'),
+	(27,'Vin, Saveurs et Plantes d''Automne','18-19 octobre 2025','Parc Floral','Apremont-sur-Allier','https://www.apremont-sur-allier.com/19-20-octobre-2004-vin-saveurs-et-plantes-dautomne/#:~:text=Agenda-,18%20%26%2019%20Octobre%202025,et%20des%20produits%20du%20terroir.'),
+	(28,'Salon du Chocolat & Vins','31 octobre - 02 novembre 2025','L''Autre Scène ','Vedène (Avignon)','https://www.grandavignon-destinations.fr/agenda/salon-du-chocolat-vins/'),
+	(29,'Salon des Vins de Chablis','25-26 octobre 2025','Chablis','Chablis','https://www.chablis.fr/decouvrez/des-traditions-bourguignonnes/la-fete-des-vins/la-fete-des-vins,1242,6986.html'),
+	(30,'Aux Vignobles! Vin est Gastronomie de nos Régions','31 janvier - 3 févrirer 2025','Halle D''Iraty','Biarritz','https://www.auxvignobles.fr/biarritz/'),
+	(31,'Salon des Vins des Vignerons Indépendants de Bordeaux','7 mars 2025','Parc des Expositions','Bordeaux','https://www.jds.fr/bordeaux/foires-et-salons/foires/salon-des-vins-des-vignerons-independants-de-bordeaux-176761_A'),
+	(32,'Salon des Vins Indépendants','21-23 mars 2025','Espace Champerret','Paris','https://www.vigneron-independant.com/32%C3%A8me-salon-des-vins-des-vignerons-ind%C3%A9pendants-paris-champerret'),
+	(33,'Salon Saveurs et Terroirs','28-30 novembre 2025','Parc des Expos','Chambéry','https://www.saveursetterroirs.com/'),
+	(34,'TERRAVINI','24-26 octobre 2025','Palais Nikaïa','Nice','https://salons-terravini.fr/'),
+	(35,'SAVIM d''automne','21-24 novembre 2025','Parc Chanot','Marseille','https://www.salons-savim.fr/'),
+	(36,'Salon des Vins des Vignerons Indépendants Paris','28 novembre - 1 décembre 2025','Parc des Expositions Porte de Versailles','Paris','https://www.vigneron-independant.com'),
+	(37,'Le Grand Tasting','28-29 novembre 2025','Carrousel du Louvre, Paris, France','Paris','https://www.grandtasting.com'),
+	(38,'Salon des Vins et Gourmandises','28 février 2025','Complexe sportif Jean Claverie à Laigné en Belin','Laigne-Saint-Gervais','https://clubdesloisirslaigne.fr/'),
+	(39,'Salon d''Annecy','17-19 octobre 2025','Route de Thône','Annecy','https://www.mer-et-vigne.fr/salons/salon-annecy-le-vieux-espace-rencontre');
+    
 INSERT INTO opinion (opinion, description, wine_id, user_id) VALUES
 (4.5, "Vin excellent avec une belle complexité. Très équilibré, j'ai adoré!", 1, 1),
 (3.8, 'Un bon vin, mais je trouve que le goût manque un peu de profondeur.', 2, 2),

@@ -49,7 +49,11 @@ const BurgerMenu = () => {
             </Link>
           </li>
           <li>
+<<<<<<< HEAD
             <Link to="/nosvins">
+=======
+            <Link to="/wines">
+>>>>>>> c424061eda95aab0d8b0c3f8166ddfd8f0070b47
               <strong>NOS VINS</strong>
             </Link>
           </li>
