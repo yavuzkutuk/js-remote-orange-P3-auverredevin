@@ -3,7 +3,7 @@ import databaseClient from "../../../database/client";
 import type { Result, Rows } from "../../../database/client";
 
 interface Wine {
-  wine_id: number; // au lieu de id car c'est wine_id dans la table
+  wine_id: number; 
   name: string;
   category: string;
   origin: string | null;

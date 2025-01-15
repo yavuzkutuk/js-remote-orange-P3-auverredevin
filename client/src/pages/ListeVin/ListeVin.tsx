@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 interface Wine {
   wine_id: number;
   name: string;
-  category: string;
   origin: string | null;
   price: number;
   description: string | null;
@@ -25,10 +24,9 @@ function WinesList() {
       {wines.map((wine: Wine) => (
         <div key={wine.wine_id}>
           <h3>{wine.name}</h3>
-          <p>Catégorie : {wine.category}</p>
           <p>Origine : {wine.origin || "Non spécifiée"}</p>
           <p>Prix : {wine.price}€</p>
-          {wine.description && <p>Description : {wine.description}</p>}
+          {wine.description && <p>{wine.description}</p>}
         </div>
       ))}
     </div>
