@@ -2,16 +2,18 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
 /* ************************************************************************* */
 
 // Import the main app component
 import App from "./App";
 import Footer from "./components/Footer/Footer";
 import Connexion from "./pages/Connexion/Connexion";
+import Degustation from "./pages/Degustation/Degustation";
 import Inscription from "./pages/Inscription/Inscription";
 import ListWine from "./pages/ListeVin/ListeVin";
-
+import NotFound from "./pages/NotFound/NotFound";
+import Quizz from "./pages/Quizz/Quizz";
+import Suggestion from "./pages/Suggestion/Suggestion";
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
 
@@ -28,8 +30,28 @@ const router = createBrowserRouter([
     element: <App />, // Renders the App component for the home page
   },
   {
-    path: "/wines", // The root path
-    element: <ListWine />, // Renders the App component for the home page
+    path: "/quizz", // The root path
+    element: <Quizz />, // Renders the Quizz component
+  },
+  {
+    path: "/inscription",
+    element: <Inscription />,
+  },
+  {
+    path: "/degustation",
+    element: <Degustation />,
+  },
+  {
+    path: "/suggestion",
+    element: <Suggestion />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
+  {
+    path: "/vins",
+    element: <ListWine />, // Renders the ListWine component
   },
 
   {
