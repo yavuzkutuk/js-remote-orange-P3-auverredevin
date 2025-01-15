@@ -56,7 +56,7 @@ const BurgerMenu = () => {
             </Link>
           </li>
           <li>
-            <Link to="/concerts">
+            <Link to="/degustation">
               <strong>DEGUSTATION</strong>
             </Link>
           </li>
