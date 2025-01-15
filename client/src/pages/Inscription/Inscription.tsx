@@ -9,7 +9,7 @@ function Connexion() {
 
       <h1>SE CONNECTER</h1>
 
-      <div className="avatar"></div>
+      <div className="avatar" />
 
       <form className="case">
         <input type="text" placeholder="Prénom" />
