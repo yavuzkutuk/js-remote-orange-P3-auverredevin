@@ -1,5 +1,6 @@
 import "./Accueil.css";
 import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
 
 function Accueil() {
   return (
@@ -61,6 +62,7 @@ function Accueil() {
           <strong>NOS VINS</strong>
         </button>
       </section>
+      <Footer />
     </div>
   );
 }

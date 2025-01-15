@@ -1,3 +1,8 @@
+CREATE TABLE roles (
+    role_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) UNIQUE NOT NULL
+);
+
 CREATE TABLE users (
     user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(50),
@@ -6,7 +11,9 @@ CREATE TABLE users (
     email VARCHAR(50) UNIQUE NOT NULL,
     phone VARCHAR(50),
     address VARCHAR(250),
-    last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    role_id INT,
+    last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (role_id) REFERENCES roles(role_id) ON DELETE SET NULL
 );
 
 CREATE TABLE wine (
@@ -90,6 +97,8 @@ CREATE TABLE wine_filters (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (wine_id) REFERENCES wine(wine_id) ON DELETE CASCADE
 );
+
+INSERT INTO roles (name) VALUES ('admin'), ('client');
 
 INSERT INTO users (firstname, lastname, date_of_birth, email, phone, address) VALUES
 ('Jean', 'Dupont', '1985-03-15', 'jean.dupont@email.com', '+33612345678', '123 Rue de Paris, Paris'),
