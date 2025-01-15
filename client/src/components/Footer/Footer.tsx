@@ -2,11 +2,9 @@ import "./Footer.css";
 
 function Footer() {
   return (
-
     <div className="div_footer">
       <nav className="nav_footer">
         <ul className="ul_footer">
-
           <li>
             <a href="/nosvins">NOS VINS</a>
           </li>

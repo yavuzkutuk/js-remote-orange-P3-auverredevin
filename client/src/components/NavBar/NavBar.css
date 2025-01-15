@@ -1,18 +1,16 @@
 .burger-menu {
   position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
+  top: 1rem;
+  left: 1rem;
   z-index: 100;
 }
 
 .burger-button {
-  font-size: 5rem;
+  font-size: 2.5rem;
   background: none;
   border: none;
   cursor: pointer;
   color: #333;
-  margin-left: 0.15em;
   transition: color 0.3s ease-in-out;
 }
 
@@ -21,16 +19,18 @@
 }
 
 .nav-links {
+  top: 7rem;
   display: none;
   position: absolute;
-  top: 4rem;
+  font-size: 80%;
+  top: 7.5rem;
   left: 0;
-  padding: 1.5rem;
-  width: 100%;
+  background-color: rgba(49, 49, 49, 0.61);
   border-radius: 8px;
   transform: translateY(-10px);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease;
   opacity: 0;
+  z-index: 99;
 }
 
 .nav-links.open {
@@ -43,11 +43,14 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .nav-links li {
-  margin: 1.5em 0;
-  font-size: 1.2em;
+  margin: 1rem 0;
+  font-size: 1.2rem;
   text-align: center;
 }
 
@@ -63,17 +66,16 @@
 }
 
 .logo {
-  flex-direction: row;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 42%;
-  margin-top: 2.5em;
+  margin: 0 auto;
+  margin-top: 2rem;
 }
 
 img {
-  width: 15em;
-  height: 15em;
+  max-width: 12rem;
+  height: auto;
 }
 
 .connexion {
@@ -82,17 +84,16 @@ img {
 
 .navbar {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
 }
 
 .button-connexion {
-  margin-right: 0.5em;
   background-color: #f5e7dd;
+  color: #333;
   border-radius: 3em;
-  width: 10em;
-  height: 3em;
+  padding: 0.8rem 1.5rem;
   font-size: medium;
   transition: background-color 0.3s ease-in-out;
 }
@@ -106,4 +107,24 @@ li {
   margin: 0;
   padding: 0;
   text-decoration: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .burger-button {
+    font-size: 2rem;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+  }
+
+  .logo img {
+    max-width: 8rem;
+  }
+
+  .button-connexion {
+    font-size: small;
+    padding: 0.6rem 1rem;
+  }
 }
