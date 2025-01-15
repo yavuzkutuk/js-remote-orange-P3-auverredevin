@@ -48,7 +48,7 @@ const router = createBrowserRouter([
     element: <NotFound />,
   },
   {
-    path: "/wines",
+    path: "/vins",
     element: <ListWine />, // Renders the ListWine component
   },
 ]);
