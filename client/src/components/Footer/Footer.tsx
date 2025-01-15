@@ -25,7 +25,7 @@ function Footer() {
 
       <div className="logo_footer">
         <img
-          src="../src/assets/images/auverredevinnnnn.png"
+          src="..src/assets/images/auverredevinnnnn.png"
           alt="Au Verre De Vin Logo"
         />
       </div>
