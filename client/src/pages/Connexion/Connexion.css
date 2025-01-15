@@ -1,0 +1,165 @@
+.connecter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vw;
+    max-width: 100vw;
+    min-height: 100vw;
+  }
+  
+  .logo {
+    text-align: center;
+    margin-bottom: 2vw; /* Ajout d'un peu d'espace sous le logo */
+    align-items: center;
+    display: flex;
+    width: 30%; /* Réduit la taille pour qu'elle s'adapte bien aux écrans plus petits */
+    justify-content: center;
+  
+  }
+  
+  .logo img {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    margin-top: 2.5em;
+    margin-right: 40vw;
+  }
+  
+  h1 {
+    font-size: auto;
+    margin: 2vw 0;
+  }
+  
+  .avatar {
+    margin: 2vw 0;
+  }
+  
+  .avatar img {
+    border-radius: 50%;
+    width: 20vw; /* Avatar prend 30% de la largeur de l'écran */
+    height: 20vw;
+    object-fit: cover; /* Garde la proportion de l'avatar */
+    
+  }
+  
+  .case {
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    gap: 2vw;
+  }
+
+  .logo-bis img{
+width: 30vw;
+height: 30vw;
+margin: 1vw;
+
+  }
+
+  
+  .case input[type="email"] {
+    padding: 2vw;
+    border: none;
+    background-color: #8b1818;
+    color: white;
+    border-radius: 1.5vw;
+    font-size: 1.5vw;
+  
+  }
+  
+  .case input[type="password"] {
+    padding: 2vw;
+    border: none;
+    background-color: #8b1818;
+    color: white;
+    border-radius: 1.5vw;
+    font-size: 1.5vw;
+  
+  }
+  
+  .case input::placeholder {
+    color: white;
+  }
+
+  
+  button {
+    background-color: #8b1818;
+    color: white;
+    border: none;
+    padding: 1vw 2vw;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    font-size: 2vw;
+    margin: 1vw 0;
+  }
+  
+  .navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 4vw;
+    margin: 4vw 0;
+    margin-bottom: 0vw;
+  }
+  
+  .navigation a {
+    color: black;
+    text-decoration: none;
+    font-size: 2vw;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 2vw;
+    font-size: 1.75vw;
+  }
+  
+  @media (max-width: 768px) {
+    .connecter {
+      padding: 10vw 5vw; /* Augmentation du padding sur mobile */
+    }
+  
+    .logo {
+      width: 70vw; /* Le logo devient plus grand sur les petits écrans */
+    }
+  
+    h1 {
+      font-size: 8vw; /* Augmentation de la taille du titre sur mobile */
+    }
+  
+    .avatar img {
+      width: 40vw; /* L'avatar devient plus grand sur les petits écrans */
+      height: 40vw;
+    }
+  
+    .case {
+      width: 90vw; /* Formulaire occupe presque toute la largeur sur mobile */
+      gap: 6vw; /* Espacement plus large entre les éléments */
+    }
+  
+    .case input[type="email"],
+    .case input[type="password"] {
+      font-size: 5vw; /* Augmentation de la taille du texte */
+      padding: 6vw; /* Espacement des champs de saisie agrandi */
+    }
+  
+    button {
+      font-size: 5vw; /* Augmentation de la taille du bouton */
+      padding: 6vw 8vw; /* Plus d'espace pour le bouton */
+    }
+  
+    .navigation {
+      flex-direction: column; /* Navigation devient verticale sur les petits écrans */
+      align-items: center;
+      gap: 8vw; /* Augmentation de l'espacement entre les liens */
+    }
+  
+    .navigation a {
+      font-size: 6vw; /* Agrandissement des liens de navigation */
+    }
+  
+    footer {
+      font-size: 5vw; /* Augmentation de la taille de la police du footer */
+    }
+  }

@@ -8,6 +8,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // Import the main app component
 import App from "./App";
 import ListWine from "./pages/ListeVin/ListeVin";
+import Footer from "./components/Footer/Footer";
+import Inscription from "./pages/Inscription/Inscription";
+import Connexion from "./pages/Connexion/Connexion";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -27,6 +30,19 @@ const router = createBrowserRouter([
   {
     path: "/wines", // The root path
     element: <ListWine />, // Renders the App component for the home page
+  },
+
+  {
+    path: "/Footer", // The root path
+    element: <Footer />, // Renders the App component for the home page
+  },
+  {
+    path: "/Inscription", // Page d'inscription
+    element: <Inscription />,
+  },
+  {
+    path: "/Connexion", // Page d'inscription
+    element: <Connexion />,
   },
 ]);
 

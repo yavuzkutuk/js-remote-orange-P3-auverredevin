@@ -1,4 +1,4 @@
-import "./connexion.css";
+import "./inscription.css";
 
 function Connexion() {
   return (
@@ -7,9 +7,10 @@ function Connexion() {
         <img src="../src/assets/images/Logo.png" alt="logoo" />
       </div>
 
-      <h1>SE CONNECTER</h1>
-
-      <div className="avatar"></div>
+      <h1>INSCRIPTION</h1>
+      <div className="avatar">
+      <img src="..//src/assets/images/avvatar.png" alt="avvatar" />
+      </div> 
 
       <form className="case">
         <input type="text" placeholder="Prénom" />
