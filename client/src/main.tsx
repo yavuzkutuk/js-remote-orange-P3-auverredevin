@@ -7,10 +7,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
-import ListWine from "./pages/ListeVin/ListeVin";
 import Footer from "./components/Footer/Footer";
-import Inscription from "./pages/Inscription/Inscription";
 import Connexion from "./pages/Connexion/Connexion";
+import Inscription from "./pages/Inscription/Inscription";
+import ListWine from "./pages/ListeVin/ListeVin";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder

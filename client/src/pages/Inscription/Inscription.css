@@ -9,12 +9,11 @@
 
 .logo {
   text-align: center;
-  margin-bottom: 2vw; /* Ajout d'un peu d'espace sous le logo */
+  margin-bottom: 2vw; 
   align-items: center;
   display: flex;
-  width: 30%; /* Réduit la taille pour qu'elle s'adapte bien aux écrans plus petits */
+  width: 30%; 
   justify-content: center;
-
 }
 
 .logo img {
@@ -35,9 +34,9 @@ h1 {
 
 .avatar img {
   border-radius: 50%;
-  width: 20vw; /* Avatar prend 30% de la largeur de l'écran */
+  width: 20vw; 
   height: 20vw;
-  object-fit: cover; /* Garde la proportion de l'avatar */
+  object-fit: cover; 
 }
 
 .case {
@@ -63,7 +62,6 @@ h1 {
   color: white;
   border-radius: 1.5vw;
   font-size: 1.5vw;
-
 }
 
 .case input[type="password"] {
@@ -73,7 +71,6 @@ h1 {
   color: white;
   border-radius: 1.5vw;
   font-size: 1.5vw;
-
 }
 
 .case input::placeholder {
@@ -124,50 +121,50 @@ footer {
 
 @media (max-width: 768px) {
   .connecter {
-    padding: 10vw 5vw; /* Augmentation du padding sur mobile */
+    padding: 10vw 5vw; 
   }
 
   .logo {
-    width: 70vw; /* Le logo devient plus grand sur les petits écrans */
+    width: 70vw; 
   }
 
   h1 {
-    font-size: 8vw; /* Augmentation de la taille du titre sur mobile */
+    font-size: 8vw;
   }
 
   .avatar img {
-    width: 40vw; /* L'avatar devient plus grand sur les petits écrans */
+    width: 40vw;
     height: 40vw;
   }
 
   .case {
-    width: 90vw; /* Formulaire occupe presque toute la largeur sur mobile */
-    gap: 6vw; /* Espacement plus large entre les éléments */
+    width: 90vw; 
+    gap: 6vw; 
   }
 
   .case input[type="text"],
   .case input[type="email"],
   .case input[type="password"] {
-    font-size: 5vw; /* Augmentation de la taille du texte */
-    padding: 6vw; /* Espacement des champs de saisie agrandi */
+    font-size: 5vw; 
+    padding: 6vw; 
   }
 
   button {
-    font-size: 5vw; /* Augmentation de la taille du bouton */
-    padding: 6vw 8vw; /* Plus d'espace pour le bouton */
+    font-size: 5vw; 
+    padding: 6vw 8vw; 
   }
 
   .navigation {
-    flex-direction: column; /* Navigation devient verticale sur les petits écrans */
+    flex-direction: column; 
     align-items: center;
-    gap: 8vw; /* Augmentation de l'espacement entre les liens */
+    gap: 8vw; 
   }
 
   .navigation a {
-    font-size: 6vw; /* Agrandissement des liens de navigation */
+    font-size: 6vw;
   }
 
   footer {
-    font-size: 5vw; /* Augmentation de la taille de la police du footer */
+    font-size: 5vw; 
   }
 }
