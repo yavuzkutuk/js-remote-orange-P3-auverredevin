@@ -11,9 +11,11 @@ function NavBar() {
           <img src="../src/assets/images/Logo.png" alt="Logo" />
         </div>
         <div className="connexion">
-          <button type="button" className="button-connexion">
-            <strong> Connexion </strong>
-          </button>
+          <Link to="/inscription">
+            <button type="button" className="button-connexion">
+              <strong> Connexion </strong>
+            </button>
+          </Link>
         </div>
       </div>
     </>
@@ -49,17 +51,18 @@ const BurgerMenu = () => {
             </Link>
           </li>
           <li>
-<<<<<<< HEAD
-            <Link to="/nosvins">
-=======
             <Link to="/wines">
->>>>>>> c424061eda95aab0d8b0c3f8166ddfd8f0070b47
               <strong>NOS VINS</strong>
             </Link>
           </li>
           <li>
-            <Link to="/degustation">
+            <Link to="/concerts">
               <strong>DEGUSTATION</strong>
+            </Link>
+          </li>
+          <li>
+            <Link to="/aboutus">
+              <strong>A propos de nous</strong>
             </Link>
           </li>
         </ul>
