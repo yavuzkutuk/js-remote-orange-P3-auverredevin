@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     element: <App />, // Renders the App component for the home page
   },
   {
-    path: "/wines", // The root path
+    path: "/vins", // The root path
     element: <ListWine />, // Renders the App component for the home page
   },
 ]);
