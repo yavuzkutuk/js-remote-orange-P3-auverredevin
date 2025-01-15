@@ -1,10 +1,10 @@
-import "./NavBar.css";
+import "./Footer.css";
 
-function Navbar() {
+function Footer() {
   return (
-    <div className="div_navbar">
-      <nav className="nav_navbar">
-        <ul className="ul_navbar">
+    <div className="div_footer">
+      <nav className="nav_footer">
+        <ul className="ul_footer">
           <li>
             <a href="/nosvins">NOS VINS</a>
           </li>
@@ -37,4 +37,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Footer;

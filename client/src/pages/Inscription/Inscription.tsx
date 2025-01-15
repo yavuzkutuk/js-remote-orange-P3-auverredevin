@@ -1,6 +1,6 @@
-import "./connexion.css";
+import "./inscription.css";
 
-function Connexion() {
+function Inscription() {
   return (
     <div className="connecter">
       <div className="logo">
@@ -41,4 +41,4 @@ function Connexion() {
   );
 }
 
-export default Connexion;
+export default Inscription;
