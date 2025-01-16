@@ -1,5 +1,7 @@
 import "./Degustation.css";
 import { useEffect, useState } from "react";
+import Footer from "../../components/Footer/Footer";
+import NavBar from "../../components/NavBar/NavBar";
 
 interface Tasting {
   tasting_id: number;
@@ -8,6 +10,7 @@ interface Tasting {
   city_name: string;
   website_url: string;
 }
+
 function Degustation() {
   const [tastings, setTastings] = useState<Tasting[]>([]);
   useEffect(() => {
@@ -19,6 +22,7 @@ function Degustation() {
 
   return (
     <div className="Degustation">
+      <NavBar />
       <h1>Dégustations</h1>
       {tastings.map((tasting: Tasting) => (
         <div key={tasting.tasting_id}>
@@ -28,6 +32,7 @@ function Degustation() {
           <a href={tasting.website_url}>Site officiel</a>
         </div>
       ))}
+      <Footer />
     </div>
   );
 }

@@ -6,10 +6,11 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
-import AboutUs from "./pages/Aboutus/AboutUS";
+import AboutUs from "./pages/Aboutus/AboutUs";
 import Footer from "./components/Footer/Footer";
 import Connexion from "./pages/Connexion/Connexion";
 import Degustation from "./pages/Degustation/Degustation";
+import IndexBackOffice from "./pages/IndexBackOffice/IndexBackOffice";
 import Inscription from "./pages/Inscription/Inscription";
 import ListWine from "./pages/ListeVin/ListeVin";
 import NotFound from "./pages/NotFound/NotFound";
@@ -32,32 +33,37 @@ const router = createBrowserRouter([
     element: <App />, // Renders the App component for the home page
   },
   {
-    path: "/quizz", // The root path
-    element: <Quizz />, // Renders the Quizz component
-  },
-  {
-    path: "/inscription",
-    element: <Inscription />,
-  },
-  {
-    path: "/degustation",
-    element: <Degustation />,
-  },
-  {
-    path: "/suggestion",
-    element: <Suggestion />,
-  },
-  {
-    path: "/aboutus",
+    path: "/aboutus".toLowerCase(),
     element: <AboutUs />,
   },
   {
-    path: "*",
+    path: "/quizz".toLowerCase(), // The root path
+    element: <Quizz />, // Renders the Quizz component
+  },
+  {
+    path: "/inscription".toLowerCase(),
+    element: <Inscription />,
+  },
+  {
+    path: "/degustation".toLowerCase(),
+    element: <Degustation />,
+  },
+  {
+    path: "/suggestion".toLowerCase(),
+    element: <Suggestion />,
+  },
+  {
+    path: "*".toLowerCase(),
+
     element: <NotFound />,
   },
   {
-    path: "/vins",
+    path: "/vins".toLowerCase(),
     element: <ListWine />, // Renders the ListWine component
+  },
+  {
+    path: "/backoffice".toLowerCase(),
+    element: <IndexBackOffice />,
   },
   {
     path: "/Footer", // The root path
