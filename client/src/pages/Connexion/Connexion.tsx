@@ -4,6 +4,7 @@ import NavBar from "../../components/NavBar/NavBar";
 
 function Connexion() {
   return (
+    <>
       <NavBar />
     <div className="connecter">
       <div className="logo">
@@ -32,7 +33,7 @@ function Connexion() {
         <a href="/quizz">Quiz</a>
         <a href="/inscription">S'inscrire</a>
       </nav>
-
+    <Footer/>
       <footer>
         <p>
           © 2024 Au Verre De Vin. L'abus d'alcool est dangereux pour la santé. À
@@ -40,6 +41,7 @@ function Connexion() {
         </p>
       </footer>
     </div>
+    </>
   );
 }
 

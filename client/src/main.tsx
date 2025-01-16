@@ -66,15 +66,15 @@ const router = createBrowserRouter([
     element: <IndexBackOffice />,
   },
   {
-    path: "/Footer", // The root path
+    path: "/footer", // The root path
     element: <Footer />, // Renders the App component for the home page
   },
   {
-    path: "/Inscription", // Page d'inscription
+    path: "/fnscription", // Page d'inscription
     element: <Inscription />,
   },
   {
-    path: "/Connexion", // Page d'inscription
+    path: "/connexion", // Page d'inscription
     element: <Connexion />,
   },
 ]);

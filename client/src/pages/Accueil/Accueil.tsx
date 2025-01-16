@@ -1,6 +1,7 @@
 import "./Accueil.css";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
+import { Link } from "react-router-dom";
 
 function Accueil() {
   return (
@@ -12,9 +13,11 @@ function Accueil() {
           <strong>DECOUVREZ VOTRE PROFIL</strong>
         </h1>
         <h4>Participez à ce quizz pour en savoir plus sur vous goûts !</h4>
+        <Link to="/quizz">
         <button type="button" className="button-quizz">
           <strong>QUIZZ</strong>
         </button>
+        </Link>
       </div>
 
       <section className="nav-buttons">
@@ -58,9 +61,11 @@ function Accueil() {
         <h1>
           <strong>PRÊT A RELEVER L’AVENTURE ?</strong>
         </h1>
+        <Link to="/vins">
         <button type="button" className="button-vins">
           <strong>NOS VINS</strong>
         </button>
+        </Link>
       </section>
       <Footer />
     </div>
