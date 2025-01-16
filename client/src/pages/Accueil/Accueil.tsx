@@ -35,7 +35,7 @@ function Accueil() {
             </p>
           </button>
         </Link>
-
+        <Link to="/degustation"> 
         <button type="button" className="button-degustation">
           <img
             className="degustation"
@@ -48,6 +48,7 @@ function Accueil() {
             papilles !
           </p>
         </button>
+        </Link>
 
         <button type="button" className="button-francais">
           <img
@@ -64,9 +65,11 @@ function Accueil() {
         <h1>
           <strong>PRÊT A RELEVER L’AVENTURE ?</strong>
         </h1>
-        <button type="button" className="button-vins">
-          <strong>NOS VINS</strong>
-        </button>
+        <Link to="/vins">
+          <button type="button" className="button-vins">
+            <strong>NOS VINS</strong>
+          </button>
+        </Link>
       </section>
       <Footer />
     </div>
