@@ -240,7 +240,7 @@ INSERT INTO tasting (name, date, location, city_name, website_url) VALUES
     ("Foire aux Vins d'Alsace", "2025-02-25", "Parc Expo de Colmar", "Strasbourg", "https://www.foire-colmar.com/fr/"),
     ("Salon Viti Loire", "2025-05-30", "Tours", "Tours", "https://www.tours.fr/"),
     ("Bacchus", "2025-03-28", "place d'Armes et ville de Toulon", "Toulon", "https://www.bacchus-fete.com/"),
-    ("Salon des Vins de Sancerre", "2025-05-00", "Maison des Sancerre", "Sancerre", "https://www.vins-centre-loire.com/fr/foire-aux-vins-de-sancerre"),
+    ("Salon des Vins de Sancerre", "2025-05-01", "Maison des Sancerre", "Sancerre", "https://www.vins-centre-loire.com/fr/foire-aux-vins-de-sancerre"),
     ("Bordeaux fête le vin", "2025-06-19", "Quais de la Garonne", "Bordeaux", "https://www.bordeaux-fete-le-vin.com/billetterie.html?o=Agenda-BFV"),
     ("Salon Vinexpo Bordeaux", "2025-06-16", "Sur les quais de Bordeaux", "Bordeaux", "https://www.vinexpobordeaux.com"),
     ("Salon des Vins du Jura", "2025-03-23", "Grand Gymnase", "Arbois", "https://lenezdanslevert.com/"),
