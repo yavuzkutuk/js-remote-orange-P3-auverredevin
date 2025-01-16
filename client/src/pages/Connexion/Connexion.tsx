@@ -1,7 +1,10 @@
 import "./Connexion.css";
+import Footer from "../../components/Footer/Footer";
+import NavBar from "../../components/NavBar/NavBar";
 
 function Connexion() {
   return (
+      <NavBar />
     <div className="connecter">
       <div className="logo">
         <img src="../src/assets/images/Logo.png" alt="Logo Au Verre de Vin" />

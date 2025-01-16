@@ -1,5 +1,7 @@
 import "./ListeVin.css";
 import { useEffect, useState } from "react";
+import Footer from "../../components/Footer/Footer";
+import NavBar from "../../components/NavBar/NavBar";
 
 interface Wine {
   wine_id: number;
