@@ -201,7 +201,6 @@ INSERT INTO wine (name, img_url, category, origin, price, description) VALUES
 --     ("Le Grand Tasting", "2025-11-28", "Carrousel du Louvre, Paris, France", "Paris", "https://www.grandtasting.com"),
 --     ("Salon des Vins et Gourmandises", "2025-02-28", "Complexe sportif Jean Claverie à Laigné en Belin", "Laigne-Saint-Gervais", "https://clubdesloisirslaigne.fr/"),
 --     ("Salon d'Annecy", "2025-10-17", "Route de Thône", "Annecy", "https://www.mer-et-vigne.fr/salons/salon-annecy-le-vieux-espace-rencontre");
-
     
 INSERT INTO opinion (note, description, wine_id, user_id) VALUES
 (4.5, "Vin excellent avec une belle complexité. Très équilibré, j'ai adoré!", 1, 1),
