@@ -21,11 +21,11 @@ function Accueil() {
       </div>
 
       <section className="nav-buttons">
-        <Link to="/nosvins" className="link-button">
+        <Link to="/vins" className="link-button">
           <button type="button" className="button-vin">
             <img
               className="raisin"
-              src="/assets/images/Raisin.png"
+              src="..//src/assets/images/Raisin.png"
               alt="Raisin"
             />
             <strong>Nos vins</strong>
@@ -39,7 +39,7 @@ function Accueil() {
           <button type="button" className="button-degustation">
             <img
               className="degustation"
-              src="/assets/images/Degustation.png"
+              src="..//src/assets/images/Degustation.png"
               alt="degustation"
             />
             <strong>Dégustation</strong>
@@ -53,7 +53,7 @@ function Accueil() {
           <button type="button" className="button-francais">
             <img
               className="Francais"
-              src="/assets/images/Francais.png"
+              src="..//src/assets/images/Francais.png"
               alt="100% Francais"
             />
             <strong>100% Français</strong>
@@ -66,7 +66,7 @@ function Accueil() {
         <h1>
           <strong>PRÊT A RELEVER L’AVENTURE ?</strong>
         </h1>
-        <Link to="/nosvins" className="link-button">
+        <Link to="/vins" className="link-button">
           <button type="button" className="button-vins">
             <strong>NOS VINS</strong>
           </button>
