@@ -7,6 +7,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // Import the main app component
 import App from "./App";
 import Degustation from "./pages/Degustation/Degustation";
+import IndexBackOffice from "./pages/IndexBackOffice/IndexBackOffice";
 import Inscription from "./pages/Inscription/Inscription";
 import ListWine from "./pages/ListeVin/ListeVin";
 import NotFound from "./pages/NotFound/NotFound";
@@ -24,36 +25,40 @@ import Suggestion from "./pages/Suggestion/Suggestion";
 // You can add more routes as you build out your app!
 const router = createBrowserRouter([
   {
-    path: "/", // The root path
+    path: "/".toLowerCase(), // The root path
     element: <App />, // Renders the App component for the home page
   },
   {
-    path: "/quizz", // The root path
+    path: "/quizz".toLowerCase(), // The root path
     element: <Quizz />, // Renders the Quizz component
   },
   {
-    path: "/inscription",
+    path: "/inscription".toLowerCase(),
     element: <Inscription />,
   },
   {
-    path: "/degustation",
+    path: "/degustation".toLowerCase(),
     element: <Degustation />,
   },
   {
-    path: "/suggestion",
+    path: "/suggestion".toLowerCase(),
     element: <Suggestion />,
   },
   {
-    path: "*",
+    path: "*".toLowerCase(),
     element: <NotFound />,
   },
   {
-    path: "/vins",
+    path: "/vins".toLowerCase(),
     element: <ListWine />, // Renders the ListWine component
   },
   {
-    path: "/tastings", // The root path
+    path: "/tastings".toLowerCase(), // The root path
     element: <Degustation />, // Renders the App component for the home page
+  },
+  {
+    path: "/backoffice".toLowerCase(),
+    element: <IndexBackOffice />,
   },
 ]);
 
