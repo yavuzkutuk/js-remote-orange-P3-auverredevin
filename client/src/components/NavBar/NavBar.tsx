@@ -11,7 +11,7 @@ function NavBar() {
           <img src="../src/assets/images/Logo.png" alt="Logo" />
         </div>
         <div className="connexion">
-          <Link to="/inscription">
+          <Link to="/connexion">
             <button type="button" className="button-connexion">
               <strong> Connexion </strong>
             </button>
