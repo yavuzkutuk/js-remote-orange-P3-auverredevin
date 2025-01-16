@@ -20,14 +20,28 @@ function Degustation() {
   return (
     <div className="Degustation">
       <h1>Dégustations</h1>
-      {tastings.map((tasting: Tasting) => (
-        <div key={tasting.tasting_id}>
-          <h3>{tasting.name}</h3>
-          <p>Date : {tasting.date}</p>
-          <p>Ville : {tasting.city_name}</p>
-          <a href={tasting.website_url}>Site officiel</a>
-        </div>
-      ))}
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Date</th>
+            <th>Ville</th>
+            <th>Site officiel</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tastings.map((tasting: Tasting) => (
+            <tr key={tasting.tasting_id}>
+              <td>{tasting.name}</td>
+              <td>{tasting.date}</td>
+              <td>{tasting.city_name}</td>
+              <td>
+                <a href={tasting.website_url}>Site officiel</a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

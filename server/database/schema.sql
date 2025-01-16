@@ -232,7 +232,7 @@ INSERT INTO tasting (name, date, location, city_name, website_url) VALUES
     ("Salon Vins et Terroirs Toulouse", "2025-03-07", "Parc des Expositions MEETT", "Toulouse", "https://www.salon-vins-terroirs-toulouse.com"),
     ("Salon des Vins des Vigerons Indépendants de Lyon", "2025-03-07", "Eurexpo", "Lyon", "https://www.vigneron-independant.com/19%C3%A8me-salon-des-vins-des-vignerons-ind%C3%A9pendants-lyon-eurexpo"),
     ("Salon de la Gastronomie et des Vins", "2025-03-21", "Parc des Expositions", "Caen", "https://www.abcsalles.com/agenda/salon-vins-gastronomie-caen"),
-    ("Somm'Up", "2025-03-30", "Palais de la Méditerranée", "Nice", "https://www.salon-vin-nice.com"),
+    ("Somm'Up", "2025-03-30", "Palais de la Méditerranée", "Nice", "https://sommup-salon.com/visiteurs/"),
     ("Les Printemps de Châteauneuf-du-Pape", "2025-04-04", "Salle Dufays", "Châteauneuf-du-Pape", "https://www.lesprintempsdechateauneufdupape.fr"),
     ("SAVIM de printemps", "2025-03-21", "Parc Chanot", "Marseille", "https://www.salons-savim.fr"),
     ("Salon des Vins de Macon", "2025-04-25", "Parc des Expositions", "Mâcon", "https://www.salon-des-vins.fr/"),
