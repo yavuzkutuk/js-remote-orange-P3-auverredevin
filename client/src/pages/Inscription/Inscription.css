@@ -10,6 +10,17 @@
 .logo {
   text-align: center;
   margin-bottom: 2vw;
+  align-items: center;
+  display: flex;
+  width: 30%;
+  justify-content: center;
+}
+
+.logo img {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  margin-top: 2.5em;
 }
 
 h1 {
@@ -23,6 +34,9 @@ h1 {
 
 .avatar img {
   border-radius: 50%;
+  width: 20vw;
+  height: 20vw;
+  object-fit: cover;
 }
 
 .case {
@@ -38,6 +52,7 @@ h1 {
   background-color: #8b1818;
   color: white;
   border-radius: 1.5vw;
+  font-size: 1.5vw;
 }
 
 .case input[type="email"] {
@@ -46,6 +61,7 @@ h1 {
   background-color: #8b1818;
   color: white;
   border-radius: 1.5vw;
+  font-size: 1.5vw;
 }
 
 .case input[type="password"] {
@@ -54,6 +70,7 @@ h1 {
   background-color: #8b1818;
   color: white;
   border-radius: 1.5vw;
+  font-size: 1.5vw;
 }
 
 .case input::placeholder {
@@ -86,7 +103,8 @@ button {
   justify-content: space-around;
   align-items: center;
   gap: 4vw;
-  margin: 3vw 0;
+  margin: 4vw 0;
+  margin-bottom: 0vw;
 }
 
 .navigation a {
@@ -102,20 +120,51 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .form {
-    width: 80vw;
+  .connecter {
+    padding: 10vw 5vw;
+  }
+
+  .logo {
+    width: 70vw;
+  }
+
+  h1 {
+    font-size: 8vw;
+  }
+
+  .avatar img {
+    width: 40vw;
+    height: 40vw;
+  }
+
+  .case {
+    width: 90vw;
+    gap: 6vw;
+  }
+
+  .case input[type="text"],
+  .case input[type="email"],
+  .case input[type="password"] {
+    font-size: 5vw;
+    padding: 6vw;
+  }
+
+  button {
+    font-size: 5vw;
+    padding: 6vw 8vw;
   }
 
   .navigation {
     flex-direction: column;
     align-items: center;
+    gap: 8vw;
   }
 
-  h1 {
+  .navigation a {
     font-size: 6vw;
   }
 
-  .logo h2 {
-    font-size: 4vw;
+  footer {
+    font-size: 5vw;
   }
 }

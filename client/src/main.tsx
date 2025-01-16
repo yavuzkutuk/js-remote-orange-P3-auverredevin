@@ -6,7 +6,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
+import Footer from "./components/Footer/Footer";
 import AboutUs from "./pages/Aboutus/AboutUs";
+import Connexion from "./pages/Connexion/Connexion";
 import Degustation from "./pages/Degustation/Degustation";
 import IndexBackOffice from "./pages/IndexBackOffice/IndexBackOffice";
 import Inscription from "./pages/Inscription/Inscription";
@@ -30,6 +32,7 @@ const router = createBrowserRouter([
     path: "/", // The root path
     element: <App />, // Renders the App component for the home page
   },
+  { path: "/indexbackoffice".toLowerCase(), element: <IndexBackOffice /> },
   {
     path: "/aboutus".toLowerCase(),
     element: <AboutUs />,
@@ -59,8 +62,16 @@ const router = createBrowserRouter([
     element: <ListWine />, // Renders the ListWine component
   },
   {
-    path: "/backoffice".toLowerCase(),
-    element: <IndexBackOffice />,
+    path: "/Footer", // The root path
+    element: <Footer />, // Renders the App component for the home page
+  },
+  {
+    path: "/Inscription", // Page d'inscription
+    element: <Inscription />,
+  },
+  {
+    path: "/Connexion", // Page d'inscription
+    element: <Connexion />,
   },
 ]);
 

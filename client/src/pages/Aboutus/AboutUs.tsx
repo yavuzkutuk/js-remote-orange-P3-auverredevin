@@ -1,11 +1,8 @@
 import "./AboutUs.css";
-import Footer from "../../components/Footer/Footer";
-import NavBar from "../../components/NavBar/NavBar";
 
 function AboutUs() {
   return (
     <div>
-      <NavBar />
       <div className="AboutBox">
         <h1>À propos de nous</h1>
         <p>
@@ -20,7 +17,6 @@ function AboutUs() {
         </p>
         <p>À votre santé !</p>
       </div>
-      <Footer />
     </div>
   );
 }
