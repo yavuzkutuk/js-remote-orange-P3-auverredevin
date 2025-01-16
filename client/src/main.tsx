@@ -6,6 +6,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
+import AboutUs from "./pages/Aboutus/AboutUS";
 import Degustation from "./pages/Degustation/Degustation";
 import Inscription from "./pages/Inscription/Inscription";
 import ListWine from "./pages/ListeVin/ListeVin";
@@ -22,6 +23,7 @@ import Suggestion from "./pages/Suggestion/Suggestion";
 
 // Create router configuration with routes
 // You can add more routes as you build out your app!
+
 const router = createBrowserRouter([
   {
     path: "/", // The root path
@@ -42,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "/suggestion",
     element: <Suggestion />,
+  },
+  {
+    path: "/aboutus",
+    element: <AboutUs />,
   },
   {
     path: "*",
