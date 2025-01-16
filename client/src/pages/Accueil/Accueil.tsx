@@ -1,4 +1,5 @@
 import "./Accueil.css";
+import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 
@@ -12,24 +13,29 @@ function Accueil() {
           <strong>DECOUVREZ VOTRE PROFIL</strong>
         </h1>
         <h4>Participez à ce quizz pour en savoir plus sur vous goûts !</h4>
-        <button type="button" className="button-quizz">
-          <strong>QUIZZ</strong>
-        </button>
+        <Link to="/quizz">
+          <button type="button" className="button-quizz">
+            <strong>QUIZZ</strong>
+          </button>
+        </Link>
       </div>
 
       <section className="nav-buttons">
-        <button type="button" className="button-vin">
-          <img
-            className="raisin"
-            src="../src/assets/images/Raisin.png"
-            alt="Raisin"
-          />
-          <strong>Nos vins</strong>
-          <p>
-            Réveillez votre palais gustativement avec notre sélection de 50 vins
-            au choix !
-          </p>
-        </button>
+        <Link to="/vins">
+          <button type="button" className="button-vin">
+            <img
+              className="raisin"
+              src="../src/assets/images/Raisin.png"
+              alt="Raisin"
+            />
+            <strong>Nos vins</strong>
+            <p>
+              Réveillez votre palais gustativement avec notre sélection de 50
+              vins au choix !
+            </p>
+          </button>
+        </Link>
+
         <button type="button" className="button-degustation">
           <img
             className="degustation"
