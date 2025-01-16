@@ -6,8 +6,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
-import AboutUs from "./pages/Aboutus/AboutUs";
 import Footer from "./components/Footer/Footer";
+import AboutUs from "./pages/Aboutus/AboutUs";
 import Connexion from "./pages/Connexion/Connexion";
 import Degustation from "./pages/Degustation/Degustation";
 import IndexBackOffice from "./pages/IndexBackOffice/IndexBackOffice";
