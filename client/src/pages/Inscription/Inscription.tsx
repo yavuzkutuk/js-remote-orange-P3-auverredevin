@@ -9,7 +9,10 @@ function Inscription() {
     <>  
     <NavBar />
     <div className="connecter">
-
+    <div className="logo">
+      <img src="../src/assets/images/Logo.png" alt="logo" />
+    </div>
+     
       <h1>INSCRIPTION</h1>
       <div className="avatar">
         <img src="..//src/assets/images/avvatar.png" alt="avvatar" />
@@ -20,7 +23,6 @@ function Inscription() {
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Mots de passe" />
         <input type="text" placeholder="Adresse" />
-        
           <div className="newsletter">
             <input type="checkbox" />
             Acceptez-vous de recevoir nos offres personnalisé par email

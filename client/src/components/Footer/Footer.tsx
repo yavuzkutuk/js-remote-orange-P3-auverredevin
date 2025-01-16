@@ -20,11 +20,7 @@ function Footer() {
             <a href="/quizz">QUIZZ</a>
           </li>
           <li>
-                  <Link to="/Connexion">
-            
-            <a href="/seconnecter">SE CONNECTER</a>
-                          </Link>
-            
+            <Link to="/Connexion">SE CONNECTER</Link>
           </li>
         </ul>
       </nav>

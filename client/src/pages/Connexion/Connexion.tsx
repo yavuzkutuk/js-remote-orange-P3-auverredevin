@@ -8,19 +8,21 @@ function Connexion() {
   return (
     <>
       <NavBar />
-    <div className="connecter">
+      <NavBar />
+      <div className="connecter">
+        <div className="logo">
+          <img src="../src/assets/images/Logo.png" alt="Logo Au Verre de Vin" />
+        </div>
 
-      <h1>SE CONNECTER</h1>
-      <div className="avatar">
-        <img src="..//src/assets/images/avvatar.png" alt="avvatar" />
-      </div>
-
+        <h1>SE CONNECTER</h1>
+        <div className="avatar">
+          <img src="..//src/assets/images/avvatar.png" alt="avvatar" />
+        </div>
       <form className="case">
   <input type="email" placeholder="Adresse e-mail" />
   <input type="password" placeholder="Mot de passe" />
   
   <div className="home">
-    {/* Le bouton est maintenant uniquement contenu dans le Link */}
     <Link to="/">
       <button type="button">Connexion</button>
     </Link>
@@ -35,6 +37,7 @@ function Connexion() {
 
         </div>
       <Footer/>
+
     </>
   );
 }

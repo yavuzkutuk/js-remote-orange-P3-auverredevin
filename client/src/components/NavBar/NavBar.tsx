@@ -8,7 +8,9 @@ function NavBar() {
       <div className="navbar">
         <BurgerMenu />
         <div className="logo">
-          <img src="../src/assets/images/Logo.png" alt="Logo" />
+          <Link to="/">
+            <img src="../src/assets/images/Logo.png" alt="Logo" />
+          </Link>
         </div>
         <div className="connexion">
           <Link to="/connexion">

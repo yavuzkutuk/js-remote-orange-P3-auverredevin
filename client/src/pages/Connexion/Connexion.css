@@ -9,10 +9,10 @@
 
 .logo {
   text-align: center;
-  margin-bottom: 2vw; 
+  margin-bottom: 2vw;
   align-items: center;
   display: flex;
-  width: 30%; 
+  width: 30%;
   justify-content: center;
 }
 
@@ -96,42 +96,42 @@ button {
   }
 
   .logo {
-    width: 70vw; 
+    width: 70vw;
   }
 
   h1 {
-    font-size: 8vw; 
+    font-size: 8vw;
   }
 
   .avatar img {
-    width: 40vw; 
+    width: 40vw;
     height: 40vw;
   }
 
   .case {
-    width: 90vw; 
-    gap: 6vw; 
+    width: 90vw;
+    gap: 6vw;
   }
 
   .case input[type="email"],
   .case input[type="password"] {
     font-size: 5vw;
-    padding: 6vw; 
+    padding: 6vw;
   }
 
   button {
-    font-size: 5vw; 
-    padding: 6vw 8vw; 
+    font-size: 5vw;
+    padding: 6vw 8vw;
   }
 
   .navigation {
     flex-direction: column;
     align-items: center;
-    gap: 8vw; 
+    gap: 8vw;
   }
 
   .navigation a {
-    font-size: 6vw; 
+    font-size: 6vw;
   }
 
   .sign-up button {
