@@ -1,7 +1,7 @@
 import "./Accueil.css";
+import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
-import { Link } from "react-router-dom";
 
 function Accueil() {
   return (
@@ -14,9 +14,9 @@ function Accueil() {
         </h1>
         <h4>Participez à ce quizz pour en savoir plus sur vous goûts !</h4>
         <Link to="/quizz">
-        <button type="button" className="button-quizz">
-          <strong>QUIZZ</strong>
-        </button>
+          <button type="button" className="button-quizz">
+            <strong>QUIZZ</strong>
+          </button>
         </Link>
       </div>
 
@@ -62,9 +62,9 @@ function Accueil() {
           <strong>PRÊT A RELEVER L’AVENTURE ?</strong>
         </h1>
         <Link to="/vins">
-        <button type="button" className="button-vins">
-          <strong>NOS VINS</strong>
-        </button>
+          <button type="button" className="button-vins">
+            <strong>NOS VINS</strong>
+          </button>
         </Link>
       </section>
       <Footer />

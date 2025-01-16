@@ -9,10 +9,10 @@
 
 .logo {
   text-align: center;
-  margin-bottom: 2vw; 
+  margin-bottom: 2vw;
   align-items: center;
   display: flex;
-  width: 30%; 
+  width: 30%;
   justify-content: center;
 }
 
@@ -34,9 +34,9 @@ h1 {
 
 .avatar img {
   border-radius: 50%;
-  width: 20vw; 
+  width: 20vw;
   height: 20vw;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 .case {
@@ -121,11 +121,11 @@ footer {
 
 @media (max-width: 768px) {
   .connecter {
-    padding: 10vw 5vw; 
+    padding: 10vw 5vw;
   }
 
   .logo {
-    width: 70vw; 
+    width: 70vw;
   }
 
   h1 {
@@ -138,26 +138,26 @@ footer {
   }
 
   .case {
-    width: 90vw; 
-    gap: 6vw; 
+    width: 90vw;
+    gap: 6vw;
   }
 
   .case input[type="text"],
   .case input[type="email"],
   .case input[type="password"] {
-    font-size: 5vw; 
-    padding: 6vw; 
+    font-size: 5vw;
+    padding: 6vw;
   }
 
   button {
-    font-size: 5vw; 
-    padding: 6vw 8vw; 
+    font-size: 5vw;
+    padding: 6vw 8vw;
   }
 
   .navigation {
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
-    gap: 8vw; 
+    gap: 8vw;
   }
 
   .navigation a {
@@ -165,6 +165,6 @@ footer {
   }
 
   footer {
-    font-size: 5vw; 
+    font-size: 5vw;
   }
 }
