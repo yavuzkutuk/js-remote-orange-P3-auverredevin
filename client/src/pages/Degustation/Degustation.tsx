@@ -20,7 +20,7 @@ function Degustation() {
   return (
     <div className="Degustation">
       <h1>Dégustations</h1>
-      <table>
+      <table className="tastingTableau">
         <thead>
           <tr>
             <th>Nom</th>
