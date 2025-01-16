@@ -7,6 +7,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // Import the main app component
 import App from "./App";
 import AboutUs from "./pages/Aboutus/AboutUS";
+import Footer from "./components/Footer/Footer";
+import Connexion from "./pages/Connexion/Connexion";
 import Degustation from "./pages/Degustation/Degustation";
 import Inscription from "./pages/Inscription/Inscription";
 import ListWine from "./pages/ListeVin/ListeVin";
@@ -54,8 +56,20 @@ const router = createBrowserRouter([
     element: <NotFound />,
   },
   {
-    path: "/wines",
+    path: "/vins",
     element: <ListWine />, // Renders the ListWine component
+  },
+  {
+    path: "/Footer", // The root path
+    element: <Footer />, // Renders the App component for the home page
+  },
+  {
+    path: "/Inscription", // Page d'inscription
+    element: <Inscription />,
+  },
+  {
+    path: "/Connexion", // Page d'inscription
+    element: <Connexion />,
   },
 ]);
 

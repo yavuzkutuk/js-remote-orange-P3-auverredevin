@@ -28,7 +28,7 @@ class wineRepository {
   async read(id: number) {
     // Execute the SQL SELECT query to retrieve a specific wine by its ID
     const [rows] = await databaseClient.query<Rows>(
-      "select * from wine where id = ?",
+      "select * from wine where wine_id = ?",
       [id],
     );
 
