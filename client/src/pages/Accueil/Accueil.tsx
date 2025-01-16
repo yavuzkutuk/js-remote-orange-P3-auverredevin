@@ -35,30 +35,31 @@ function Accueil() {
             </p>
           </button>
         </Link>
-        <Link to="/degustation"> 
-        <button type="button" className="button-degustation">
-          <img
-            className="degustation"
-            src="../src/assets/images/Degustation.png"
-            alt="degustation"
-          />
-          <strong>Dégustation</strong>
-          <p>
-            Venez participer à nos séances dégustation qui réveillera vos
-            papilles !
-          </p>
-        </button>
+        <Link to="/degustation">
+          <button type="button" className="button-degustation">
+            <img
+              className="degustation"
+              src="../src/assets/images/Degustation.png"
+              alt="degustation"
+            />
+            <strong>Dégustation</strong>
+            <p>
+              Venez participer à nos séances dégustation qui réveillera vos
+              papilles !
+            </p>
+          </button>
         </Link>
-
-        <button type="button" className="button-francais">
-          <img
-            className="Francais"
-            src="../src/assets/images/Francais.png"
-            alt="100% Francais"
-          />
-          <strong>100% Français</strong>
-          <p>Tout nos vins sont directement produits de vignes française !</p>
-        </button>
+        <Link to="/AboutUs">
+          <button type="button" className="button-francais">
+            <img
+              className="Francais"
+              src="../src/assets/images/Francais.png"
+              alt="100% Francais"
+            />
+            <strong>100% Français</strong>
+            <p>Tout nos vins sont directement produits de vignes française !</p>
+          </button>
+        </Link>
       </section>
 
       <section>
