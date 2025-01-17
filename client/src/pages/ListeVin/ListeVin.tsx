@@ -23,20 +23,24 @@ function WinesList() {
   }, []);
 
   return (
-    <div className="cards-wines">
-      {wines.map((wine: Wine) => (
-        <article className="cards-wine" key={wine.wine_id}>
-          <img
-            src={`${import.meta.env.VITE_API_URL}/${wine.img_url}`}
-            alt={wine.name}
-          />
-          <h3>{wine.name}</h3>
-          <p>Origine : {wine.origin || "Non spécifiée"}</p>
-          <p>Prix : {wine.price}€</p>
-          {wine.description && <p>{wine.description}</p>}
-        </article>
-      ))}
-    </div>
+    <>
+      <NavBar />
+      <div className="cards-wines">
+        {wines.map((wine: Wine) => (
+          <article className="cards-wine" key={wine.wine_id}>
+            <img
+              src={`${import.meta.env.VITE_API_URL}/${wine.img_url}`}
+              alt={wine.name}
+            />
+            <h3>{wine.name}</h3>
+            <p>Origine : {wine.origin || "Non spécifiée"}</p>
+            <p>Prix : {wine.price}€</p>
+            {wine.description && <p>{wine.description}</p>}
+          </article>
+        ))}
+      </div>
+      <Footer />
+    </>
   );
 }
 

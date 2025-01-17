@@ -6,8 +6,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
-import AboutUs from "./pages/Aboutus/AboutUs";
 import Footer from "./components/Footer/Footer";
+import AboutUs from "./pages/Aboutus/AboutUs";
 import Connexion from "./pages/Connexion/Connexion";
 import Degustation from "./pages/Degustation/Degustation";
 import IndexBackOffice from "./pages/IndexBackOffice/IndexBackOffice";
@@ -66,15 +66,15 @@ const router = createBrowserRouter([
     element: <IndexBackOffice />,
   },
   {
-    path: "/Footer", // The root path
+    path: "/footer", // The root path
     element: <Footer />, // Renders the App component for the home page
   },
   {
-    path: "/Inscription", // Page d'inscription
+    path: "/fnscription", // Page d'inscription
     element: <Inscription />,
   },
   {
-    path: "/Connexion", // Page d'inscription
+    path: "/connexion", // Page d'inscription
     element: <Connexion />,
   },
 ]);
