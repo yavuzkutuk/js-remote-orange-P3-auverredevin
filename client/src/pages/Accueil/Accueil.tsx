@@ -13,7 +13,9 @@ function Accueil() {
           <strong>DECOUVREZ VOTRE PROFIL</strong>
         </h1>
         <h4>Participez à ce quizz pour en savoir plus sur vous goûts !</h4>
+
         <Link to="/quizz" className="link-button">
+
           <button type="button" className="button-quizz">
             <strong>QUIZZ</strong>
           </button>
@@ -66,7 +68,9 @@ function Accueil() {
         <h1>
           <strong>PRÊT A RELEVER L’AVENTURE ?</strong>
         </h1>
+
         <Link to="/vins" className="link-button">
+
           <button type="button" className="button-vins">
             <strong>NOS VINS</strong>
           </button>

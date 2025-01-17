@@ -18,7 +18,7 @@ function Footer() {
             <a href="/quizz">QUIZZ</a>
           </li>
           <li>
-            <a href="/seconnecter">SE CONNECTER</a>
+            <a href="/connexion">SE CONNECTER</a>
           </li>
         </ul>
       </nav>
