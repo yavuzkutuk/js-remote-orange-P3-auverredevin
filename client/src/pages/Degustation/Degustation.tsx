@@ -1,5 +1,21 @@
 import { useEffect, useState } from "react";
 import "./Degustation.css";
+import {
+  Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Pagination,
+  Paper,
+  Select,
+  Stack,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 
 interface Tasting {
   tasting_id: number;
@@ -23,7 +39,7 @@ function Degustation() {
       .catch((error) => console.error(error));
   }, []);
 
-  // Get unique cities
+  // Get the cities
   const cities = [
     ...new Set(tastings.map((tasting) => tasting.city_name)),
   ].sort();
@@ -44,84 +60,93 @@ function Degustation() {
     indexOfFirstItem,
     indexOfLastItem,
   );
+
+  // Pagination calculation
   const totalPages = Math.ceil(filteredTastings.length / itemsPerPage);
 
+  const handlePageChange = (
+    _event: React.ChangeEvent<unknown>,
+    value: number,
+  ) => {
+    setCurrentPage(value);
+  };
+
   return (
-    <div className="Degustation">
+    <div>
       <h1>Dégustations</h1>
-      <div className="filters">
-        <select
+      <FormControl className="form-control">
+        <InputLabel>Ville</InputLabel>
+        <Select
           value={selectedCity}
           onChange={(e) => setSelectedCity(e.target.value)}
-          className="city-select"
+          label="Ville"
         >
-          <option value="">Toutes les villes</option>
+          <MenuItem value="">Toutes les villes</MenuItem>
           {cities.map((city) => (
-            <option key={city} value={city}>
+            <MenuItem key={city} value={city}>
               {city}
-            </option>
+            </MenuItem>
           ))}
-        </select>
-        <button
-          type="button"
-          onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}
-          className="sort-button"
-        >
-          Trier par date {sortOrder === "asc" ? "↑" : "↓"}
-        </button>
-      </div>
+        </Select>
+      </FormControl>
+      <Button
+        variant="contained"
+        onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}
+        className="button"
+      >
+        Trier par date {sortOrder === "asc" ? "↑" : "↓"}
+      </Button>
 
-      <table className="tastingTableau">
-        <thead className="tastingThead">
-          <tr>
-            <th>Nom</th>
-            <th
-              className="sortable"
-              onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}
-              onKeyUp={(e) => {
-                if (e.key === "Enter")
-                  setSortOrder(sortOrder === "asc" ? "desc" : "asc");
-              }}
-              data-arrow={sortOrder === "asc" ? "↑" : "↓"}
-            >
-              Date
-            </th>
-            <th>Ville</th>
-            <th>Site officiel</th>
-          </tr>
-        </thead>
-        <tbody>
-          {currentItems.map((tasting) => (
-            <tr key={tasting.tasting_id}>
-              <td>{tasting.name}</td>
-              <td>{tasting.date}</td>
-              <td>{tasting.city_name}</td>
-              <td>
-                <a
-                  href={tasting.website_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Site officiel
-                </a>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <TableContainer component={Paper} className="table-container">
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Nom</TableCell>
+              <TableCell
+                onClick={() =>
+                  setSortOrder(sortOrder === "asc" ? "desc" : "asc")
+                }
+                className="table-cell-sortable"
+              >
+                Date {sortOrder === "asc" ? "↑" : "↓"}
+              </TableCell>
+              <TableCell>Ville</TableCell>
+              <TableCell>Site officiel</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {currentItems.map((tasting) => (
+              <TableRow key={tasting.tasting_id}>
+                <TableCell>{tasting.name}</TableCell>
+                <TableCell>
+                  {new Date(tasting.date).toLocaleDateString()}
+                </TableCell>
+                <TableCell>{tasting.city_name}</TableCell>
+                <TableCell>
+                  <a
+                    href={tasting.website_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Visiter
+                  </a>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
 
-      <div className="pagination">
-        {Array.from({ length: totalPages }, (_, index) => (
-          <button
-            type="button"
-            key={`page-${index + 1}`}
-            onClick={() => setCurrentPage(index + 1)}
-            className={`page-button ${currentPage === index + 1 ? "active" : ""}`}
-          >
-            {index + 1}
-          </button>
-        ))}
-      </div>
+      <Stack spacing={2} sx={{ padding: "20px", alignItems: "center" }}>
+        <Pagination
+          count={totalPages}
+          page={currentPage}
+          onChange={handlePageChange}
+          color="primary"
+          showFirstButton
+          showLastButton
+        />
+      </Stack>
     </div>
   );
 }
