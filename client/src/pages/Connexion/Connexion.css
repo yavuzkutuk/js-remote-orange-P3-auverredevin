@@ -7,23 +7,6 @@
   min-height: 100vw;
 }
 
-.logo {
-  text-align: center;
-  margin-bottom: 2vw;
-  align-items: center;
-  display: flex;
-  width: 30%;
-  justify-content: center;
-}
-
-.logo img {
-  flex-direction: row;
-  display: flex;
-  align-items: center;
-  margin-top: 2.5em;
-  margin-right: 40vw;
-}
-
 h1 {
   font-size: auto;
   margin: 2vw 0;
@@ -45,12 +28,6 @@ h1 {
   flex-direction: column;
   width: 35vw;
   gap: 2vw;
-}
-
-.logo-bis img {
-  width: 30vw;
-  height: 30vw;
-  margin: 1vw;
 }
 
 .case input[type="email"] {
@@ -75,46 +52,9 @@ h1 {
   color: white;
 }
 
-button {
-  background-color: #8b1818;
-  color: white;
-  border: none;
-  padding: 1vw 2vw;
-  border-radius: 0.5vw;
-  cursor: pointer;
-  font-size: 2vw;
-  margin: 1vw 0;
-}
-
-.navigation {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  gap: 4vw;
-  margin: 4vw 0;
-  margin-bottom: 0vw;
-}
-
-.navigation a {
-  color: black;
-  text-decoration: none;
-  font-size: 2vw;
-}
-
-footer {
-  text-align: center;
-  margin-top: 2vw;
-  font-size: 1.75vw;
-}
-
 @media (max-width: 768px) {
   .connecter {
     padding: 10vw 5vw;
-  }
-
-  .logo {
-    width: 70vw;
   }
 
   h1 {
@@ -135,24 +75,5 @@ footer {
   .case input[type="password"] {
     font-size: 5vw;
     padding: 6vw;
-  }
-
-  button {
-    font-size: 5vw;
-    padding: 6vw 8vw;
-  }
-
-  .navigation {
-    flex-direction: column;
-    align-items: center;
-    gap: 8vw;
-  }
-
-  .navigation a {
-    font-size: 6vw;
-  }
-
-  footer {
-    font-size: 5vw;
   }
 }

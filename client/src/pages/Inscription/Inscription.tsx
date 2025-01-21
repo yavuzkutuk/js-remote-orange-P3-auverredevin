@@ -7,9 +7,6 @@ function Inscription() {
     <>
       <NavBar />
       <div className="connecter">
-        <div className="logo">
-          <img src="../src/assets/images/Logo.png" alt="logoo" />
-        </div>
         <h1>INSCRIPTION</h1>
         <div className="avatar">
           <img src="..//src/assets/images/avvatar.png" alt="avvatar" />
@@ -28,14 +25,6 @@ function Inscription() {
 
           <button type="submit">S'inscrire</button>
         </form>
-
-        <nav className="navigation">
-          <a href="/nosvins">NOS VINS</a>
-          <a href="/degustations">DEGUSTATION</a>
-          <a href="/reservations">MES RESERVATIONS</a>
-          <a href="/quizz">QUIZ</a>
-          <a href="/seconnecter">SE CONNECTER</a>
-        </nav>
       </div>
       <Footer />
     </>
