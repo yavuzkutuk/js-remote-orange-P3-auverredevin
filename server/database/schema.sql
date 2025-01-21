@@ -247,7 +247,7 @@ INSERT INTO tasting (name, date, location, city_name, website_url) VALUES
     ("Salon des Vins Artisanaux et Naturels", "2025-03-21", "Hotel Amour Plage", "Nice, France", "https://www.vinsdazur.com/"),
     ("Salon des Vins d'Automne de Colmar", "2025-08-03", "Parc Expo", "Colmar", "https://www.foire-colmar.com/fr/"),
     ("Bacchus", "2025-06-05", "Parc de Valmy", "Argeles-sur-Mer", "https://festival-bacchus.fr/#:~:text=Rendez%2Dvous%20le%205%2C%206%20et%207%20juin%202025%20!"),
-    ("Fête des Grands Vins de Bourgogne", "2026-11-14", "Palais des Congrès", "Beaune", "https://www.fetedesgrandsvins.fr/"),
+    ("Fête des Grands Vins de Bourgogne", "2025-11-14", "Palais des Congrès", "Beaune", "https://www.fetedesgrandsvins.fr/"),
     ("Salon de Paris-Vincennes", "2025-09-05", "Vincennes Hippodrome de Paris", "Paris", "https://www.mer-et-vigne.fr/salons/salon-dautomne-paris-vincennes"),
     ("Vin, Saveurs et Plantes d'Automne", "2025-10-18", "Parc Floral", "Apremont-sur-Allier", "https://www.apremont-sur-allier.com/19-20-octobre-2004-vin-saveurs-et-plantes-dautomne/#:~:text=Agenda-,18%20%26%2019%20Octobre%202025,et%20des%20produits%20du%20terroir."),
     ("Salon du Chocolat & Vins", "2025-10-31", "L'Autre Scène", "Vedène (Avignon)", "https://www.grandavignon-destinations.fr/agenda/salon-du-chocolat-vins/"),

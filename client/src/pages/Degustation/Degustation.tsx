@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Degustation.css";
 import {
-  Button,
   FormControl,
   InputLabel,
   MenuItem,
@@ -74,28 +73,30 @@ function Degustation() {
   return (
     <div>
       <h1>Dégustations</h1>
-      <FormControl className="form-control">
-        <InputLabel>Ville</InputLabel>
-        <Select
-          value={selectedCity}
-          onChange={(e) => setSelectedCity(e.target.value)}
-          label="Ville"
-        >
-          <MenuItem value="">Toutes les villes</MenuItem>
-          {cities.map((city) => (
-            <MenuItem key={city} value={city}>
-              {city}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      <Button
-        variant="contained"
-        onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}
-        className="button"
+      <Stack
+        direction="row"
+        spacing={2}
+        justifyContent="center"
+        alignItems="center"
+        sx={{ marginBottom: 2 }}
       >
-        Trier par date {sortOrder === "asc" ? "↑" : "↓"}
-      </Button>
+        <FormControl className="form-control">
+          <InputLabel>Ville</InputLabel>
+          <Select
+            value={selectedCity}
+            onChange={(e) => setSelectedCity(e.target.value)}
+            label="Ville"
+            sx={{ minWidth: 200 }}
+          >
+            <MenuItem value="">Toutes les villes</MenuItem>
+            {cities.map((city) => (
+              <MenuItem key={city} value={city}>
+                {city}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </Stack>
 
       <TableContainer component={Paper} className="table-container">
         <Table>
