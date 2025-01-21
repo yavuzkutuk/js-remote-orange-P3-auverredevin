@@ -1,6 +1,8 @@
 import "./Connexion.css";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
+import { Link } from "react-router-dom";
+
 
 function Connexion() {
   return (
@@ -12,17 +14,24 @@ function Connexion() {
           <img src="..//src/assets/images/avvatar.png" alt="avvatar" />
         </div>
 
-        <form className="case">
-          <input type="email" placeholder="Adresse e-mail" />
-          <input type="password" placeholder="Mot de passe" />
-          <button type="submit">Connexion</button>
-        </form>
+      <form className="case">
+  <input type="email" placeholder="Adresse e-mail" />
+  <input type="password" placeholder="Mot de passe" />
+  
+  <div className="home">
+    <Link to="/">
+      <button type="button">Connexion</button>
+    </Link>
+  </div>
+</form>
 
-        <div className="logo-bis">
-          <img src="../src/assets/images/auverredevinn.png" alt="avatar" />
+      <form className="sign-up">
+      <Link to="/Inscription">
+        <button type="submit">S'inscrire</button>
+        </Link>
+      </form>
         </div>
-      </div>
-      <Footer />
+      <Footer/>
     </>
   );
 }

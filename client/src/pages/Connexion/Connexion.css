@@ -51,7 +51,6 @@ h1 {
 .case input::placeholder {
   color: white;
 }
-
 @media (max-width: 768px) {
   .connecter {
     padding: 10vw 5vw;
@@ -76,4 +75,5 @@ h1 {
     font-size: 5vw;
     padding: 6vw;
   }
+
 }
