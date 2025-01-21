@@ -44,19 +44,27 @@ class wineRepository {
     return rows as Wine[];
   }
 
-  // The U of CRUD - Update operation
-  // TODO: Implement the update operation to modify an existing wine
+  async update(wine: Wine) {
+    // Execute the SQL UPDATE query to update an existing wine in the "wine" table
+    const [result] = await databaseClient.query<Result>(
+      "update wine set name = ? where wine_id = ?",
+      [wine.name, wine.wine_id],
+    );
 
-  // async update(wine: wine) {
-  //   ...
-  // }
+    // Return how many rows were affected
+    return result.affectedRows;
+  }
 
-  // The D of CRUD - Delete operation
-  // TODO: Implement the delete operation to remove an wine by its ID
+  async delete(id: number) {
+    // Execute the SQL DELETE query to delete an existing wine from the "category" table
+    const [result] = await databaseClient.query<Result>(
+      "delete from wine where wine_id = ?",
+      [id],
+    );
 
-  // async delete(id: number) {
-  //   ...
-  // }
+    // Return how many rows were affected
+    return result.affectedRows;
+  }
 }
 
 export default new wineRepository();
