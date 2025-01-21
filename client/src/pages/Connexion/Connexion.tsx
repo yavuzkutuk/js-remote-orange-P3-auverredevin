@@ -8,16 +8,12 @@ function Connexion() {
       <NavBar />
       <div className="connecter">
         <div className="logo">
-
           <img src="../src/assets/images/Logo.png" alt="Logo Au Verre de Vin" />
-
         </div>
 
         <h1>SE CONNECTER</h1>
         <div className="avatar">
-
           <img src="..//src/assets/images/avvatar.png" alt="avvatar" />
-
         </div>
 
         <form className="case">
@@ -27,9 +23,7 @@ function Connexion() {
         </form>
 
         <div className="logo-bis">
-
           <img src="../src/assets/images/auverredevinn.png" alt="avatar" />
-
         </div>
 
         <nav className="navigation">
@@ -39,10 +33,8 @@ function Connexion() {
           <a href="/quizz">Quiz</a>
           <a href="/inscription">S'inscrire</a>
         </nav>
-
       </div>
       <Footer />
-
     </>
   );
 }
