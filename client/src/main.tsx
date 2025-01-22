@@ -9,16 +9,16 @@ import App from "./App";
 import Footer from "./components/Footer/Footer";
 import AboutUs from "./pages/Aboutus/AboutUs";
 import IndexBackOffice from "./pages/BackOffice/IndexBackOffice";
+import ListEventsBO from "./pages/BackOffice/ListEventsBO";
+import ListUsersBO from "./pages/BackOffice/ListUsersBO";
+import ListWinesBO from "./pages/BackOffice/ListWinesBO";
+import SuggestionsBO from "./pages/BackOffice/SuggestionsBO";
 import Connexion from "./pages/Connexion/Connexion";
 import Degustation from "./pages/Degustation/Degustation";
 import Inscription from "./pages/Inscription/Inscription";
 import ListWine from "./pages/ListeVin/ListeVin";
 import NotFound from "./pages/NotFound/NotFound";
 import Quizz from "./pages/Quizz/Quizz";
-import SuggestionsBO from "./pages/BackOffice/SuggestionsBO";
-import ListWinesBO from "./pages/BackOffice/ListWinesBO";
-import ListUsersBO from "./pages/BackOffice/ListUsersBO";
-import ListEventsBO from "./pages/BackOffice/ListEventsBO";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
