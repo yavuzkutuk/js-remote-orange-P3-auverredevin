@@ -1,42 +1,47 @@
 import "./Connexion.css";
+import Footer from "../../components/Footer/Footer";
+import NavBar from "../../components/NavBar/NavBar";
+import { Link } from "react-router-dom";
+
 
 function Connexion() {
   return (
-    <div className="connecter">
-      <div className="logo">
-        <img src="../src/assets/images/Logo.png" alt="Logo Au Verre de Vin" />
-      </div>
+    <>
+      <NavBar />
+      <div className="connecter">
+        <div className="logo">
 
-      <h1>SE CONNECTER</h1>
-      <div className="avatar">
-        <img src="..//src/assets/images/avvatar.png" alt="avvatar" />
-      </div>
+          <img src="../src/assets/images/Logo.png" alt="Logo Au Verre de Vin" />
 
+        </div>
+
+        <h1>SE CONNECTER</h1>
+        <div className="avatar">
+
+          <img src="..//src/assets/images/avvatar.png" alt="avvatar" />
+
+        </div>
       <form className="case">
-        <input type="email" placeholder="Adresse e-mail" />
-        <input type="password" placeholder="Mot de passe" />
-        <button type="submit">Connexion</button>
+  <input type="email" placeholder="Adresse e-mail" />
+  <input type="password" placeholder="Mot de passe" />
+  
+  <div className="home">
+    <Link to="/">
+      <button type="button">Connexion</button>
+    </Link>
+  </div>
+</form>
+
+      <form className="sign-up">
+      <Link to="/Inscription">
+        <button type="submit">S'inscrire</button>
+        </Link>
       </form>
 
-      <div className="logo-bis">
-        <img src="../src/assets/images/auverredevinn.png" alt="avatar" />
-      </div>
+        </div>
+      <Footer/>
 
-      <nav className="navigation">
-        <a href="/nosvins">Nos Vins</a>
-        <a href="/degustations">Dégustation</a>
-        <a href="/reservations">Mes Réservations</a>
-        <a href="/quizz">Quiz</a>
-        <a href="/inscription">S'inscrire</a>
-      </nav>
-
-      <footer>
-        <p>
-          © 2024 Au Verre De Vin. L'abus d'alcool est dangereux pour la santé. À
-          consommer avec modération.
-        </p>
-      </footer>
-    </div>
+    </>
   );
 }
 

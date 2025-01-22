@@ -1,4 +1,6 @@
 import "./Footer.css";
+import { Link } from "react-router-dom";
+
 
 function Footer() {
   return (
@@ -18,14 +20,14 @@ function Footer() {
             <a href="/quizz">QUIZZ</a>
           </li>
           <li>
-            <a href="/seconnecter">SE CONNECTER</a>
+            <Link to="/Connexion">SE CONNECTER</Link>
           </li>
         </ul>
       </nav>
 
       <div className="logo_footer">
         <img
-          src="..src/assets/images/auverredevinnnnn.png"
+          src="../src/assets/images/auverredevinnnnn.png"
           alt="Au Verre De Vin Logo"
         />
       </div>

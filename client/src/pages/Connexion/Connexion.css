@@ -9,10 +9,10 @@
 
 .logo {
   text-align: center;
-  margin-bottom: 2vw; 
+  margin-bottom: 2vw;
   align-items: center;
   display: flex;
-  width: 30%; 
+  width: 30%;
   justify-content: center;
 }
 
@@ -21,7 +21,6 @@
   display: flex;
   align-items: center;
   margin-top: 2.5em;
-  margin-right: 40vw;
 }
 
 h1 {
@@ -45,12 +44,6 @@ h1 {
   flex-direction: column;
   width: 35vw;
   gap: 2vw;
-}
-
-.logo-bis img {
-  width: 30vw;
-  height: 30vw;
-  margin: 1vw;
 }
 
 .case input[type="email"] {
@@ -77,7 +70,7 @@ h1 {
 
 button {
   background-color: #8b1818;
-  color: white;
+  color: rgb(255, 255, 255);
   border: none;
   padding: 1vw 2vw;
   border-radius: 0.5vw;
@@ -86,26 +79,15 @@ button {
   margin: 1vw 0;
 }
 
-.navigation {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  gap: 4vw;
-  margin: 4vw 0;
-  margin-bottom: 0vw;
-}
-
-.navigation a {
-  color: black;
-  text-decoration: none;
-  font-size: 2vw;
-}
-
-footer {
-  text-align: center;
-  margin-top: 2vw;
-  font-size: 1.75vw;
+.sign-up button {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 1vw 2vw;
+  border-radius: 0.5vw;
+  cursor: pointer;
+  font-size: 1vw;
+  margin: 2.5vw 0;
 }
 
 @media (max-width: 768px) {
@@ -114,42 +96,47 @@ footer {
   }
 
   .logo {
-    width: 70vw; 
+    width: 70vw;
   }
 
   h1 {
-    font-size: 8vw; 
+    font-size: 8vw;
   }
 
   .avatar img {
-    width: 40vw; 
+    width: 40vw;
     height: 40vw;
   }
 
   .case {
-    width: 90vw; 
-    gap: 6vw; 
+    width: 90vw;
+    gap: 6vw;
   }
 
   .case input[type="email"],
   .case input[type="password"] {
     font-size: 5vw;
-    padding: 6vw; 
+    padding: 6vw;
   }
 
   button {
-    font-size: 5vw; 
-    padding: 6vw 8vw; 
+    font-size: 5vw;
+    padding: 6vw 8vw;
   }
 
   .navigation {
     flex-direction: column;
     align-items: center;
-    gap: 8vw; 
+    gap: 8vw;
   }
 
   .navigation a {
-    font-size: 6vw; 
+    font-size: 6vw;
+  }
+
+  .sign-up button {
+    font-size: 3vw; 
+    padding: 3vw 4vw; 
   }
 
   footer {

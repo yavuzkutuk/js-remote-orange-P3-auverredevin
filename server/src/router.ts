@@ -18,6 +18,8 @@ router.post("/api/items", itemActions.add);
 router.get("/api/wines", wineActions.browse);
 router.get("/api/wines/:id", wineActions.read);
 router.post("/api/wines", wineActions.add);
+router.put("/api/wines/:id", wineActions.edit);
+router.delete("/api/wines/:id", wineActions.destroy);
 
 router.get("/api/tastings", tastingActions.browse);
 router.get("/api/tastings/:id", tastingActions.read);
