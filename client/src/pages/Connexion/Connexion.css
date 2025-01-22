@@ -7,22 +7,6 @@
   min-height: 100vw;
 }
 
-.logo {
-  text-align: center;
-  margin-bottom: 2vw;
-  align-items: center;
-  display: flex;
-  width: 30%;
-  justify-content: center;
-}
-
-.logo img {
-  flex-direction: row;
-  display: flex;
-  align-items: center;
-  margin-top: 2.5em;
-}
-
 h1 {
   font-size: auto;
   margin: 2vw 0;
@@ -67,36 +51,9 @@ h1 {
 .case input::placeholder {
   color: white;
 }
-
-button {
-  background-color: #8b1818;
-  color: rgb(255, 255, 255);
-  border: none;
-  padding: 1vw 2vw;
-  border-radius: 0.5vw;
-  cursor: pointer;
-  font-size: 2vw;
-  margin: 1vw 0;
-}
-
-.sign-up button {
-  background-color: #000000;
-  color: white;
-  border: none;
-  padding: 1vw 2vw;
-  border-radius: 0.5vw;
-  cursor: pointer;
-  font-size: 1vw;
-  margin: 2.5vw 0;
-}
-
 @media (max-width: 768px) {
   .connecter {
     padding: 10vw 5vw;
-  }
-
-  .logo {
-    width: 70vw;
   }
 
   h1 {
@@ -119,27 +76,4 @@ button {
     padding: 6vw;
   }
 
-  button {
-    font-size: 5vw;
-    padding: 6vw 8vw;
-  }
-
-  .navigation {
-    flex-direction: column;
-    align-items: center;
-    gap: 8vw;
-  }
-
-  .navigation a {
-    font-size: 6vw;
-  }
-
-  .sign-up button {
-    font-size: 3vw; 
-    padding: 3vw 4vw; 
-  }
-
-  footer {
-    font-size: 5vw;
-  }
 }

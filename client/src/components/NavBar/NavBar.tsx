@@ -1,4 +1,12 @@
 import "./NavBar.css";
+import MenuIcon from "@mui/icons-material/Menu";
+import {
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+} from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -25,51 +33,73 @@ function NavBar() {
 }
 
 const BurgerMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  // Fonction pour ouvrir/fermer le menu
-  const toggleMenu = () => {
-    setIsOpen(!isOpen); // Inverse l'état de isOpen
-  };
+  const toggleDrawer =
+    (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event.type === "keydown" &&
+        "key" in event &&
+        (event.key === "Tab" || event.key === "Shift")
+      ) {
+        return;
+      }
+      setIsDrawerOpen(open);
+    };
+
+  const menuItems = [
+    { text: "ACCUEIL", path: "/" },
+    { text: "QUIZZ", path: "/quizz" },
+    { text: "NOS VINS", path: "/vins" },
+    { text: "DÉGUSTATION", path: "/degustation" },
+    { text: "À propos de nous", path: "/aboutus" },
+  ];
 
   return (
     <div className="burger-menu">
-      {/* Bouton burger */}
-      <button type="button" className="burger-button" onClick={toggleMenu}>
-        ☰
-      </button>
+      {/* Bouton burger avec MUI */}
+      <IconButton
+        color="inherit"
+        aria-label="menu"
+        className="burger-button"
+        onClick={toggleDrawer(true)}
+      >
+        <MenuIcon fontSize="large" />
+      </IconButton>
 
-      {/* Menu burger visible lorsque 'isOpen' est true */}
-      <div className={`nav-links ${isOpen ? "open" : ""}`}>
-        <ul>
-          <li>
-            <Link to="/">
-              <strong>ACCUEIL</strong>
-            </Link>
-          </li>
-          <li>
-            <Link to="/quizz">
-              <strong>QUIZZ</strong>
-            </Link>
-          </li>
-          <li>
-            <Link to="/vins">
-              <strong>NOS VINS</strong>
-            </Link>
-          </li>
-          <li>
-            <Link to="/degustation">
-              <strong>DEGUSTATION</strong>
-            </Link>
-          </li>
-          <li>
-            <Link to="/aboutus">
-              <strong>A propos de nous</strong>
-            </Link>
-          </li>
-        </ul>
-      </div>
+      {/* Drawer (menu burger) */}
+      <Drawer
+        anchor="left"
+        open={isDrawerOpen}
+        onClose={toggleDrawer(false)}
+        sx={{
+          "& .MuiDrawer-paper": {
+            backgroundColor: "#F5E8DF", // Couleur de fond du menu
+            color: "#ffffff", // Couleur du texte
+            width: 250, // Largeur du Drawer
+            boxShadow: "2px 0 10px rgba(0, 0, 0, 0.3)", // Ombre douce
+          },
+        }}
+      >
+        <nav onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
+          <List>
+            {menuItems.map((item) => (
+              <ListItem component={Link} to={item.path} key={item.text}>
+                <ListItemText
+                  primary={item.text}
+                  sx={{
+                    color: "#4A4A4A", // Couleur du texte des éléments
+                    textTransform: "uppercase", // Texte en majuscules
+                    fontWeight: "bolder", // Texte en gras
+                  }}
+                />
+              </ListItem>
+            ))}
+          </List>
+        </nav>
+      </Drawer>
     </div>
   );
 };
+
 export default NavBar;
