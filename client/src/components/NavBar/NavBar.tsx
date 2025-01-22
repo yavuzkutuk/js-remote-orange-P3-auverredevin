@@ -13,9 +13,9 @@ import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <>
+      <BurgerMenu />
       <div className="navbar">
-        <BurgerMenu />
-        <div className="logo">
+        <div className="logo_navbar">
           <Link to="/">
             <img src="../src/assets/images/Logo.png" alt="Logo" />
           </Link>
