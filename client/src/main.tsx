@@ -10,7 +10,7 @@ import Footer from "./components/Footer/Footer";
 import AboutUs from "./pages/Aboutus/AboutUs";
 import Connexion from "./pages/Connexion/Connexion";
 import Degustation from "./pages/Degustation/Degustation";
-import IndexBackOffice from "./pages/IndexBackOffice/IndexBackOffice";
+import IndexBackOffice from "./pages/BackOffice/IndexBackOffice";
 import Inscription from "./pages/Inscription/Inscription";
 import ListWine from "./pages/ListeVin/ListeVin";
 import NotFound from "./pages/NotFound/NotFound";
