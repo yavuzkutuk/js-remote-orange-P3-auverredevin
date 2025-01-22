@@ -1,8 +1,7 @@
 import "./inscription.css";
+import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
-import { Link } from "react-router-dom";
-
 
 function Inscription() {
   return (
@@ -19,16 +18,13 @@ function Inscription() {
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Mots de passe" />
           <input type="text" placeholder="Adresse" />
-
-
           <div className="newsletter">
             <input type="checkbox" />
             Acceptez-vous de recevoir nos offres personnalisé par email
           </div>
-    <Link to="/connexion">
-          <button type="submit">S'inscrire</button>
-              </Link>
-          
+          <Link to="/connexion">
+            <button type="submit">S'inscrire</button>
+          </Link>
         </form>
       </div>
       <Footer />
