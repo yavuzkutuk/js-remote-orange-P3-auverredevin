@@ -16,24 +16,25 @@ function Connexion() {
         <div className="avatar">
           <img src="..//src/assets/images/avvatar.png" alt="avvatar" />
         </div>
-        <form className="case">
-          <input type="email" placeholder="Adresse e-mail" />
-          <input type="password" placeholder="Mot de passe" />
+      <form className="case">
+  <input type="email" placeholder="Adresse e-mail" />
+  <input type="password" placeholder="Mot de passe" />
+  
+  <div className="home">
+    <Link to="/">
+      <button type="button">Connexion</button>
+    </Link>
+  </div>
+</form>
 
-          <div className="home">
-            <Link to="/">
-              <button type="button">Connexion</button>
-            </Link>
-          </div>
-        </form>
+      <form className="sign-up">
+      <Link to="/Inscription">
+        <button type="submit">S'inscrire</button>
+        </Link>
+      </form>
 
-        <form className="sign-up">
-          <Link to="/Inscription">
-            <button type="submit">S'inscrire</button>
-          </Link>
-        </form>
-      </div>
-      <Footer />
+        </div>
+      <Footer/>
     </>
   );
 }
