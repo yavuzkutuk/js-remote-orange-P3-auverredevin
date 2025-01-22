@@ -8,19 +8,19 @@ function IndexBackOffice() {
     <div>
       <NavBar />
       <section className="IndexBackOffice">
-      <h1>IndexBackOffice</h1>
-      <Link to="/suggestionsBO">
-        <button type="submit">Liste des suggestions</button>
-      </Link>
-      <Link to="/utilisateursBO">
-        <button type="submit">Liste des utilisateurs</button>
-      </Link>
-      <Link to="/vinsBO">
-        <button type="submit">Liste des vins</button>
-      </Link>
-      <Link to="/evenementsBO">
-        <button type="submit">Liste des évenements</button>
-      </Link>
+        <h1>IndexBackOffice</h1>
+        <Link to="/suggestionsBO">
+          <button type="submit">Liste des suggestions</button>
+        </Link>
+        <Link to="/utilisateursBO">
+          <button type="submit">Liste des utilisateurs</button>
+        </Link>
+        <Link to="/vinsBO">
+          <button type="submit">Liste des vins</button>
+        </Link>
+        <Link to="/evenementsBO">
+          <button type="submit">Liste des évenements</button>
+        </Link>
       </section>
       <Footer />
     </div>
