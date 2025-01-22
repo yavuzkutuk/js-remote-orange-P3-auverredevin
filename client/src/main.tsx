@@ -15,7 +15,11 @@ import Inscription from "./pages/Inscription/Inscription";
 import ListWine from "./pages/ListeVin/ListeVin";
 import NotFound from "./pages/NotFound/NotFound";
 import Quizz from "./pages/Quizz/Quizz";
-import Suggestion from "./pages/Suggestion/Suggestion";
+import SuggestionsBO from "./pages/BackOffice/SuggestionsBO";
+import ListWinesBO from "./pages/BackOffice/ListWinesBO";
+import ListUsersBO from "./pages/BackOffice/ListUsersBO";
+import ListEventsBO from "./pages/BackOffice/ListEventsBO";
+
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
 
@@ -49,10 +53,6 @@ const router = createBrowserRouter([
     element: <Degustation />,
   },
   {
-    path: "/suggestion".toLowerCase(),
-    element: <Suggestion />,
-  },
-  {
     path: "*".toLowerCase(),
 
     element: <NotFound />,
@@ -64,6 +64,22 @@ const router = createBrowserRouter([
   {
     path: "/backoffice".toLowerCase(),
     element: <IndexBackOffice />,
+  },
+  {
+    path: "/suggestionsBO".toLowerCase(),
+    element: <SuggestionsBO />,
+  },
+  {
+    path: "/vinsBO".toLowerCase(),
+    element: <ListWinesBO />,
+  },
+  {
+    path: "/evenementsBO".toLowerCase(),
+    element: <ListEventsBO />,
+  },
+  {
+    path: "/utilisateursBO".toLowerCase(),
+    element: <ListUsersBO />,
   },
   {
     path: "/footer", // The root path
