@@ -9,17 +9,20 @@ function AboutUs() {
 
       <div className="AboutBox">
         <h1>À propos de nous</h1>
-        <p>
+        <div className="aboutimg">
+          <img src="../src/assets/images/AboutUS.png" alt="Logo" />
+        </div>
+        <p className="Abouttext">
           Passionnés par les vins français, nous avons créé ce site pour
           partager la richesse et la diversité de nos terroirs. De Bordeaux à la
           Provence, chaque bouteille raconte une histoire que nous souhaitons
           vous faire découvrir.
         </p>
-        <p>
+        <p className="Abouttext">
           Que vous soyez amateur ou curieux, embarquez avec nous dans un voyage
           sensoriel au cœur des vignobles français.
         </p>
-        <p>À votre santé !</p>
+        <p className="Abouttext">À votre santé 🍷!</p>
       </div>
       <Footer />
     </>

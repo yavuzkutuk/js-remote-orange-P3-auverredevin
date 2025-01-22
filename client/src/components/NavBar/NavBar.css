@@ -71,6 +71,7 @@
   align-items: center;
   margin: 0 auto;
   margin-top: 2rem;
+  width: 100%;
 }
 
 img {
@@ -114,11 +115,11 @@ li {
   .burger-button {
     font-size: 2rem;
   }
-
-  .nav-links ul {
-    flex-direction: column;
+  .connexion {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
   }
-
   .logo img {
     max-width: 8rem;
   }
