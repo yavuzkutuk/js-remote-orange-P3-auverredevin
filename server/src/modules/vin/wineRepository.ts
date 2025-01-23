@@ -5,6 +5,7 @@ import type { Result, Rows } from "../../../database/client";
 interface Wine {
   wine_id: number;
   name: string;
+  img_url: string;
   category: string;
   origin: string | null;
   price: number;
@@ -15,8 +16,15 @@ class wineRepository {
 
   async create(wine: Omit<Wine, "wine_id">) {
     const [result] = await databaseClient.query<Result>(
-      "insert into wine (name, category, origin, price, description) values (?, ?, ?, ?, ?)",
-      [wine.name, wine.category, wine.origin, wine.price, wine.description],
+      "insert into wine (name, img_url, category, origin, price, description) values (?, ?, ?, ?, ?, ?)",
+      [
+        wine.name,
+        wine.img_url,
+        wine.category,
+        wine.origin,
+        wine.price,
+        wine.description,
+      ],
     );
 
     // Return the ID of the newly inserted wine

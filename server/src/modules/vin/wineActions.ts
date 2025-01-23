@@ -43,6 +43,7 @@ const edit: RequestHandler = async (req, res, next) => {
     const Wine = {
       wine_id: Number(req.params.id),
       name: req.body.name,
+      img_url: req.body.img_url,
       category: req.body.category,
       origin: req.body.origin,
       price: req.body.price,
@@ -69,6 +70,7 @@ const add: RequestHandler = async (req, res, next) => {
   try {
     const newWine = {
       name: req.body.name,
+      img_url: req.body.img_url,
       category: req.body.category,
       origin: req.body.origin,
       price: req.body.price,
