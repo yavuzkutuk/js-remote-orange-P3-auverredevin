@@ -24,6 +24,7 @@ CREATE TABLE wine (
     origin VARCHAR(100),
     price DECIMAL(10,2) NOT NULL,
     description TEXT DEFAULT NULL,
+    wine_url VARCHAR(600),
     CONSTRAINT price_positive CHECK (price > 0)
 );
 
@@ -108,12 +109,12 @@ INSERT INTO users (firstname, lastname, date_of_birth, email, phone, address) VA
 ('Sophie', 'Petit', '1992-04-18', 'sophie.petit@email.com', '+33645678901', '15 Rue de la République, Marseille'),
 ('Lucas', 'Moreau', '1987-09-25', 'lucas.moreau@email.com', '+33656789012', '32 Boulevard Victor Hugo, Nice');
 
-INSERT INTO wine (name, img_url, category, origin, price, description) VALUES
-("Château d'Esclans Garrus 2023", "assets/uploads/wines/1.png", "Rosé", "Côtes-de-Provence", 115.00, "Un rosé prestigieux offrant une complexité aromatique exceptionnelle, avec des notes de fruits mûrs et une finale longue et élégante"),
-("Domaine Vallon des Glauges 2023", "assets/uploads/wines/2.png", "Rosé", "Coteaux-d'Aix-en-Provence", 12.50, "Un rosé équilibré et élégant, présentant des arômes de fruits rouges frais et une belle fraîcheur en bouche"),
-("Château Maïme 2023", "assets/uploads/wines/3.png", "Rosé", "Côtes-de-Provence", 15.00, "Un vin rosé frais et délicat, aux arômes de pêche et de fleurs blanches, idéal pour les repas estivaux"),
-("Domaine Ray 2023", "assets/uploads/wines/4.png", "Rosé", "Coteaux-d'Aix-en-Provence", 7.20, "Un rosé accessible et convivial, avec des notes de fraise et une légère acidité rafraîchissante"),
-("Château Sainte-Roseline 2023", "assets/uploads/wines/5.png", "Rosé", "Côtes-de-Provence", 20.00, "Un rosé biologique de grande qualité, aux arômes complexes de fruits exotiques et une texture soyeuse en bouche"),
+INSERT INTO wine (name, img_url, category, origin, price, description, wine_url) VALUES
+("Château d'Esclans Garrus 2022", "assets/uploads/wines/1.png", "Rosé", "Côtes-de-Provence", 115.00, "Un rosé prestigieux offrant une complexité aromatique exceptionnelle, avec des notes de fruits mûrs et une finale longue et élégante", "https://www.infinivin.com/fr/chateau-d-esclans-garrus-rose-cotes-de-provence-1474.html?srsltid=AfmBOopcpi8pB--KL_Tg3tOeIghmSFcL76BNZlYNR_RnDBbTcuDIp2uW"),
+("Domaine Vallon des Glauges 2023", "assets/uploads/wines/2.png", "Rosé", "Coteaux-d'Aix-en-Provence", 12.50, "Un rosé équilibré et élégant, présentant des arômes de fruits rouges frais et une belle fraîcheur en bouche", "https://www.twil.fr/france/provence/vin-de-pays-des-alpilles/iris-wine-79640.html?srsltid=AfmBOopPTjRrBzEiKQtZ8CSp8d5vpXNhk9p9dTwFFQXfdwMAS-CI2hNp#378964"),
+("Château Maïme 2023", "assets/uploads/wines/3.png", "Rosé", "Côtes-de-Provence", 15.00, "Un vin rosé frais et délicat, aux arômes de pêche et de fleurs blanches, idéal pour les repas estivaux", "https://boutique.maison-des-vins.fr/fr/vin-rose-aoc-cotes-provence/1039-chateau-maime-heritage-rose-2023.html"),
+("Domaine Ray 2023", "assets/uploads/wines/4.png", "Rosé", "Coteaux-d'Aix-en-Provence", 7.20, "Un rosé accessible et convivial, avec des notes de fraise et une légère acidité rafraîchissante", "https://lacompagniedesbonnesbouteilles.fr/produit/vin-rose-domaine-ray-jane-igp-du-var-rose-75cl/?srsltid=AfmBOoptgBTC5YtQTeX1fdCIb72qlWOgtUWmuVkpZv0PL9sXW1PB9uuT"),
+("Château Sainte-Roseline 2023", "assets/uploads/wines/5.png", "Rosé", "Côtes-de-Provence", 20.00, "Un rosé biologique de grande qualité, aux arômes complexes de fruits exotiques et une texture soyeuse en bouche", "https://www.boutique-sainteroseline.com/fr/roseline-prestige-rose-2023-ar15.php"),
 ("Domaine Jean-Marc Burgaud Morgon Corcelette 2022", "assets/uploads/wines/6.png", "Rouge", "Beaujolais", 19.00, "Un vin élégant du Beaujolais, offrant des arômes de fruits rouges mûrs et une belle structure tannique"),
 ("Domaine d'Aupilhac Languedoc Montpeyroux Les Cocalières 2021",  "assets/uploads/wines/7.png","Rouge", "Languedoc", 23.40, "Un vin du Languedoc aux notes épicées et fruitées, avec une complexité remarquable et une finale persistante"),
 ("Domaine de la Chevalerie Bourgueil Busardières 2019", "assets/uploads/wines/8.png", "Rouge", "Vallée de la Loire", 26.00, "Un Bourgueil structuré et raffiné, présentant des arômes de cassis et de violette, avec une belle longueur en bouche"),
