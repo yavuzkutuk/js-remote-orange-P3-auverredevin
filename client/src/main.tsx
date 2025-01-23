@@ -14,7 +14,7 @@ import ListUsersBO from "./pages/BackOffice/ListUsersBO";
 import ListWinesBO from "./pages/BackOffice/ListWinesBO";
 import SuggestionsBO from "./pages/BackOffice/SuggestionsBO";
 import Connexion from "./pages/Connexion/Connexion";
-import Degustation from "./pages/Degustation/Degustation";
+import Evenements from "./pages/Evenements/Evenements";
 import Inscription from "./pages/Inscription/Inscription";
 import ListWine from "./pages/ListeVin/ListeVin";
 import NotFound from "./pages/NotFound/NotFound";
@@ -42,15 +42,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/quizz".toLowerCase(), // The root path
-    element: <Quizz />, // Renders the Quizz component
+    element: <Quizz />,
   },
   {
     path: "/inscription".toLowerCase(),
     element: <Inscription />,
   },
   {
-    path: "/degustation".toLowerCase(),
-    element: <Degustation />,
+    path: "/evenements".toLowerCase(),
+    element: <Evenements />,
   },
   {
     path: "*".toLowerCase(),
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/vins".toLowerCase(),
-    element: <ListWine />, // Renders the ListWine component
+    element: <ListWine />,
   },
   {
     path: "/backoffice".toLowerCase(),
