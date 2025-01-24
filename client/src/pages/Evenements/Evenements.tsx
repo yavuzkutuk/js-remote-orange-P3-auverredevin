@@ -158,4 +158,4 @@ function Degustation() {
   );
 }
 
-export default Evenements;
+export default Degustation;
