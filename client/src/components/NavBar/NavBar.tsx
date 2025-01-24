@@ -51,7 +51,7 @@ const BurgerMenu = () => {
     { text: "ACCUEIL", path: "/" },
     { text: "QUIZZ", path: "/quizz" },
     { text: "NOS VINS", path: "/vins" },
-    { text: "DÉGUSTATION", path: "/degustation" },
+    { text: "ÉVENEMENTS", path: "/evenements" },
     { text: "À propos de nous", path: "/aboutus" },
   ];
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
-import "./Degustation.css";
+import "./Evenements.css";
 import {
   FormControl,
   InputLabel,
@@ -76,7 +76,7 @@ function Degustation() {
     <>
       <NavBar />
       <div>
-        <h1>Dégustations</h1>
+        <h1>Évenements</h1>
         <Stack
           direction={{ xs: "column", sm: "row" }}
           spacing={2}

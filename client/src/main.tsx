@@ -10,7 +10,7 @@ import Footer from "./components/Footer/Footer";
 import AboutUs from "./pages/Aboutus/AboutUs";
 import IndexBackOffice from "./pages/BackOffice/IndexBackOffice";
 import Connexion from "./pages/Connexion/Connexion";
-import Degustation from "./pages/Degustation/Degustation";
+import Evenements from "./pages/Evenements/Evenements";
 import Inscription from "./pages/Inscription/Inscription";
 import ListWine from "./pages/ListeVin/ListeVin";
 import NotFound from "./pages/NotFound/NotFound";
@@ -45,8 +45,8 @@ const router = createBrowserRouter([
     element: <Inscription />,
   },
   {
-    path: "/degustation".toLowerCase(),
-    element: <Degustation />,
+    path: "/evenements".toLowerCase(),
+    element: <Evenements />,
   },
   {
     path: "/suggestion".toLowerCase(),

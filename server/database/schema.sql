@@ -24,7 +24,7 @@ CREATE TABLE wine (
     origin VARCHAR(100),
     price DECIMAL(10,2) NOT NULL,
     description TEXT DEFAULT NULL,
-    wine_url VARCHAR(255), NOT NULL,
+    wine_url VARCHAR(255),
     CONSTRAINT price_positive CHECK (price > 0)
 );
 
