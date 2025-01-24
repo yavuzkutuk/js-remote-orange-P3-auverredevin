@@ -65,7 +65,7 @@ function Accueil() {
 
       <section>
         <h1>
-          <strong>PRÊT A RELEVER L’AVENTURE ?</strong>
+          <strong>PRÊT A PARTIR À L’AVENTURE ?</strong>
         </h1>
 
         <Link to="/vins" className="link-button">
