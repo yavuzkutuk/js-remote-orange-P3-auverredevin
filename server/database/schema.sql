@@ -3,17 +3,18 @@ CREATE TABLE roles (
     name VARCHAR(50) UNIQUE NOT NULL
 );
 
-CREATE TABLE users (
+CREATE TABLE user (
     user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(50),
     lastname VARCHAR(50),
-    date_of_birth DATE,
+    date_of_birth DATE DEFAULT NULL,
     email VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
     phone VARCHAR(50),
     address VARCHAR(250),
     role_id INT,
     last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (role_id) REFERENCES roles(role_id) ON DELETE SET NULL
+    FOREIGN KEY (role_id) REFERENCES roles(role_id) ON DELETE CASCADE
 );
 
 CREATE TABLE wine (
@@ -46,7 +47,7 @@ CREATE TABLE opinion (
     user_id INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (wine_id) REFERENCES wine(wine_id) ON DELETE CASCADE,
-    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES user(user_id) ON DELETE CASCADE,
     CONSTRAINT note_range CHECK (note >= 0 AND note <= 5)
 );
 
@@ -68,7 +69,7 @@ CREATE TABLE user_answers (
     user_id INT NOT NULL,
     question_id INT NOT NULL,
     answer_id INT NOT NULL,
-    CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(user_id),
+    CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES user(user_id),
     CONSTRAINT fk_question_2 FOREIGN KEY (question_id) REFERENCES questions(question_id),
     CONSTRAINT fk_answer FOREIGN KEY (answer_id) REFERENCES answers(answer_id)
 );
@@ -85,7 +86,7 @@ CREATE TABLE user_scores (
     user_id INT NOT NULL,
     total_score INT NOT NULL,
     taste_profile_id INT,  -- Clé étrangère vers la table taste_profiles
-    CONSTRAINT fk_user_score FOREIGN KEY (user_id) REFERENCES users(user_id),
+    CONSTRAINT fk_user_score FOREIGN KEY (user_id) REFERENCES user(user_id),
     CONSTRAINT fk_taste_profile FOREIGN KEY (taste_profile_id) REFERENCES taste_profiles(profile_id)
 );
 
@@ -102,12 +103,12 @@ CREATE TABLE wine_filters (
 
 INSERT INTO roles (name) VALUES ('admin'), ('client');
 
-INSERT INTO users (firstname, lastname, date_of_birth, email, phone, address) VALUES
-('Jean', 'Dupont', '1985-03-15', 'jean.dupont@email.com', '+33612345678', '123 Rue de Paris, Paris'),
-('Marie', 'Martin', '1990-07-22', 'marie.martin@email.com', '+33623456789', '45 Avenue des Champs-Élysées, Paris'),
-('Pierre', 'Bernard', '1988-11-30', 'pierre.bernard@email.com', '+33634567890', '78 Rue du Commerce, Lyon'),
-('Sophie', 'Petit', '1992-04-18', 'sophie.petit@email.com', '+33645678901', '15 Rue de la République, Marseille'),
-('Lucas', 'Moreau', '1987-09-25', 'lucas.moreau@email.com', '+33656789012', '32 Boulevard Victor Hugo, Nice');
+INSERT INTO user (firstname, lastname, date_of_birth, email, password, phone, address, role_id) VALUES
+('Jean', 'Dupont', '1985-03-15', 'jean.dupont@email.com', '1234567', '+33612345678', '123 Rue de Paris, Paris', '2'),
+('Marie', 'Martin', '1990-07-22', 'marie.martin@email.com', '1234567', '+33623456789', '45 Avenue des Champs-Élysées, Paris', '2'),
+('Pierre', 'Bernard', '1988-11-30', 'pierre.bernard@email.com', '1234567', '+33634567890', '78 Rue du Commerce, Lyon', '2'),
+('Sophie', 'Petit', '1992-04-18', 'sophie.petit@email.com', '1234567', '+33645678901', '15 Rue de la République, Marseille', '2'),
+('Lucas', 'Moreau', '1987-09-25', 'lucas.moreau@email.com', '1234567', '+33656789012', '32 Boulevard Victor Hugo, Nice', '2');
 
 INSERT INTO wine (name, img_url, category, origin, price, description, wine_url) VALUES
 ("Château d'Esclans Garrus 2021", "assets/uploads/wines/1.png", "Rosé", "Côtes-de-Provence", 115.00, "Un rosé prestigieux offrant une complexité aromatique exceptionnelle, avec des notes de fruits mûrs et une finale longue et élégante", "https://meilleur-vin.fr/fr/vin-rose/81-1770-chateau-d-esclans-garrus-vin-rose.html#/26-volume-075_l/71-millesime-2021"),

@@ -3,9 +3,11 @@ import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 import "./ListeVin.css";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
+import Modal from "@mui/material/Modal";
 import Select from "@mui/material/Select";
 
 interface Wine {
@@ -25,6 +27,7 @@ function WinesList() {
   const [selectedOrigin, setSelectedOrigin] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedPrice, setSelectedPrice] = useState("");
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:3310/api/wines")
@@ -36,6 +39,10 @@ function WinesList() {
       .catch((error) => console.error(error));
   }, []);
 
+  const handleOpenModal = () => void setOpenModal(true);
+  const handleCloseModal = () => void setOpenModal(false);
+
+  // Déduire les valeurs uniques
   const origins = [...new Set(wines.map((wine) => wine.origin))].sort();
   const categories = [...new Set(wines.map((wine) => wine.category))].sort();
   const priceRanges = [
@@ -163,8 +170,20 @@ function WinesList() {
           </Box>
         </Box>
       </section>
+
       {/* Liste des vins */}
       <div className="cards-wines">
+        <div>
+          {filteredWines.length === 0 && (
+            <p>Aucun vin ne correspond à votre recherche.</p>
+          )}
+        </div>
+        {/* Carte "Ajouter un vin" */}
+        {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+        <article className="cards-wine add-wine-card" onClick={handleOpenModal}>
+          <h3>Ajouter un vin</h3>
+          <p>Cliquez pour ajouter un vin</p>
+        </article>
         {filteredWines.map((wine) => (
           <article className="cards-wine" key={wine.wine_id}>
             <img
@@ -179,6 +198,22 @@ function WinesList() {
           </article>
         ))}
       </div>
+
+      {/* Modal */}
+      <Modal open={openModal} onClose={handleCloseModal}>
+        <div className="modal-content">
+          <h2>Ajouter un vin</h2>
+          {/* Formulaire d'ajout */}
+          <form>
+            <input type="text" placeholder="Nom du vin" required />
+            <input type="number" placeholder="Prix (€)" required />
+            <input type="text" placeholder="Origine" required />
+            <textarea placeholder="Description" />
+            <button type="submit">Ajouter</button>
+          </form>
+          <Button onClick={handleCloseModal}>Fermer</Button>
+        </div>
+      </Modal>
 
       <Footer />
     </>
