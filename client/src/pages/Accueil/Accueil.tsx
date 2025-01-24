@@ -43,7 +43,7 @@ function Accueil() {
               src="..//src/assets/images/Degustation.png"
               alt="degustation"
             />
-            <strong>Dégustation</strong>
+            <strong>Évènement</strong>
             <p>
               Venez participer à nos séances dégustation qui réveillera vos
               papilles !
