@@ -65,11 +65,12 @@
   color: #f5e7dd;
 }
 
-.logo {
+.logo_navbar {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  position: relative;
+  transform: translateX(70px);
   margin-top: 2rem;
   width: 100%;
 }
@@ -88,6 +89,9 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  background-color: rgba(170, 137, 146, 0.795);
+  width: 100vw;
+  margin-top: -2%;
 }
 
 .button-connexion {
@@ -120,8 +124,10 @@ li {
     top: 1rem;
     right: 1rem;
   }
-  .logo img {
+  .logo_navbar {
     max-width: 8rem;
+    position: relative;
+    transform: translateX(95px);
   }
 
   .button-connexion {

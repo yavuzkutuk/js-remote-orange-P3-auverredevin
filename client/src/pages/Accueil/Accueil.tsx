@@ -36,7 +36,7 @@ function Accueil() {
             </p>
           </button>
         </Link>
-        <Link to="/degustation" className="link-button">
+        <Link to="/evenements" className="link-button">
           <button type="button" className="button-degustation">
             <img
               className="degustation"

@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Footer from "../../components/Footer/Footer";
+import NavBar from "../../components/NavBar/NavBar";
 import "./Evenements.css";
 import {
   FormControl,
@@ -71,84 +73,88 @@ function Degustation() {
   };
 
   return (
-    <div>
-      <h1>Évenements</h1>
-      <Stack
-        direction={{ xs: "column", sm: "row" }}
-        spacing={2}
-        justifyContent="center"
-        alignItems="center"
-        sx={{ marginBottom: 2 }}
-      >
-        <FormControl className="form-control">
-          <InputLabel>Ville</InputLabel>
-          <Select
-            value={selectedCity}
-            onChange={(e) => setSelectedCity(e.target.value)}
-            label="Ville"
-            sx={{ minWidth: 200 }}
-          >
-            <MenuItem value="">Toutes les villes</MenuItem>
-            {cities.map((city) => (
-              <MenuItem key={city} value={city}>
-                {city}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </Stack>
+    <>
+      <NavBar />
+      <div>
+        <h1>Évenements</h1>
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
+          spacing={2}
+          justifyContent="center"
+          alignItems="center"
+          sx={{ marginBottom: 2 }}
+        >
+          <FormControl className="form-control">
+            <InputLabel>Ville</InputLabel>
+            <Select
+              value={selectedCity}
+              onChange={(e) => setSelectedCity(e.target.value)}
+              label="Ville"
+              sx={{ minWidth: 200 }}
+            >
+              <MenuItem value="">Toutes les villes</MenuItem>
+              {cities.map((city) => (
+                <MenuItem key={city} value={city}>
+                  {city}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Stack>
 
-      <TableContainer component={Paper} className="table-container">
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Nom</TableCell>
-              <TableCell
-                onClick={() =>
-                  setSortOrder(sortOrder === "asc" ? "desc" : "asc")
-                }
-                className="table-cell-sortable"
-              >
-                Date {sortOrder === "asc" ? "↑" : "↓"}
-              </TableCell>
-              <TableCell>Ville</TableCell>
-              <TableCell>Site officiel</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {currentItems.map((tasting) => (
-              <TableRow key={tasting.tasting_id}>
-                <TableCell>{tasting.name}</TableCell>
-                <TableCell>
-                  {new Date(tasting.date).toLocaleDateString()}
+        <TableContainer component={Paper} className="table-container">
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Nom</TableCell>
+                <TableCell
+                  onClick={() =>
+                    setSortOrder(sortOrder === "asc" ? "desc" : "asc")
+                  }
+                  className="table-cell-sortable"
+                >
+                  Date {sortOrder === "asc" ? "↑" : "↓"}
                 </TableCell>
-                <TableCell>{tasting.city_name}</TableCell>
-                <TableCell>
-                  <a
-                    href={tasting.website_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Visiter
-                  </a>
-                </TableCell>
+                <TableCell>Ville</TableCell>
+                <TableCell>Site officiel</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+            </TableHead>
+            <TableBody>
+              {currentItems.map((tasting) => (
+                <TableRow key={tasting.tasting_id}>
+                  <TableCell>{tasting.name}</TableCell>
+                  <TableCell>
+                    {new Date(tasting.date).toLocaleDateString()}
+                  </TableCell>
+                  <TableCell>{tasting.city_name}</TableCell>
+                  <TableCell>
+                    <a
+                      href={tasting.website_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Visiter
+                    </a>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
 
-      <Stack spacing={2} sx={{ padding: "20px", alignItems: "center" }}>
-        <Pagination
-          count={totalPages}
-          page={currentPage}
-          onChange={handlePageChange}
-          color="primary"
-          showFirstButton
-          showLastButton
-        />
-      </Stack>
-    </div>
+        <Stack spacing={2} sx={{ padding: "20px", alignItems: "center" }}>
+          <Pagination
+            count={totalPages}
+            page={currentPage}
+            onChange={handlePageChange}
+            color="primary"
+            showFirstButton
+            showLastButton
+          />
+        </Stack>
+      </div>
+      <Footer />
+    </>
   );
 }
 
