@@ -21,6 +21,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 
@@ -191,6 +192,7 @@ function ListWinesBO() {
   return (
     <div>
       <NavBar />
+      <Link to="/backoffice">BackOffice</Link>
       <section className="ListWinesBO">
         <h1>Liste des Vins - BackOffice</h1>
 
