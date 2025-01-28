@@ -12,6 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 
@@ -89,6 +90,7 @@ function ListUsersBO() {
   return (
     <div>
       <NavBar />
+      <Link to="/backoffice">BackOffice</Link>
       <Typography
         variant="h4"
         gutterBottom
