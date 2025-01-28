@@ -18,6 +18,7 @@ import Evenements from "./pages/Evenements/Evenements";
 import Inscription from "./pages/Inscription/Inscription";
 import ListWine from "./pages/ListeVin/ListeVin";
 import NotFound from "./pages/NotFound/NotFound";
+import Profil from "./pages/Profil/Profil";
 import Quizz from "./pages/Quizz/Quizz";
 
 // Import additional components for new routes
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
   {
     path: "/inscription".toLowerCase(),
     element: <Inscription />,
+  },
+  {
+    path: "/profil".toLowerCase(),
+    element: <Profil />,
   },
   {
     path: "/evenements".toLowerCase(),
