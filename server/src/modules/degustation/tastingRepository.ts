@@ -27,7 +27,7 @@ class TastingRepository {
   async read(id: number) {
     // Execute the SQL SELECT query to retrieve a specific tasting by its ID
     const [rows] = await databaseClient.query<Rows>(
-      "select * from tasting where id = ?",
+      "select * from tasting where tasting_id = ?",
       [id],
     );
 
@@ -44,16 +44,34 @@ class TastingRepository {
   }
 
   // The U of CRUD - Update operation
+  async update(tasting: Tasting) {
+    // Execute the SQL UPDATE query to update an existing tasting in the "tasting" table
+    const [result] = await databaseClient.query<Result>(
+      "update tasting set name = ?, date = ?, city_id = ?, website_url = ? where tasting_id = ?",
+      [
+        tasting.name,
+        tasting.date,
+        tasting.city_id,
+        tasting.website_url,
+        tasting.tasting_id,
+      ],
+    );
 
-  // async update(tasting: Tasting) {
-  //   ...
-  // }
+    // Return how many rows were affected
+    return result.affectedRows;
+  }
 
   // The D of CRUD - Delete operation
+  async delete(id: number) {
+    // Execute the SQL DELETE query to delete an existing tasting from the "tasting" table
+    const [result] = await databaseClient.query<Result>(
+      "delete from tasting where tasting_id = ?",
+      [id],
+    );
 
-  // async delete(id: number) {
-  //   ...
-  // }
+    // Return how many rows were affected
+    return result.affectedRows;
+  }
 }
 
 export default new TastingRepository();
