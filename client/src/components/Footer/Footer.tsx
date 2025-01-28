@@ -32,7 +32,7 @@ function Footer() {
       </div>
 
       <footer className="footer">
-        <p>© 2024 Au Verre De Vin. L'alcool est dangereux pour la santé</p>
+        <p>© 2024 Au Verre De Vin. L'abus d'alcool est dangereux pour la santé</p>
       </footer>
     </div>
   );
