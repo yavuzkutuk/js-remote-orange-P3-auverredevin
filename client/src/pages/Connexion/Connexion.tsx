@@ -8,7 +8,6 @@ function Connexion() {
     <>
       <NavBar />
       <div className="connecter">
-
         <h1>SE CONNECTER</h1>
         <div className="avatar">
           <img src="..//src/assets/images/avvatar.png" alt="avvatar" />

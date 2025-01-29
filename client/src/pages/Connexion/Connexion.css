@@ -71,43 +71,43 @@ h1 {
   font-size: 1vw;
 }
 
-.ul_footer  {
+.ul_footer {
   margin-top: -45vw;
   padding-top: 0;
 }
 
 .logo_footer {
-  margin-top: -45vw; 
+  margin-top: -45vw;
   padding-top: 0;
 }
 
 .footer p {
-  margin-top: 0vw; 
+  margin-top: 0vw;
 }
 
 @media (max-width: 1024px) {
   .connecter {
-    padding: 8vw 4vw; 
+    padding: 8vw 4vw;
   }
 
   h1 {
-    font-size: 6vw; 
+    font-size: 6vw;
   }
 
   .avatar img {
-    width: 30vw; 
+    width: 30vw;
     height: 30vw;
   }
 
   .case {
-    width: 60vw; 
-    gap: 4vw; 
+    width: 60vw;
+    gap: 4vw;
   }
 
   .case input[type="email"],
   .case input[type="password"] {
     font-size: 4vw;
-    padding: 5vw; 
+    padding: 5vw;
   }
 
   .sign-up button {
@@ -125,33 +125,32 @@ h1 {
   }
 
   h1 {
-    font-size: 8vw; 
+    font-size: 8vw;
   }
 
   .avatar img {
-    width: 40vw; 
+    width: 40vw;
     height: 40vw;
   }
 
   .case {
-    width: 90vw; 
-    gap: 6vw; 
+    width: 90vw;
+    gap: 6vw;
   }
 
   .case input[type="email"],
   .case input[type="password"] {
     font-size: 5vw;
-    padding: 6vw; 
+    padding: 6vw;
   }
 
   .button-connexion {
-    padding: 0.5em 1rem; 
+    padding: 0.5em 1rem;
     text-decoration: none;
-
   }
 
   .home button {
-    margin-inline-start: 28vw; 
+    margin-inline-start: 28vw;
     padding: 0.8em 2rem;
     font-size: 4vw;
     border-radius: 1vw;
@@ -164,6 +163,6 @@ h1 {
   }
 
   .ul_footer {
-    margin-top: 5vw; 
+    margin-top: 5vw;
   }
 }
