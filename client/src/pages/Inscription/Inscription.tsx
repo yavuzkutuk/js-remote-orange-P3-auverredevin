@@ -23,7 +23,9 @@ function Inscription() {
             Acceptez-vous de recevoir nos offres personnalisé par email
           </div>
           <Link to="/connexion">
-            <button type="submit">S'inscrire</button>
+            <button type="submit" className="btn-inscription">
+              S'inscrire
+            </button>
           </Link>
         </form>
       </div>

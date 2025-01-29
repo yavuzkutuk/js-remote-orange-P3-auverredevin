@@ -103,13 +103,40 @@ footer {
   font-size: 1.75vw;
 }
 
+.btn-inscription {
+  margin-inline-start: 11vw;
+}
+
+.ul_footer {
+  margin-top: -10vw;
+  padding-top: 0;
+}
+
+.logo_footer {
+  margin-top: -5vw;
+  padding-top: 0;
+}
+
+.footer p {
+  margin-top: 2vw;
+}
+
 @media (max-width: 768px) {
   .connecter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 10vw 5vw;
+    gap: 4vw;
   }
 
   h1 {
     font-size: 8vw;
+  }
+
+  .avatar {
+    margin: 0;
   }
 
   .avatar img {
@@ -117,15 +144,37 @@ footer {
     height: 40vw;
   }
 
+  .newsletter {
+    display: flex;
+    align-items: center;
+    font-size: 4vw;
+    gap: 2vw;
+  }
+
   .case {
-    width: 90vw;
-    gap: 6vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70vw;
+    gap: 3vw;
   }
 
   .case input[type="text"],
   .case input[type="email"],
   .case input[type="password"] {
     font-size: 5vw;
-    padding: 6vw;
+    padding: 3vw;
+    width: 100%;
+    border-radius: 1.5vw;
+  }
+
+  button {
+    padding: 3vw 5vw;
+    font-size: 4vw;
+    border-radius: 1vw;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+    left: -4vw;
   }
 }

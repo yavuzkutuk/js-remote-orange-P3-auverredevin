@@ -7,6 +7,12 @@
   min-height: 100vw;
 }
 
+.button-connexion {
+  background-color: #f5e7dd;
+  padding: 0.8em 1rem;
+  text-decoration: none;
+}
+
 h1 {
   font-size: auto;
   margin: 2vw 0;
@@ -51,6 +57,68 @@ h1 {
 .case input::placeholder {
   color: white;
 }
+
+.home button {
+  margin-inline-start: 11vw;
+}
+
+.sign-up button {
+  padding: 0.5vw;
+  border: none;
+  background-color: #8b1818;
+  color: white;
+  border-radius: 1.5vw;
+  font-size: 1vw;
+}
+
+.ul_footer {
+  margin-top: -45vw;
+  padding-top: 0;
+}
+
+.logo_footer {
+  margin-top: -45vw;
+  padding-top: 0;
+}
+
+.footer p {
+  margin-top: 0vw;
+}
+
+@media (max-width: 1024px) {
+  .connecter {
+    padding: 8vw 4vw;
+  }
+
+  h1 {
+    font-size: 6vw;
+  }
+
+  .avatar img {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .case {
+    width: 60vw;
+    gap: 4vw;
+  }
+
+  .case input[type="email"],
+  .case input[type="password"] {
+    font-size: 4vw;
+    padding: 5vw;
+  }
+
+  .sign-up button {
+    font-size: 1.2vw;
+  }
+
+  .home button {
+    margin-inline-start: 5vw;
+  }
+}
+
 @media (max-width: 768px) {
   .connecter {
     padding: 10vw 5vw;
@@ -74,5 +142,27 @@ h1 {
   .case input[type="password"] {
     font-size: 5vw;
     padding: 6vw;
+  }
+
+  .button-connexion {
+    padding: 0.5em 1rem;
+    text-decoration: none;
+  }
+
+  .home button {
+    margin-inline-start: 28vw;
+    padding: 0.8em 2rem;
+    font-size: 4vw;
+    border-radius: 1vw;
+  }
+
+  .sign-up button {
+    font-size: 4vw;
+    margin: 4vw;
+    border-radius: 1vw;
+  }
+
+  .ul_footer {
+    margin-top: 5vw;
   }
 }
