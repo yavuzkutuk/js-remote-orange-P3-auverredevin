@@ -14,7 +14,7 @@ class questionRepository {
     // Execute the SQL INSERT query to add a new item to the "item" table
     const [result] = await databaseClient.query<Result>(
       "insert into item (title, user_id) values (?, ?)",
-      [questions.question_id, questions.question_id],
+      [item.question_text, item.question_text],
     );
 
     // Return the ID of the newly inserted item

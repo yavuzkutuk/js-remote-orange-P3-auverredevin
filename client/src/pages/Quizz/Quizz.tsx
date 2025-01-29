@@ -1,4 +1,5 @@
 import "./Quizz.css";
+import { useEffect } from "react";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 
@@ -8,11 +9,21 @@ interface Quizz {
 }
 
 function Quizz() {
+  useEffect(() => {
+    fetch("http://localhost:3310/api/wines")
+      .then((response) => response.json())
+      .then((data) => {
+        data;
+      })
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
     <div className="Quizz">
       <NavBar />
       <h1>Quizz</h1>
-      <p>Laissez vous guider</p>
+      <h2>Laissez Vous guider</h2>
+
       <div className="card-container">
         <div className="card">
           <h3>Question 1</h3>
