@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .burger-menu {
   position: absolute;
   top: 1rem;
@@ -90,7 +95,7 @@ img {
   align-items: center;
   padding: 1rem 2rem;
   background-color: rgba(170, 137, 146, 0.795);
-  width: 100vw;
+  width: 100%;
   margin-top: -2%;
 }
 
@@ -114,7 +119,6 @@ li {
   text-decoration: none;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
   .burger-button {
     font-size: 2rem;

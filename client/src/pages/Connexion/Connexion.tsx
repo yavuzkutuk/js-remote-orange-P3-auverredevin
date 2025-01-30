@@ -10,6 +10,7 @@ function Connexion() {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
