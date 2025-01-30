@@ -1,19 +1,61 @@
+import { Box, Button, Container, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import "./NotFound.css";
+import Footer from "../../components/Footer/Footer";
+import NavBar from "../../components/NavBar/NavBar";
 
 const NotFound = () => {
   return (
-    <div className="not-found-page">
-      <div className="not-found-container">
-        <h1 className="not-found-title">404</h1>
-        <p className="not-found-message">
-          Oups, la page que vous cherchez n'existe pas !
-        </p>
-        <Link to="/" className="back-home-button">
-          Retour à l'accueil
-        </Link>
-      </div>
-    </div>
+    <>
+      <NavBar />
+      <Container
+        className="not-found-page"
+        maxWidth="sm"
+        sx={{
+          marginTop: "3",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {/* Logo centré */}
+        <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
+          <img
+            src="../src/assets/images/404.png"
+            alt="Bienvenue"
+            style={{ maxWidth: "400px", height: "auto" }}
+          />
+        </Box>
+        <div className="not-found-container">
+          <Typography
+            variant="body1"
+            className="not-found-message"
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            Oups, ce cru n'est pas disponible ici !
+          </Typography>
+          <Button
+            variant="contained"
+            sx={{
+              backgroundColor: "#9f0c00",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            component={Link}
+            to="/"
+            className="back-home-button"
+          >
+            Retour à l'accueil
+          </Button>
+        </div>
+      </Container>
+      <Footer />
+    </>
   );
 };
 
