@@ -7,7 +7,7 @@ CREATE TABLE user (
     user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(50),
     lastname VARCHAR(50),
-    login VARCHAR(50) UNIQUE NOT NULL,
+    login VARCHAR(50) DEFAULT NULL,
     date_of_birth DATE DEFAULT NULL,
     email VARCHAR(50) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
