@@ -9,6 +9,7 @@ const router = express.Router();
 // Define item-related routes
 import tastingActions from "./modules/degustation/tastingActions";
 import itemActions from "./modules/item/itemActions";
+import quizzActions from "./modules/quizz/quizzActions";
 import userActions from "./modules/users/usersActions";
 import wineActions from "./modules/vin/wineActions";
 
@@ -32,11 +33,15 @@ router.post("/api/users", userActions.add);
 router.put("/api/users/:id", userActions.edit);
 router.delete("/api/users/:id", userActions.destroy);
 
-import SignIn from "./modules/auth/auth";
 
+import SignIn from "./modules/auth/auth";
 router.post("/api/auth/signin", SignIn.SignIn);
 router.post("/api/auth/signup", SignIn.SignUp);
 router.get("/api/auth/check", SignIn.Check);
+
+router.get("/api/question", quizzActions.browse);
+router.get("/api/question/:id", quizzActions.read);
+router.post("/api/question", quizzActions.add);
 
 /* ************************************************************************* */
 
