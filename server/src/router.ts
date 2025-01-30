@@ -33,7 +33,6 @@ router.post("/api/users", userActions.add);
 router.put("/api/users/:id", userActions.edit);
 router.delete("/api/users/:id", userActions.destroy);
 
-
 import SignIn from "./modules/auth/auth";
 router.post("/api/auth/signin", SignIn.SignIn);
 router.post("/api/auth/signup", SignIn.SignUp);

@@ -37,7 +37,7 @@ function Inscription() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post("/api/users", formData);
+      await axios.post("http://localhost:3310/api/users", formData);
       navigate("/connexion");
     } catch (error) {
       console.error("Error during registration:", error);
