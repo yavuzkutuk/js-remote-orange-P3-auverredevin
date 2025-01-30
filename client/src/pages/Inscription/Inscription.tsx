@@ -56,8 +56,12 @@ function Inscription() {
           borderRadius={2}
         >
           <Typography variant="h4">INSCRIPTION</Typography>
-          <Box mt={2}>
-            <img src="../src/assets/images/avvatar.png" alt="avatar" />
+          <Box mt={2} sx={{ display: "flex", justifyContent: "center" }}>
+            <img
+              src="../src/assets/images/avvatar.png"
+              alt="avatar"
+              style={{ width: "100%", height: "auto" }}
+            />
           </Box>
           <form onSubmit={handleSubmit}>
             <TextField
