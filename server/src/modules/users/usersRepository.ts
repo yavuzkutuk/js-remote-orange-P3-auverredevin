@@ -6,26 +6,33 @@ interface User {
   firstname: string;
   lastname: string;
   login: string;
-  password: string;
+  date_of_birth: string | null;
   email: string;
+  password: string;
+  phone: string | null;
+  address: string | null;
   creation_date: string;
   modification_date: string;
   isAdmin: boolean;
+  admin_id: number | null;
   role_id: number;
-  admin_id: number;
+  last_update: string;
   token: string;
 }
 
 class UsersRepository {
-  async create(user: Omit<User, "user_id">) {
+  async create(user: Omit<User, "user_id" | "last_update">) {
     const [result] = await databaseClient.query<Result>(
-      "INSERT INTO user (firstname, lastname, login, password, email, creation_date, modification_date, isAdmin, role_id, admin_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+      "INSERT INTO user (firstname, lastname, login, date_of_birth, email, password, phone, address, creation_date, modification_date, isAdmin, role_id, admin_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
       [
         user.firstname,
         user.lastname,
         user.login,
-        user.password,
+        user.date_of_birth,
         user.email,
+        user.password,
+        user.phone,
+        user.address,
         user.creation_date,
         user.modification_date,
         user.isAdmin,
@@ -62,13 +69,16 @@ class UsersRepository {
 
   async update(user: User) {
     const [result] = await databaseClient.query<Result>(
-      "UPDATE user SET firstname = ?, lastname = ?, login = ?, password = ?, email = ?, creation_date = ?, modification_date = ?, isAdmin = ?, role_id = ?, admin_id = ? WHERE user_id = ?",
+      "UPDATE user SET firstname = ?, lastname = ?, login = ?, date_of_birth = ?, email = ?, password = ?, phone = ?, address = ?, creation_date = ?, modification_date = ?, isAdmin = ?, role_id = ?, admin_id = ? WHERE user_id = ?",
       [
         user.firstname,
         user.lastname,
         user.login,
-        user.password,
+        user.date_of_birth,
         user.email,
+        user.password,
+        user.phone,
+        user.address,
         user.creation_date,
         user.modification_date,
         user.isAdmin,

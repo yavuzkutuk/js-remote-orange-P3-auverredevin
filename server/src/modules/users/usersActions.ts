@@ -20,6 +20,7 @@ interface User {
   token: string;
 }
 
+// The B of BREAD - Browse (Read All) operation
 const browse: RequestHandler = async (req, res, next) => {
   try {
     const users = await userRepository.readAll();
@@ -29,6 +30,7 @@ const browse: RequestHandler = async (req, res, next) => {
   }
 };
 
+// The R of BREAD - Read operation
 const read: RequestHandler = async (req, res, next) => {
   try {
     const userId = Number(req.params.id);
@@ -44,6 +46,7 @@ const read: RequestHandler = async (req, res, next) => {
   }
 };
 
+// The A of BREAD - Add (Create) operation
 const add: RequestHandler = async (req, res, next) => {
   try {
     const newUser = {
@@ -70,6 +73,7 @@ const add: RequestHandler = async (req, res, next) => {
   }
 };
 
+// The E of BREAD - Edit operation
 const edit: RequestHandler = async (req, res, next) => {
   try {
     const user = {
@@ -88,6 +92,7 @@ const edit: RequestHandler = async (req, res, next) => {
       role_id: req.body.role_id,
       admin_id: req.body.admin_id,
       token: req.body.token,
+      last_update: new Date().toISOString(),
     };
 
     const affectedRows = await userRepository.update(user);
@@ -101,6 +106,7 @@ const edit: RequestHandler = async (req, res, next) => {
   }
 };
 
+// The D of BREAD - Destroy operation
 const destroy: RequestHandler = async (req, res, next) => {
   try {
     const userId = Number(req.params.id);
