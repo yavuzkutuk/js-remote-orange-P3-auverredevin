@@ -80,7 +80,7 @@ body {
   width: 100%;
 }
 
-img {
+.logo_navbar img {
   max-width: 12rem;
   height: auto;
 }
