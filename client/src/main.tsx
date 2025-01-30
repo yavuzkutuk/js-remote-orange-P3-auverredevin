@@ -21,6 +21,7 @@ import ListWine from "./pages/ListeVin/ListeVin";
 import NotFound from "./pages/NotFound/NotFound";
 import Profil from "./pages/Profil/Profil";
 import Quizz from "./pages/Quizz/Quizz";
+import Welcome from "./pages/Welcome/Welcome";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -94,6 +95,10 @@ const router = createBrowserRouter([
   {
     path: "/fnscription", // Page d'inscription
     element: <Inscription />,
+  },
+  {
+    path: "/welcome", // Page de bienvenue
+    element: <Welcome />,
   },
   {
     path: "/connexion", // Page d'inscription
