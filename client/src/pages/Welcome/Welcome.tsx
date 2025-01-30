@@ -16,7 +16,7 @@ function Welcome({ username }: WelcomeProps) {
         <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
           <img
             src="../src/assets/images/Bienvenue.png"
-            alt="Bienvenue cher"
+            alt="Bienvenue"
             style={{ maxWidth: "200px", height: "auto" }}
           />
         </Box>
