@@ -13,8 +13,6 @@ interface User {
   address: string | null;
   creation_date: string;
   modification_date: string;
-  isAdmin: boolean;
-  admin_id: number | null;
   role_id: number;
   last_update: string;
   token: string;
@@ -23,7 +21,7 @@ interface User {
 class UsersRepository {
   async create(user: Omit<User, "user_id" | "last_update">) {
     const [result] = await databaseClient.query<Result>(
-      "INSERT INTO user (firstname, lastname, login, date_of_birth, email, password, phone, address, creation_date, modification_date, isAdmin, role_id, admin_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+      "INSERT INTO user (firstname, lastname, login, date_of_birth, email, password, phone, address, creation_date, modification_date, role_id) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
       [
         user.firstname,
         user.lastname,
@@ -35,9 +33,7 @@ class UsersRepository {
         user.address,
         user.creation_date,
         user.modification_date,
-        user.isAdmin,
         user.role_id,
-        user.admin_id,
       ],
     );
 
@@ -81,9 +77,7 @@ class UsersRepository {
         user.address,
         user.creation_date,
         user.modification_date,
-        user.isAdmin,
         user.role_id,
-        user.admin_id,
         user.user_id,
       ],
     );

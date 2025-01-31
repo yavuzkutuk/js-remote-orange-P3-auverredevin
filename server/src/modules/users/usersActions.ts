@@ -13,9 +13,7 @@ interface User {
   address: string;
   creation_date: string;
   modification_date: string;
-  isAdmin: boolean;
   role_id: number;
-  admin_id: number;
   last_update: string;
   token: string;
 }
@@ -58,11 +56,12 @@ const add: RequestHandler = async (req, res, next) => {
       date_of_birth: req.body.date_of_birth,
       phone: req.body.phone,
       address: req.body.address,
-      creation_date: new Date().toISOString(),
-      modification_date: new Date().toISOString(),
-      isAdmin: req.body.isAdmin,
+      creation_date: new Date().toISOString().slice(0, 19).replace("T", " "), // Format: YYYY-MM-DD HH:MM:SS
+      modification_date: new Date()
+        .toISOString()
+        .slice(0, 19)
+        .replace("T", " "),
       role_id: req.body.role_id,
-      admin_id: req.body.admin_id,
       token: req.body.token,
     };
 
@@ -88,9 +87,7 @@ const edit: RequestHandler = async (req, res, next) => {
       address: req.body.address,
       creation_date: req.body.creation_date,
       modification_date: new Date().toISOString(),
-      isAdmin: req.body.isAdmin,
       role_id: req.body.role_id,
-      admin_id: req.body.admin_id,
       token: req.body.token,
       last_update: new Date().toISOString(),
     };
