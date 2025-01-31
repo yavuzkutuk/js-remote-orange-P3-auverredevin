@@ -41,7 +41,10 @@ function Welcome({ username }: WelcomeProps) {
         >
           <Button
             variant="contained"
-            sx={{ backgroundColor: "#9f0c00" }}
+            sx={{
+              backgroundColor: "#9f0c00",
+              ":hover": { backgroundColor: "#dd1e0d" },
+            }}
             component={Link}
             to="/vins"
           >
@@ -52,7 +55,11 @@ function Welcome({ username }: WelcomeProps) {
           </Typography>
           <Button
             variant="outlined"
-            sx={{ color: "whitesmoke", backgroundColor: "#9f0c00" }}
+            sx={{
+              color: "whitesmoke",
+              backgroundColor: "#9f0c00",
+              ":hover": { backgroundColor: "#dd1e0d" },
+            }}
             component={Link}
             to="/quizz"
           >

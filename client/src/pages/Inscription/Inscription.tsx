@@ -138,16 +138,18 @@ function Inscription() {
               }
               label="Acceptez-vous de recevoir nos offres personnalisées par email"
             />
-            <Link to="/welcome">
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                fullWidth
-              >
-                S'inscrire
-              </Button>
-            </Link>
+            <Button
+              sx={{
+                backgroundColor: "#9f0c00",
+                ":hover": { backgroundColor: "#dd1e0d" },
+              }}
+              type="submit"
+              variant="contained"
+              color="primary"
+              fullWidth
+            >
+              S'inscrire
+            </Button>
           </form>
           <Box mt={2}>
             <Link to="/connexion">Déjà inscrit ? Connectez-vous</Link>

@@ -72,17 +72,37 @@ function Connexion() {
               required
             />
             <Button
+              sx={{ color: "#9f0c00", ":hover": { color: "#dd1e0d" } }}
               type="button"
               onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? "Cacher" : "Afficher"} le mot de passe
             </Button>
-            <Button type="submit" variant="contained" color="primary" fullWidth>
+            <Button
+              sx={{
+                color: "whitesmoke",
+                backgroundColor: "#9f0c00",
+                ":hover": { backgroundColor: "#dd1e0d" },
+              }}
+              type="submit"
+              variant="contained"
+              color="primary"
+              fullWidth
+            >
               Connexion
             </Button>
           </form>
-          <Box mt={2}>
-            <Button onClick={() => navigate("/inscription")}>
+          <Box
+            mt={2}
+            sx={{
+              backgroundColor: "#9f0c00",
+              ":hover": { backgroundColor: "#dd1e0d" },
+            }}
+          >
+            <Button
+              sx={{ color: "whitesmoke" }}
+              onClick={() => navigate("/inscription")}
+            >
               Pas encore inscrit ? S'inscrire
             </Button>
           </Box>
