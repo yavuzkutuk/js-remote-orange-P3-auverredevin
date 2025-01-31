@@ -54,7 +54,7 @@ const Check: RequestHandler = async (req, res, next) => {
     res.status(500).send({ error: "APP_SECRET is not defined" });
     return;
   }
-  jwt.verify(token, appSecret, (error, decoded) => {
+  jwt.verify(token, appSecret, (error: jwt.VerifyErrors | null) => {
     if (error) {
       res.status(401).send({ check: false });
       return;

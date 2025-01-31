@@ -134,9 +134,16 @@ function Inscription() {
               }
               label="Acceptez-vous de recevoir nos offres personnalisées par email"
             />
-            <Button type="submit" variant="contained" color="primary" fullWidth>
-              S'inscrire
-            </Button>
+            <Link to="/welcome">
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                fullWidth
+              >
+                S'inscrire
+              </Button>
+            </Link>
           </form>
           <Box mt={2}>
             <Link to="/connexion">Déjà inscrit ? Connectez-vous</Link>

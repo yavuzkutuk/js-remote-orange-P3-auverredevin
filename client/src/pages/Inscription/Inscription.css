@@ -121,6 +121,11 @@ footer {
   margin-top: 2vw;
 }
 
+.MuiBox-root {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 768px) {
   .connecter {
     display: flex;
