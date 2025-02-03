@@ -45,10 +45,11 @@ const NotFound = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              ":hover": { backgroundColor: "#dd1e0d" },
             }}
+            className="back-home-button"
             component={Link}
             to="/"
-            className="back-home-button"
           >
             Retour à l'accueil
           </Button>

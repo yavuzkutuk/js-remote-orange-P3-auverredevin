@@ -5,6 +5,7 @@
   text-align: center;
   padding: 20px;
   margin: 0 auto;
+  font-family: "Roboto", sans-serif;
 }
 
 .AboutBoxP {
@@ -13,11 +14,7 @@
   background-color: #d9d9d9; /* Couleur de fond */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
   padding: 20px; /* Espacement intérieur pour le texte */
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
 }
 
 .Abouttext {

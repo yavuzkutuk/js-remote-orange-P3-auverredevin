@@ -24,6 +24,7 @@ function Inscription() {
     address: "",
     newsletter: false,
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,13 +35,31 @@ function Inscription() {
     });
   };
 
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!formData.firstname) newErrors.firstname = "Le prénom est requis";
+    if (!formData.lastname) newErrors.lastname = "Le nom est requis";
+    if (!formData.date_of_birth)
+      newErrors.date_of_birth = "La date de naissance est requise";
+    if (!formData.email) newErrors.email = "L'email est requis";
+    if (!formData.password) newErrors.password = "Le mot de passe est requis";
+
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!validateForm()) return;
+
     try {
       await axios.post("http://localhost:3310/api/users", formData);
-      navigate("/connexion");
+      navigate("/welcome");
     } catch (error) {
-      console.error("Error during registration:", error);
+      console.error("Erreur lors de l'inscription:", error);
     }
   };
 
@@ -72,6 +91,8 @@ function Inscription() {
               value={formData.firstname}
               onChange={handleChange}
               required
+              error={!!errors.firstname}
+              helperText={errors.firstname}
             />
             <TextField
               fullWidth
@@ -81,6 +102,8 @@ function Inscription() {
               value={formData.lastname}
               onChange={handleChange}
               required
+              error={!!errors.lastname}
+              helperText={errors.lastname}
             />
             <TextField
               fullWidth
@@ -91,6 +114,9 @@ function Inscription() {
               InputLabelProps={{ shrink: true }}
               value={formData.date_of_birth}
               onChange={handleChange}
+              required
+              error={!!errors.date_of_birth}
+              helperText={errors.date_of_birth}
             />
             <TextField
               fullWidth
@@ -101,6 +127,8 @@ function Inscription() {
               value={formData.email}
               onChange={handleChange}
               required
+              error={!!errors.email}
+              helperText={errors.email}
             />
             <TextField
               fullWidth
@@ -111,6 +139,8 @@ function Inscription() {
               value={formData.password}
               onChange={handleChange}
               required
+              error={!!errors.password}
+              helperText={errors.password}
             />
             <TextField
               fullWidth
@@ -138,16 +168,18 @@ function Inscription() {
               }
               label="Acceptez-vous de recevoir nos offres personnalisées par email"
             />
-            <Link to="/welcome">
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                fullWidth
-              >
-                S'inscrire
-              </Button>
-            </Link>
+            <Button
+              sx={{
+                backgroundColor: "#9f0c00",
+                ":hover": { backgroundColor: "#dd1e0d" },
+              }}
+              type="submit"
+              variant="contained"
+              color="primary"
+              fullWidth
+            >
+              S'inscrire
+            </Button>
           </form>
           <Box mt={2}>
             <Link to="/connexion">Déjà inscrit ? Connectez-vous</Link>
