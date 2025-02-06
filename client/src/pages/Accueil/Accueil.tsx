@@ -63,7 +63,7 @@ function Accueil() {
         </Link>
       </section>
 
-      <section>
+      <section className="aventure">
         <h1>
           <strong>PRÊT A PARTIR À L’AVENTURE ?</strong>
         </h1>

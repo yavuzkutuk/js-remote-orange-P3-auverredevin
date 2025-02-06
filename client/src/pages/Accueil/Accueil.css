@@ -93,7 +93,7 @@ a {
   margin-bottom: 2vh;
 }
 
-section {
+.aventure {
   display: flex;
   flex-direction: column;
   justify-content: center;

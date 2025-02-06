@@ -1,5 +1,4 @@
 import "./Footer.css";
-import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -13,13 +12,10 @@ function Footer() {
             <a href="/evenements">ÉVENEMENTS</a>
           </li>
           <li>
-            <a href="/mesreservations">MES RESERVATIONS</a>
-          </li>
-          <li>
             <a href="/quizz">QUIZZ</a>
           </li>
           <li>
-            <Link to="/Connexion">SE CONNECTER</Link>
+            <a href="/aboutus">À PROPOS DE NOUS</a>
           </li>
         </ul>
       </nav>
@@ -33,7 +29,11 @@ function Footer() {
 
       <footer className="footer">
         <p>
-          © 2024 Au Verre De Vin. L'abus d'alcool est dangereux pour la santé
+          © 2024 Au Verre De Vin. L'abus d'alcool est dangereux pour la santé.{" "}
+          <br />{" "}
+          <a href="/legalmentions" style={{ color: "#9f0c00" }}>
+            Mentions légales.
+          </a>
         </p>
       </footer>
     </div>
