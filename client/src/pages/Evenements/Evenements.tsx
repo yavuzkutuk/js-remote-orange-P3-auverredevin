@@ -84,13 +84,32 @@ function Degustation() {
           alignItems="center"
           sx={{ marginBottom: 2 }}
         >
-          <FormControl className="form-control">
-            <InputLabel>Ville</InputLabel>
+          <FormControl sx={{ minWidth: 200 }}>
+            <InputLabel
+              sx={{
+                color: "#9f0c00",
+                "&.Mui-focused": {
+                  color: "#9f0c00 !important",
+                },
+              }}
+            >
+              Ville
+            </InputLabel>
             <Select
               value={selectedCity}
               onChange={(e) => setSelectedCity(e.target.value)}
               label="Ville"
-              sx={{ minWidth: 200 }}
+              sx={{
+                minWidth: 200,
+                color: "#9f0c00",
+                "& .MuiOutlinedInput-notchedOutline, &:hover .MuiOutlinedInput-notchedOutline, & .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline, & .MuiOutlinedInput-root fieldset, &:hover fieldset, &.Mui-focused fieldset":
+                  {
+                    borderColor: "#9f0c00 !important",
+                  },
+                "& .MuiSvgIcon-root": {
+                  color: "#9f0c00",
+                },
+              }}
             >
               <MenuItem value="">Toutes les villes</MenuItem>
               {cities.map((city) => (
