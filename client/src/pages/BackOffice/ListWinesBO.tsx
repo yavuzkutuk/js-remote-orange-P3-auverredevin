@@ -453,7 +453,11 @@ function ListWinesBO() {
           <Button
             variant="contained"
             color="primary"
-            sx={{ backgroundColor: "#9f0c00", "&:hover": { backgroundColor: "#dd1e0d" } }}
+            sx={{
+              backgroundColor: "#9f0c00",
+              "&:hover": { backgroundColor: "#dd1e0d" },
+              mt: 2,
+            }}
           >
             Index BackOffice
           </Button>
