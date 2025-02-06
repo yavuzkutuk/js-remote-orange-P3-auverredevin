@@ -2,8 +2,8 @@ import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
 
 interface AuthContextType {
-  handleLogin: (login: string, password: string) => Promise<void>;
-  handleRegister: (login: string, password: string) => Promise<void>;
+  handleLogin: (email: string, password: string) => Promise<void>;
+  handleRegister: (email: string, password: string) => Promise<void>;
   handleLogout: () => Promise<void>;
   isAuth: boolean;
   message: string | null;
@@ -19,13 +19,13 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
 
-  const handleRegister = async (login: string, password: string) => {
-    if (login === null || password === null) {
+  const handleRegister = async (email: string, password: string) => {
+    if (email === null || password === null) {
       setMessage("Veuillez saisir les datas");
       return;
     }
 
-    const values = { login: login, password: password };
+    const values = { email: email, password: password };
 
     const response = await axios.post<{ message: string; user?: string }>(
       "http://localhost:3310/api/auth/signin",
@@ -53,13 +53,13 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     message: string;
   }
 
-  const handleLogin = async (login: string, password: string) => {
-    if (login === null || password === null) {
+  const handleLogin = async (email: string, password: string) => {
+    if (email === null || password === null) {
       //setMessage('Veuillez saisir les datas');
       return;
     }
 
-    const values = { login: login, password: password };
+    const values = { email: email, password: password };
     const { data } = await axios.post<LoginResponse>(
       "http://localhost:3310/api/auth/signin",
       {

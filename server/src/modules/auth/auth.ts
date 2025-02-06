@@ -4,19 +4,19 @@ import jwt from "jsonwebtoken";
 import usersRepository from "../users/usersRepository";
 
 const SignIn: RequestHandler = async (req, res, next) => {
-  const { login } = req.body.values;
+  const { email } = req.body.values;
   const { password } = req.body.values;
 
   try {
     // Fetch all items
     const user: { token?: string } = await usersRepository.checkuser(
-      login,
+      email,
       password,
     );
     if (!process.env.APP_SECRET) {
       throw new Error("APP_SECRET is not defined");
     }
-    const token = jwt.sign({ login: login }, process.env.APP_SECRET, {
+    const token = jwt.sign({ email: email }, process.env.APP_SECRET, {
       expiresIn: "2 days",
     });
     user.token = token;

@@ -32,9 +32,9 @@ const checkUser = async (
   res: import("express").Response,
   next: import("express").NextFunction,
 ) => {
-  const { login, password } = req.body.values;
+  const { email, password } = req.body.values;
   const [rows, fields] = await db.query(
-    `SELECT * FROM users WHERE login='${login}'`,
+    `SELECT * FROM users WHERE email='${email}'`,
   );
 
   if (rows.length === 0) {

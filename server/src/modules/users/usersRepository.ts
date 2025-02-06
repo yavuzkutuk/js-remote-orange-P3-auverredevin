@@ -57,10 +57,10 @@ class UsersRepository {
 
   // The Rs of CRUD - Read operations
 
-  async checkuser(login: string, password: string) {
+  async checkuser(email: string, password: string) {
     const [rows] = await databaseClient.query<Rows>(
-      "SELECT * FROM user WHERE login = ? AND password = ?",
-      [login, password],
+      "SELECT * FROM user WHERE email = ? AND password = ?",
+      [email, password],
     );
 
     return rows[0] as User;
