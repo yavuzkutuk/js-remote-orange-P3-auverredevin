@@ -132,6 +132,7 @@ function Degustation() {
                       href={tasting.website_url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      style={{ color: "#9f0c00" }}
                     >
                       Visiter
                     </a>
@@ -147,7 +148,7 @@ function Degustation() {
             count={totalPages}
             page={currentPage}
             onChange={handlePageChange}
-            color="primary"
+            sx={{ "& .MuiPaginationItem-root": { color: "#9f0c00" } }}
             showFirstButton
             showLastButton
           />

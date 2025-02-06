@@ -27,7 +27,7 @@ const LegalMentions = () => {
             Mentions Légales
             <br />
             <img
-              src="../src/assets/images/MentionsLégales.png"
+              src="../src/assets/images/MentionsLegales.png"
               alt="LogoMentionLégales"
             />
           </Typography>
