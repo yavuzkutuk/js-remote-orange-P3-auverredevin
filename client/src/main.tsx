@@ -1,27 +1,32 @@
-// Import necessary modules from React and React Router
+// Necessary modules from React and React Router
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./hook/useAuth";
 /* ************************************************************************* */
 
-// Import the main app component
+// Main app component
 import App from "./App";
 import Footer from "./components/Footer/Footer";
+
+// Front-end pages
 import AboutUs from "./pages/Aboutus/AboutUs";
-import IndexBackOffice from "./pages/BackOffice/IndexBackOffice";
-import ListEventsBO from "./pages/BackOffice/ListEventsBO";
-import ListUsersBO from "./pages/BackOffice/ListUsersBO";
-import ListWinesBO from "./pages/BackOffice/ListWinesBO";
-import SuggestionsBO from "./pages/BackOffice/SuggestionsBO";
 import Connexion from "./pages/Connexion/Connexion";
 import Evenements from "./pages/Evenements/Evenements";
 import Inscription from "./pages/Inscription/Inscription";
+import LegalMentions from "./pages/LegalMentions/legalMention";
 import ListWine from "./pages/ListeVin/ListeVin";
 import NotFound from "./pages/NotFound/NotFound";
 import Profil from "./pages/Profil/Profil";
 import Quizz from "./pages/Quizz/Quizz";
 import Welcome from "./pages/Welcome/Welcome";
+
+// Back-office pages
+import IndexBackOffice from "./pages/BackOffice/IndexBackOffice";
+import ListEventsBO from "./pages/BackOffice/ListEventsBO";
+import ListUsersBO from "./pages/BackOffice/ListUsersBO";
+import ListWinesBO from "./pages/BackOffice/ListWinesBO";
+import SuggestionsBO from "./pages/BackOffice/SuggestionsBO";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -36,61 +41,61 @@ import Welcome from "./pages/Welcome/Welcome";
 
 const router = createBrowserRouter([
   {
-    path: "/", // The root path
-    element: <App />, // Renders the App component for the home page
+    path: "/",
+    element: <App />, // Page d'accueil
   },
   {
-    path: "/aboutus".toLowerCase(),
-    element: <AboutUs />,
+    path: "/aboutus",
+    element: <AboutUs />, // Page à propos
   },
   {
-    path: "/quizz".toLowerCase(), // The root path
-    element: <Quizz />,
+    path: "/quizz",
+    element: <Quizz />, // Page de quizz
   },
   {
-    path: "/inscription".toLowerCase(),
-    element: <Inscription />,
+    path: "/inscription",
+    element: <Inscription />, // Page d'inscription
   },
   {
-    path: "/profil".toLowerCase(),
-    element: <Profil />,
+    path: "/profil",
+    element: <Profil />, // Page de profil
   },
   {
-    path: "/evenements".toLowerCase(),
-    element: <Evenements />,
+    path: "/evenements",
+    element: <Evenements />, // Page d'événements
   },
   {
-    path: "*".toLowerCase(),
+    path: "*",
 
-    element: <NotFound />,
+    element: <NotFound />, // Page 404
   },
   {
-    path: "/vins".toLowerCase(),
-    element: <ListWine />,
+    path: "/vins",
+    element: <ListWine />, // Liste des vins
   },
   {
-    path: "/backoffice".toLowerCase(),
-    element: <IndexBackOffice />,
+    path: "/backoffice",
+    element: <IndexBackOffice />, // backoffice
   },
   {
-    path: "/suggestionsBO".toLowerCase(),
-    element: <SuggestionsBO />,
+    path: "/suggestionsBO",
+    element: <SuggestionsBO />, // backoffice suggestions
   },
   {
-    path: "/vinsBO".toLowerCase(),
-    element: <ListWinesBO />,
+    path: "/vinsBO",
+    element: <ListWinesBO />, // backoffice vins
   },
   {
-    path: "/evenementsBO".toLowerCase(),
-    element: <ListEventsBO />,
+    path: "/evenementsBO",
+    element: <ListEventsBO />, // backoffice événements
   },
   {
-    path: "/utilisateursBO".toLowerCase(),
-    element: <ListUsersBO />,
+    path: "/utilisateursBO",
+    element: <ListUsersBO />, // backoffice utilisateurs
   },
   {
-    path: "/footer", // The root path
-    element: <Footer />, // Renders the App component for the home page
+    path: "/footer",
+    element: <Footer />, // Page de bienvenue
   },
   {
     path: "/fnscription", // Page d'inscription
@@ -104,6 +109,7 @@ const router = createBrowserRouter([
     path: "/connexion", // Page d'inscription
     element: <Connexion />,
   },
+  { path: "/legalmentions", element: <LegalMentions /> },
 ]);
 
 /* ************************************************************************* */
