@@ -417,7 +417,10 @@ function ListEventsBO() {
           <Button
             variant="contained"
             color="primary"
-            sx={{ backgroundColor: "#9f0c00" }}
+            sx={{
+              backgroundColor: "#9f0c00",
+              "&:hover": { backgroundColor: "#dd1e0d" },
+            }}
           >
             Index BackOffice
           </Button>
