@@ -192,7 +192,6 @@ function ListWinesBO() {
   return (
     <div>
       <NavBar />
-      <Link to="/backoffice">BackOffice</Link>
       <section className="ListWinesBO">
         <h1>Liste des Vins - BackOffice</h1>
 
@@ -449,6 +448,17 @@ function ListWinesBO() {
           padding: "8px 16px",
         }}
       />
+      <Box display="flex" justifyContent="center" sx={{ marginBottom: 2 }}>
+        <Link to="/backoffice">
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{ backgroundColor: "#9f0c00" }}
+          >
+            Index BackOffice
+          </Button>
+        </Link>
+      </Box>
       <Footer />
     </div>
   );

@@ -182,7 +182,6 @@ function ListEventsBO() {
   return (
     <div className="ListEventsBO">
       <NavBar />
-      <Link to="/backoffice">BackOffice</Link>
       <h1>ListEventsBO</h1>
       <Stack
         direction={{ xs: "column", sm: "row" }}
@@ -413,6 +412,17 @@ function ListEventsBO() {
           showLastButton
         />
       </Stack>
+      <Box display="flex" justifyContent="center" sx={{ marginBottom: 2 }}>
+        <Link to="/backoffice">
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{ backgroundColor: "#9f0c00" }}
+          >
+            Index BackOffice
+          </Button>
+        </Link>
+      </Box>
       <Footer />
     </div>
   );
