@@ -25,6 +25,11 @@ const LegalMentions = () => {
         >
           <Typography variant="h4" gutterBottom color="#9f0c00">
             Mentions Légales
+            <br />
+            <img
+              src="../src/assets/images/MentionsLégales.png"
+              alt="LogoMentionLégales"
+            />
           </Typography>
           <Typography variant="body1" component="p">
             <Typography variant="h5" component="p" gutterBottom color="#9f0c00">
