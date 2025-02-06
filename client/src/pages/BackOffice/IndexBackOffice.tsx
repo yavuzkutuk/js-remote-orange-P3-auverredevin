@@ -78,8 +78,8 @@ function IndexBackOffice() {
             </Button>
           </Box>
         </Box>
-        <Footer />
       </Container>
+      <Footer />
     </>
   );
 }
