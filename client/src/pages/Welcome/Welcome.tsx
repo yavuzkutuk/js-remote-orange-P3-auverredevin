@@ -9,66 +9,68 @@ interface WelcomeProps {
 
 function Welcome({ username }: WelcomeProps) {
   return (
-    <Container maxWidth="md" sx={{ textAlign: "center", mt: 4 }}>
+    <>
       <NavBar />
-      <Box sx={{ bgcolor: "whitesmoke", p: 3, borderRadius: 2, mt: 5 }}>
-        {/* Logo centré */}
-        <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
-          <img
-            src="../src/assets/images/Bienvenue.png"
-            alt="Bienvenue"
-            style={{ maxWidth: "200px", height: "auto" }}
-          />
-        </Box>
+      <Container maxWidth="md" sx={{ textAlign: "center", mt: 4 }}>
+        <Box sx={{ bgcolor: "whitesmoke", p: 3, borderRadius: 2, mt: 5 }}>
+          {/* Logo centré */}
+          <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
+            <img
+              src="../src/assets/images/Bienvenue.png"
+              alt="Bienvenue"
+              style={{ maxWidth: "200px", height: "auto" }}
+            />
+          </Box>
 
-        {/* Titre */}
-        <Typography
-          variant="h4"
-          component="h1"
-          sx={{ mb: 2, fontWeight: "bold" }}
-        >
-          Bienvenue {username ? username : "cher amateur de vin"} 🍷
-        </Typography>
-
-        {/* Boutons et texte */}
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: 2,
-          }}
-        >
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#9f0c00",
-              ":hover": { backgroundColor: "#dd1e0d" },
-            }}
-            component={Link}
-            to="/vins"
+          {/* Titre */}
+          <Typography
+            variant="h4"
+            component="h1"
+            sx={{ mb: 2, fontWeight: "bold" }}
           >
-            Voir nos vins
-          </Button>
-          <Typography variant="body1" sx={{ fontWeight: "medium" }}>
-            ou
+            Bienvenue {username ? username : "cher amateur de vin"} 🍷
           </Typography>
-          <Button
-            variant="outlined"
+
+          {/* Boutons et texte */}
+          <Box
             sx={{
-              color: "whitesmoke",
-              backgroundColor: "#9f0c00",
-              ":hover": { backgroundColor: "#dd1e0d" },
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 2,
             }}
-            component={Link}
-            to="/quizz"
           >
-            Faites un quizz pour découvrir vos goûts en matière de vin
-          </Button>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#9f0c00",
+                ":hover": { backgroundColor: "#dd1e0d" },
+              }}
+              component={Link}
+              to="/vins"
+            >
+              Voir nos vins
+            </Button>
+            <Typography variant="body1" sx={{ fontWeight: "medium" }}>
+              ou
+            </Typography>
+            <Button
+              variant="outlined"
+              sx={{
+                color: "whitesmoke",
+                backgroundColor: "#9f0c00",
+                ":hover": { backgroundColor: "#dd1e0d" },
+              }}
+              component={Link}
+              to="/quizz"
+            >
+              Faites un quizz pour découvrir vos goûts en matière de vin
+            </Button>
+          </Box>
         </Box>
-      </Box>
-      <Footer />
-    </Container>
+        <Footer />
+      </Container>
+    </>
   );
 }
 

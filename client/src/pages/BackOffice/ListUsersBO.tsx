@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Paper,
   Table,
@@ -90,7 +91,6 @@ function ListUsersBO() {
   return (
     <div>
       <NavBar />
-      <Link to="/backoffice">BackOffice</Link>
       <Typography
         variant="h4"
         gutterBottom
@@ -163,6 +163,20 @@ function ListUsersBO() {
           onRowsPerPageChange={handleRowsPerPageChange}
         />
       </Paper>
+      <Box display="flex" justifyContent="center" sx={{ marginBottom: 2 }}>
+        <Link to="/backoffice">
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{
+              backgroundColor: "#9f0c00",
+              "&:hover": { backgroundColor: "#dd1e0d" },
+            }}
+          >
+            Index BackOffice
+          </Button>
+        </Link>
+      </Box>
       <Footer />
     </div>
   );
