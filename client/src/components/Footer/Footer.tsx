@@ -13,13 +13,13 @@ function Footer() {
             <a href="/evenements">ÉVENEMENTS</a>
           </li>
           <li>
-            <a href="/mesreservations">MES RESERVATIONS</a>
-          </li>
-          <li>
             <a href="/quizz">QUIZZ</a>
           </li>
           <li>
             <Link to="/Connexion">SE CONNECTER</Link>
+          </li>
+          <li>
+            <a href="/legalmentions">MENTIONS LÉGALES</a>
           </li>
         </ul>
       </nav>

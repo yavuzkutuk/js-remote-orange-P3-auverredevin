@@ -1,3 +1,11 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3vh;
+}
+
 .cards-wine {
   margin: 10px;
   padding: 10px;
