@@ -19,7 +19,7 @@ function Connexion() {
     e.preventDefault();
     try {
       const response = await axios.post<{ token: string }>(
-        "http://localhost:3310/api/auth/signin",
+        "/api/auth/signin",
         formData,
       );
       if (response.data.token) {
