@@ -10,7 +10,6 @@ function SuggestionsBO() {
     <div>
       <NavBar />
       <h1>SuggestionsBO</h1>
-      <Footer />
       <Box display="flex" justifyContent="center" sx={{ marginBottom: 2 }}>
         <Link to="/backoffice">
           <Button
@@ -25,6 +24,7 @@ function SuggestionsBO() {
           </Button>
         </Link>
       </Box>
+      <Footer />
     </div>
   );
 }
