@@ -45,6 +45,7 @@ const add: RequestHandler = async (req, res, next) => {
       description: req.body.description,
       creation_date: new Date().toISOString().slice(0, 19).replace("T", " "), // Format: YYYY-MM-DD HH:MM:SS
       modification_date: new Date().toISOString(),
+      user_id: req.body.user_id, // Added user_id property
     };
 
     const insertId = await suggestionRepository.create(newSuggestion);
@@ -65,9 +66,7 @@ const edit: RequestHandler = async (req, res, next) => {
       description: req.body.description,
       creation_date: req.body.creation_date,
       modification_date: new Date().toISOString(),
-      role_id: req.body.role_id,
-      token: req.body.token,
-      last_update: new Date().toISOString(),
+      user_id: req.body.user_id,
     };
 
     const affectedRows = await suggestionRepository.update(suggestion);

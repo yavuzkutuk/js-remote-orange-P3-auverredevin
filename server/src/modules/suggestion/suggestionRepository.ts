@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import databaseClient from "../../../database/client";
 
 import type { ResultSetHeader, RowDataPacket } from "mysql2/promise";
@@ -13,21 +14,33 @@ type Suggestion = {
   description: string;
   creation_date: string;
   modification_date: string;
+  user_id: number;
 };
 
 class SuggestionRepository {
   // The C of CRUD - Create operation
 
   async create(suggestion: Omit<Suggestion, "suggestion_id">) {
+    const formattedCreationDate = format(
+      new Date(suggestion.creation_date),
+      "yyyy-MM-dd HH:mm:ss",
+    );
+    const formattedModificationDate = format(
+      new Date(suggestion.modification_date),
+      "yyyy-MM-dd HH:mm:ss",
+    );
+
     const [result] = await databaseClient.query<Result>(
-      "INSERT INTO suggestion (name, price, origin, description, creation_date, modification_date) VALUES ( ?, ?, ?, ?, ?, ?)",
+      `INSERT INTO suggestion (user_id, name, price, origin, description, creation_date, modification_date) 
+       VALUES (?, ?, ?, ?, ?, ?, ?)`,
       [
+        suggestion.user_id || null, // Allow user_id to be null
         suggestion.name,
         suggestion.price,
         suggestion.origin,
         suggestion.description,
-        suggestion.creation_date,
-        suggestion.modification_date,
+        formattedCreationDate,
+        formattedModificationDate,
       ],
     );
 

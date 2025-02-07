@@ -1,6 +1,7 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
+import axios from "axios";
 import { useState } from "react";
 
 interface SuggestionVinProps {
@@ -32,10 +33,22 @@ export default function SuggestionVin({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await fetch("http://localhost:3310/api/suggestion", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, price, origin, description }),
+      const currentDate = new Date()
+        .toISOString()
+        .slice(0, 19)
+        .replace("T", " ");
+      const userId = 1; // Replace with the actual user ID
+      if (!userId) {
+        throw new Error("User ID is required");
+      }
+      await axios.post("http://localhost:3310/api/suggestion", {
+        user_id: userId,
+        name,
+        price,
+        origin,
+        description,
+        creation_date: currentDate,
+        modification_date: currentDate,
       });
       handleCloseModal(); // ✅ Fermer la modal après soumission
     } catch (error) {
