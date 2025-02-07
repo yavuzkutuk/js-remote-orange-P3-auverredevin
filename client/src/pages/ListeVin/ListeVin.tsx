@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
+import SuggestionVin from "../../components/Suggestion/Suggestion";
 import "./ListeVin.css";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-import Modal from "@mui/material/Modal";
 import Select from "@mui/material/Select";
 
 interface Wine {
@@ -27,7 +26,7 @@ function WinesList() {
   const [selectedOrigin, setSelectedOrigin] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedPrice, setSelectedPrice] = useState("");
-  const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false); // ✅ État pour gérer l'ouverture de la modal
 
   useEffect(() => {
     fetch("http://localhost:3310/api/wines")
@@ -39,8 +38,7 @@ function WinesList() {
       .catch((error) => console.error(error));
   }, []);
 
-  const handleOpenModal = () => void setOpenModal(true);
-  const handleCloseModal = () => void setOpenModal(false);
+  const handleOpenModal = () => setOpenModal(true);
 
   // Déduire les valeurs uniques
   const origins = [...new Set(wines.map((wine) => wine.origin))].sort();
@@ -200,20 +198,7 @@ function WinesList() {
       </div>
 
       {/* Modal */}
-      <Modal open={openModal} onClose={handleCloseModal}>
-        <div className="modal-content">
-          <h2>Ajouter un vin</h2>
-          {/* Formulaire d'ajout */}
-          <form>
-            <input type="text" placeholder="Nom du vin" required />
-            <input type="number" placeholder="Prix (€)" required />
-            <input type="text" placeholder="Origine" required />
-            <textarea placeholder="Description" />
-            <button type="submit">Ajouter</button>
-          </form>
-          <Button onClick={handleCloseModal}>Fermer</Button>
-        </div>
-      </Modal>
+      <SuggestionVin openModal={openModal} setOpenModal={setOpenModal} />
 
       <Footer />
     </>

@@ -32,6 +32,15 @@ CREATE TABLE wine (
     CONSTRAINT price_positive CHECK (price > 0)
 );
 
+CREATE TABLE suggestion (
+    suggestion_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    wine_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES user(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (wine_id) REFERENCES wine(wine_id) ON DELETE CASCADE
+);
+
 CREATE TABLE tasting (
     tasting_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(250) NOT NULL,
