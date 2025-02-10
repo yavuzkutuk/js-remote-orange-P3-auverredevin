@@ -18,6 +18,7 @@ interface Wine {
   origin: string;
   price: number;
   description: string | null;
+  wine_url: string | null;
 }
 
 function WinesList() {
@@ -195,6 +196,16 @@ function WinesList() {
             <p>Catégorie : {wine.category}</p>
             <p>Prix : {wine.price}€</p>
             {wine.description && <p>{wine.description}</p>}
+            <Button
+              sx={{ backgroundColor: "#9f0c00", color: "whitesmoke" }}
+              onClick={() => {
+                if (wine.wine_url) {
+                  window.open(wine.wine_url, "_blank");
+                }
+              }}
+            >
+              Voir le vin
+            </Button>
           </article>
         ))}
       </div>
