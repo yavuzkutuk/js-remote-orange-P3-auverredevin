@@ -3,10 +3,10 @@ import databaseClient from "../../../database/client";
 import type { Result, Rows } from "../../../database/client";
 
 interface Answer {
-    answer_id: number;
-    question_id: string;
-    answer_text: string;
-    score_value: number;
+  answer_id: number;
+  question_id: string;
+  answer_text: string;
+  score_value: number;
 }
 class answersRepository {
   // The C of CRUD - Create operation
@@ -14,7 +14,12 @@ class answersRepository {
   async create(answers: Omit<Answer, "answers_id">) {
     const [result] = await databaseClient.query<Result>(
       "insert into answers (answer_id, question_id, answer_text, score_value) values (?, ?, ?, ?)",
-      [answers.answer_id, answers.question_id, answers.answer_text, answers.score_value],
+      [
+        answers.answer_id,
+        answers.question_id,
+        answers.answer_text,
+        answers.score_value,
+      ],
     );
 
     // Return the ID of the newly inserted answers
