@@ -10,6 +10,7 @@ const router = express.Router();
 import tastingActions from "./modules/degustation/tastingActions";
 import itemActions from "./modules/item/itemActions";
 import quizzActions from "./modules/quizz/quizzActions";
+import suggestionActions from "./modules/suggestion/suggestionActions";
 import userActions from "./modules/users/usersActions";
 import wineActions from "./modules/vin/wineActions";
 
@@ -41,6 +42,12 @@ router.get("/api/auth/check", SignIn.Check);
 router.get("/api/question", quizzActions.browse);
 router.get("/api/question/:id", quizzActions.read);
 router.post("/api/question", quizzActions.add);
+
+router.get("/api/suggestion", suggestionActions.browse);
+router.get("/api/suggestion/:id", suggestionActions.read);
+router.post("/api/suggestion", suggestionActions.add);
+router.put("/api/suggestion/:id", suggestionActions.edit);
+router.delete("/api/suggestion/:id", suggestionActions.destroy);
 
 /* ************************************************************************* */
 
