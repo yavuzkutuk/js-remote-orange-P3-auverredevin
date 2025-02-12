@@ -35,9 +35,9 @@ function Connexion() {
   const [type, setType] = useState("password");
   const [firstname, setFirstname] = useState([] as UserProps[]);
 
-  console.log("user", user);
-  console.log("login", login);
-  console.log("password", password);
+  // console.log("user", user);
+  // console.log("login", login);
+  // console.log("password", password);
   return (
     <>
       <NavBar />
@@ -45,10 +45,10 @@ function Connexion() {
       <Container
         id="signInModule"
         maxWidth="sm"
-        style={{ display: "flex", flexDirection: "column" }}
+        sx={{ display: "flex", flexDirection: "column", backgroundColor: "#f5f5f5", mt: 5  }}
       >
-        <Typography variant="h4" component="h1" gutterBottom>
-          Login
+        <Typography variant="h4" component="h1" gutterBottom color= "black" sx={{ mt: 2, textAlign: "center" }}>
+          Se connecter
         </Typography>
         {message && <div style={{ color: "red" }}>{message}</div>}
         <form
@@ -112,7 +112,7 @@ function Connexion() {
           type="submit"
           sx={{ mt: 2, backgroundColor: "#9f0c00" }}
           component={Link}
-          to="/signUp"
+          to="/inscription"
         >
           Je crée mon compte
         </Button>
