@@ -1,15 +1,14 @@
 import { Box, Button, Container, TextField, Typography } from "@mui/material";
+import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
-import { useAuth } from "../../hook/useAuth";
 
 function Connexion() {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-  const { handleLogin, message } = useAuth();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -18,8 +17,18 @@ function Connexion() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await handleLogin(formData.email, formData.password);
-    navigate("/");
+    try {
+      const response = await axios.post<{ token: string }>(
+        "/api/auth/signin",
+        formData,
+      );
+      if (response.data.token) {
+        localStorage.setItem("token", response.data.token);
+        navigate("/");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
   };
 
   return (
@@ -69,11 +78,6 @@ function Connexion() {
             >
               {showPassword ? "Cacher" : "Afficher"} le mot de passe
             </Button>
-            {message && (
-              <Typography color="error" mt={2}>
-                {message}
-              </Typography>
-            )}
             <Button
               sx={{
                 color: "whitesmoke",
@@ -82,6 +86,7 @@ function Connexion() {
               }}
               type="submit"
               variant="contained"
+              color="primary"
               fullWidth
             >
               Connexion

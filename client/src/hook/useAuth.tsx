@@ -2,9 +2,9 @@ import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
 
 interface AuthContextType {
-  handleLogin: (email: string, password: string) => Promise<void>;
-  handleRegister: (email: string, password: string) => Promise<void>;
-  handleLogout: () => void;
+  handleLogin: (login: string, password: string) => Promise<void>;
+  handleRegister: (login: string, password: string) => Promise<void>;
+  handleLogout: () => Promise<void>;
   isAuth: boolean;
   message: string | null;
   user: string | null;
@@ -19,20 +19,31 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
 
-  const handleRegister = async (email: string, password: string) => {
-    try {
-      const response = await axios.post<{ message: string; user?: string }>(
-        "http://localhost:3310/api/auth/signup",
-        { email, password },
-      );
+  const handleRegister = async (login: string, password: string) => {
+    if (login === null || password === null) {
+      setMessage("Veuillez saisir les datas");
+      return;
+    }
 
-      if (response.data.user) {
-        setMessage("Inscription réussie, vous pouvez vous connecter.");
-      } else {
-        setMessage(response.data.message);
-      }
-    } catch (error) {
-      setMessage("Erreur lors de l'inscription.");
+    const values = { login: login, password: password };
+
+    const response = await axios.post<{ message: string; user?: string }>(
+      "http://localhost:3310/api/auth/signin",
+      {
+        method: "POST",
+        values: values,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      },
+    );
+
+    const data = response.data;
+
+    if (data.message && data.user) {
+      setMessage(data.message);
+    } else {
+      setMessage(data.message);
     }
   };
 
@@ -42,57 +53,64 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     message: string;
   }
 
-  const handleLogin = async (email: string, password: string) => {
-    try {
-      const { data } = await axios.post<LoginResponse>(
-        "http://localhost:3310/api/auth/signin",
-        { email, password },
-      );
+  const handleLogin = async (login: string, password: string) => {
+    if (login === null || password === null) {
+      //setMessage('Veuillez saisir les datas');
+      return;
+    }
 
-      if (data.token) {
-        setIsAuth(true);
-        setUser(data.user);
-        localStorage.setItem("token", data.token);
-        setMessage(null);
-      } else {
-        setIsAuth(false);
-        setMessage(data.message || "Email ou mot de passe incorrect.");
-      }
-    } catch (error) {
-      setMessage("Erreur lors de la connexion.");
+    const values = { login: login, password: password };
+    const { data } = await axios.post<LoginResponse>(
+      "http://localhost:3310/api/auth/signin",
+      {
+        method: "POST",
+        values: values,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      },
+    );
+
+    if (data.token) {
+      setIsAuth(true);
+      setUser(data.user);
+      localStorage.setItem("token", data.token);
+    } else {
+      setIsAuth(false);
+      setMessage(data.message || "Password erronné");
     }
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    setIsAuth(false);
-    setUser(null);
+  const handleLogout = async () => {
+    await handleClean();
   };
 
   const currentUser = async () => {
     const token = localStorage.getItem("token");
 
     if (token) {
-      try {
-        const { data } = await axios.get<{ check: boolean; user?: string }>(
-          "http://localhost:3310/api/auth/check",
-          { headers: { Authorization: `Bearer ${token}` } },
-        );
+      // Test de connexion back
+      const { data } = await axios.get("http://localhost:3310/api/auth/check", {
+        headers: { token: token },
+      });
 
-        setIsAuth(data.check);
-        if (data.check) {
-          setUser(data.user || null);
-        } else {
-          handleLogout();
-        }
-      } catch {
-        handleLogout();
+      setIsAuth((data as { check: boolean })?.check);
+      if (!(data as { check: boolean })?.check) {
+        await handleClean();
       }
+    } else {
+      await handleClean();
     }
+  };
+
+  const handleClean = async () => {
+    localStorage.removeItem("token");
+    setIsAuth(false);
   };
 
   useEffect(() => {
     currentUser();
+    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   }, [currentUser]);
 
   return (
@@ -113,7 +131,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
-  if (!context)
-    throw new Error("useAuth doit être utilisé dans un AuthProvider");
+
+  if (!context) throw new Error("Pour utiliser useAuth context est necessaire");
   return context;
 };
