@@ -2,44 +2,49 @@ import databaseClient from "../../../database/client";
 
 import type { Result, Rows } from "../../../database/client";
 
-type Questions = {
-  question_id: number;
-  question_text: string;
-};
-
-class questionRepository {
+interface Answer {
+  answer_id: number;
+  question_id: string;
+  answer_text: string;
+  score_value: number;
+}
+class answersRepository {
   // The C of CRUD - Create operation
 
-  async create(questions: Omit<Questions, "question_id">) {
-    // Execute the SQL INSERT query to add a new item to the "item" table
+  async create(answers: Omit<Answer, "answers_id">) {
     const [result] = await databaseClient.query<Result>(
-      "insert into item (title, user_id) values (?, ?)",
-      [questions.question_text, questions.question_text],
+      "insert into answers (answer_id, question_id, answer_text, score_value) values (?, ?, ?, ?)",
+      [
+        answers.answer_id,
+        answers.question_id,
+        answers.answer_text,
+        answers.score_value,
+      ],
     );
 
-    // Return the ID of the newly inserted item
+    // Return the ID of the newly inserted answers
     return result.insertId;
   }
 
   // The Rs of CRUD - Read operations
 
   async read(id: number) {
-    // Execute the SQL SELECT query to retrieve a specific item by its ID
+    // Execute the SQL SELECT query to retrieve a specific answers by its ID
     const [rows] = await databaseClient.query<Rows>(
-      "select * from item where id = ?",
+      "select * from answers where answers_id = ?",
       [id],
     );
 
-    // Return the first row of the result, which represents the item
-    return rows[0] as Questions;
+    // Return the first row of the result, which represents the answers
+    return rows[0] as Answer;
   }
 
   async readAll() {
     // Execute the SQL SELECT query to retrieve all items from the "item" table
-    const [rows] = await databaseClient.query<Rows>("select * from questions");
+    const [rows] = await databaseClient.query<Rows>("select * from answers");
 
     // Return the array of items
-    return rows as Questions[];
+    return rows as Answer[];
   }
 
   // The U of CRUD - Update operation
@@ -57,4 +62,4 @@ class questionRepository {
   // }
 }
 
-export default new questionRepository();
+export default new answersRepository();
