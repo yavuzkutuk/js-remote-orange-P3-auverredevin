@@ -11,6 +11,7 @@ import answerActions from "./modules/answers/answersActions";
 import tastingActions from "./modules/degustation/tastingActions";
 import itemActions from "./modules/item/itemActions";
 import quizzActions from "./modules/quizz/quizzActions";
+import suggestionActions from "./modules/suggestion/suggestionActions";
 import userActions from "./modules/users/usersActions";
 import wineActions from "./modules/vin/wineActions";
 
@@ -46,6 +47,12 @@ router.post("/api/question", quizzActions.add);
 router.get("/api/answers", answerActions.browse);
 router.get("/api/answers/:id", answerActions.read);
 router.post("/api/answers", answerActions.add);
+
+router.get("/api/suggestion", suggestionActions.browse);
+router.get("/api/suggestion/:id", suggestionActions.read);
+router.post("/api/suggestion", suggestionActions.add);
+router.put("/api/suggestion/:id", suggestionActions.edit);
+router.delete("/api/suggestion/:id", suggestionActions.destroy);
 
 /* ************************************************************************* */
 
